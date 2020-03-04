@@ -4,47 +4,51 @@ Plasma Chamber is a dapps development framework which grantees security, scalabi
 
 ## Table of contents
 
-#### Getting Started
+### Getting Started
 
 This page provides an overview of the Plasma Chamber documentation and related resources.
 Plasma Chamber is a blockchain application framework, which integrated Layer2 scaling solution.
 
-##### Try Plasma Chamber
+#### Try Plasma Chamber
 
-##### Learn Plasma Chamber
+##### Try Plasma Chamber in local
 
-##### Staying Informed
+[Try Plasma Chamber in local](/getting-started/try-plasma-chamber-in-local.md)
 
-##### Versioned Documentation
+#### Learn Plasma Chamber
 
-##### Something Missing?
+#### Staying Informed
+
+#### Versioned Documentation
+
+#### Something Missing?
 
 <br>
 
-#### Related Repositories 
+### Related Repositories
 
 <br>
 
-#### Main Concepts
+### Main Concepts
 
 In this guide, we will examine the building blocks of React apps: elements and components. Once you master them, you can create cpmlex apps from small reusable pieces.
 
-##### Plasma in the nutshell
+#### Plasma in the nutshell
 
-##### Introducing OVM
+#### Introducing OVM
 
-##### StateUpdate
+#### StateUpdate
 
-##### Challenge
+#### Challenge
 
-##### Merkle Root Submission
+#### Merkle Root Submission
 
 <br>
 
-#### API Reference
+### API Reference
 
-#### Testing
+### Testing
 
-#### Contributing
+### Contributing
 
-#### FAQ
+### FAQ
