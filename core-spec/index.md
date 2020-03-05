@@ -6,11 +6,12 @@ Hello! This document describes Cryptoeconomics Lab's L2 client and framework spe
 
 ### Who should read this document
 
-This document is written primarily for developers who will use our OVM core framework.
+This document is written about our OVM client core library and spec of OVM contracts.
+Intended audience of this document are
 
-- Developers who wants to contribute to develop our OVM client should read SDK and framework spec described here (link).
-- Developers who want to integrate our OVM framework to new blockchain system should read L1 adaptor spec described here (link).
-- Developers who want to contricute to OVM language and L2 smart contract should read OVM spec and DSL section.
+- Developers who wants to integrate our OVM framework to new Layer 1 Blockchain
+- Developers who wants to contribute to develop our OVM client or support new platform such as Android or iOS
+- Developers who wants to contribute to OVM language and Layer 2 smart contract
 
 ## Background
 
@@ -55,7 +56,7 @@ Plasma Chamber uses ethereum ABI encoding.
 
 ### Github repositories of our implementation
 
-[Client Core](https://github.com/cryptoeconomicslab/wakkanay): L1 agnostic OVM Client.
+[OVM client core library](https://github.com/cryptoeconomicslab/wakkanay): L1 agnostic OVM Client.
 [Ethereum Client](https://github.com/cryptoeconomicslab/wakkanay-ethereum): Ethereum specific L2 implementation using Client Core.
 [Plasma Aggregator](https://github.com/cryptoeconomicslab/wakkanay-plasma-aggregator): Plasma specific transaction aggregator client.
 [Contract](https://github.com/cryptoeconomicslab/ovm-contracts): group of contracts that are needed to support OVM’s claim decision.
