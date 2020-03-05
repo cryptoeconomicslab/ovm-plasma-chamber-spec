@@ -72,7 +72,9 @@ Plasma Chamber uses ethereum ABI encoding.
 
 ### Query API
 
-[Great step to query language](https://github.com/cryptoeconomicslab/plasma-rust-framework/pull/255#discussion_r329358113) by @tkmct
+TODO: Query API spec
+
+[The previous version of query API](https://github.com/cryptoeconomicslab/plasma-rust-framework/pull/255#discussion_r329358113)
 
 # L1 Adaptor Spec
 
