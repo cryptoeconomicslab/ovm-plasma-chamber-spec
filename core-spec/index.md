@@ -361,8 +361,8 @@ https://hackmd.io/@syuhei/rySwGUOvS
 
 #### Custome generator
 
-If you wanna support new L1 protocol, you can develop specific generators following [generator interface](https://github.com/cryptoeconomicslab/ovm-compiler/blob/master/packages/generator/src/CodeGenerator.ts) and [abstract syntax tree](https://github.com/cryptoeconomicslab/ovm-compiler/blob/master/packages/transpiler/src/CompiledPredicate.ts) of DSL.
-We can show 2 examples of generator in https://github.com/cryptoeconomicslab/ovm-compiler/tree/master/packages, solidity-generator and ethereum-generator.(ethereum-generator generates EVM bytecode).
+If you want to support a new Layer1 protocol, you can develop specific generators following [generator interface](https://github.com/cryptoeconomicslab/ovm-compiler/blob/master/packages/generator/src/CodeGenerator.ts) and [abstract syntax tree](https://github.com/cryptoeconomicslab/ovm-compiler/blob/master/packages/transpiler/src/CompiledPredicate.ts) of DSL.
+We can demonstrate two examples of the generator in https://github.com/cryptoeconomicslab/ovm-compiler/tree/master/packages, Solidity-generator and Ethereum-generator, which generates EVM bytecode.
 
 ## Reference
 
