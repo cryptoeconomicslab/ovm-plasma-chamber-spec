@@ -36,8 +36,8 @@ OVM was proposed by Plasma Group.
 - Hybrid Layer 2 construction using OVM
 - Multi-platform design
 
-Once developer write the application, it runs on many L1 and many platforms.
-And also they don't have to write less client logic as possible.
+Once developers are done writing an application, it will be able to run on various L1 and many platforms.
+And also, developers will be required to write less client logic.
 
 **table of contents**
 
