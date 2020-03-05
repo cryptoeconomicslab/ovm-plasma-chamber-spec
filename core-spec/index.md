@@ -53,7 +53,7 @@ And also they don't have to write less client logic as possible.
 
 ### Serialization
 
-Plasma Chamber uses ethereum ABI encoding.
+[framework name] uses Ethereum ABI encoding.
 
 ### Github repositories of our implementation
 
