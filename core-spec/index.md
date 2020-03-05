@@ -351,9 +351,9 @@ We can compile big property to small single property, and also we can build libr
 
 #### Why compile?
 
-To avoid big property, we need wrapperd decider synthesized by multiple deciders.
-However developers don't want to write specific decider and predicate.
-So, OVM compiler should compile Properties with free variables.
+To avoid big property, we need a wrapped decider synthesized by multiple deciders.
+However, developers don't want to write specific decider by Solidity in manually because it takes much time and can cause trivial bug.
+OVM compiler, hence, should compile complex decider which is composed from multiple deciders to one decider.
 
 #### How compile
 
