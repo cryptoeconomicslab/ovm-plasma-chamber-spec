@@ -60,7 +60,7 @@ And also they don't have to write less client logic as possible.
 [OVM client core library](https://github.com/cryptoeconomicslab/wakkanay): L1 agnostic OVM Client.
 [Ethereum Client](https://github.com/cryptoeconomicslab/wakkanay-ethereum): Ethereum specific L2 implementation using Client Core.
 [Plasma Aggregator](https://github.com/cryptoeconomicslab/wakkanay-plasma-aggregator): Plasma specific transaction aggregator client.
-[Contract](https://github.com/cryptoeconomicslab/ovm-contracts): group of contracts that are needed to support OVM’s claim decision.
+[Contract](https://github.com/cryptoeconomicslab/ovm-contracts): a group of contracts which support OVM’s claim decision.
 
 # Plasma SDK Spec
 
@@ -78,7 +78,7 @@ TODO: Query API spec
 
 # L1 Adaptor Spec
 
-The main purpose of implementing L1 Adaptor is to support new Layer 1 blockchain.
+The main purpose of implementing L1 Adaptor is to support as many Layer 1 blockchains as possible as a mainchain.
 Developer can implement L1 Adaptor following interfaces below.
 
 - Coder
@@ -101,7 +101,7 @@ L1 adaptor must implements Encoder and Decoder for following primitive types.
 
 ## Wallet
 
-Wallet's responsibility is key management. Wallet provides L1 specific private key management ways.
+Wallet's responsibility is end-users' private key management. Wallet provides a specific way to manage private keys depending upon connected mainchain.
 
 ### Wallet Class
 
@@ -134,10 +134,10 @@ https://hackmd.io/3003WCghTou-oXGBcTmuUg?both
 
 ## Overview
 
-OVM is the concept to standardize L2 dispute logic. L2 developers write property to define dispute logic for Layer 2 protocol.
+OVM is a concept of shared language to standardize various L2 dispute logic. Dapps developers will only have to write property to define dispute logic to develop a scalable dapp using Layer 2 protocols.
 Every property is claimed to the same Contract called Adjudication Contract. Properties are written by predicate logic and it can prove to true or false under dispute logic.
 For example, users deposit their assets to Deposit Contract and finally withdraw assets from Deposit Contract. In this scenario, Property stands for the condition which users can withdraw money from Deposit Contract.
-In this document, we describe how we can implement OVM contract.
+later in this document, we will describe how you can implement this kind of contract on the OVM.
 
 ### Property
 
@@ -207,19 +207,19 @@ Claims property and instantiate new challenge game.
 
 ### isDecided
 
-Gets the claim is decided or not.
+Gets the result of whether the claim has been decided or not.
 
 ### decideClaimToTrue
 
-Set the game decision true whose dispute period has passed.
+Sets the game decision true whose dispute period has already passed.
 
 ### decideClaimToFalse
 
-Set the game decision false when its challenge is set true.
+Set the game decision false when its challenge has been evaluated to true.
 
 ### removeChallenge
 
-Removes challenge whose decision is set as false.
+Removes challenge whose decision has been evaluated to false.
 
 ### setPredicateDecision
 
@@ -238,7 +238,7 @@ Adds a new challenge game. AC must check the challenge is valid of the parent ga
 
 isValidChallenge validates valid child node of game tree. I explain game tree.
 
-I write the "challenge rule table" defining `challenge` function which applies the challenge table below recursively.
+This is "challenge rule table" defining `challenge` function which applies the challenge table below recursively.
 For example, `challenge(¬p) = p`.
 
 #### Valid Challenge
