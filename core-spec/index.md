@@ -8,12 +8,11 @@ Hello! This document describes Cryptoeconomics Lab's L2 client and framework spe
 
 ### Who should read this document
 
-This document is written about our OVM client core library and spec of OVM contracts.
-Intended audience of this document are
+This document is written about our OVM client core library and spec of OVM contracts. The intended audience of this document are
 
-- Developers who wants to integrate our OVM framework to new Layer 1 Blockchain
-- Developers who wants to contribute to develop our OVM client or support new platform such as Android or iOS
-- Developers who wants to contribute to OVM language and Layer 2 smart contract
+- Developers who want to integrate our OVM framework to new Layer 1 Blockchain
+- Developers who want to contribute to develop our OVM client or support new platforms such as Android or iOS
+- Developers who want to contribute to OVM language and Layer 2 smart contract
 
 ## Background
 
