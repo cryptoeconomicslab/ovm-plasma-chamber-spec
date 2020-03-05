@@ -1,6 +1,6 @@
 # [framework name] Core Spec
 
-new framework name is comming soon.
+The new framework name is coming soon.
 
 # Introduction
 
@@ -25,7 +25,7 @@ This document is written about our OVM client core library and spec of OVM contr
 Since OVM was originally proposed as a concept of shared language for various Layer2 solutions, we have been focusing to implement a concrete system that realizes OVM's unique advantages into real software. This lead to the advent of [framework name].
 When you break [framework name] down, it has some major components, OVM contract, OVM client and a compiler.
 
-## Contributers
+## Contributors
 
 Cryptoeconomics Lab, inc.
 OVM was proposed by Plasma Group.
@@ -36,7 +36,7 @@ OVM was proposed by Plasma Group.
 - Hybrid Layer 2 construction using OVM
 - Multi-platform design
 
-Once developer write the appilcation, it runs on many L1 and many platforms.
+Once developer write the application, it runs on many L1 and many platforms.
 And also they don't have to write less client logic as possible.
 
 **table of contents**
@@ -88,7 +88,7 @@ Developer can implement L1 Adaptor following interfaces below.
 
 ## Coder
 
-Coder provides Encoder for specific Layer 1 block chain. Developer can implement Encoding adapted new blockchain.
+Coder provides Encoder for specific Layer 1 blockchain. Developer can implement Encoding adapted new blockchain.
 
 L1 adaptor must implements Encoder and Decoder for following primitive types.
 
@@ -107,7 +107,7 @@ Wallet's responsibility is key management. Wallet provides L1 specific private k
 
 ## ContractWrapper and EventWatcher
 
-ContractWrapper and EventWatcher provides concrete interface to access L1 Contract.
+ContractWrapper and EventWatcher provide concrete interface to access L1 Contract.
 
 ### AdjudicatorContract Class
 
@@ -126,7 +126,7 @@ ContractWrapper and EventWatcher provides concrete interface to access L1 Contra
 
 # Client Spec
 
-Design client spec to fit many platforms such as mobile phone, browser and micro computer.
+Design client spec to fit many platforms such as mobile phone, browser, and microcomputer.
 
 https://hackmd.io/3003WCghTou-oXGBcTmuUg?both
 
@@ -135,13 +135,13 @@ https://hackmd.io/3003WCghTou-oXGBcTmuUg?both
 ## Overview
 
 OVM is the concept to standardize L2 dispute logic. L2 developers write property to define dispute logic for Layer 2 protocol.
-Every properties are claimed to the same Contract called Adjudication Contract. Properties are written by predicate logic and it can be prove to true or false under dispute logic.
-For example, users deposit their asset to Deposit Contract and finally withdraw asset from Deposit Contract. In this scenario, Property stands for the condition which users can withdraw money from Deposit Contract.
+Every property is claimed to the same Contract called Adjudication Contract. Properties are written by predicate logic and it can prove to true or false under dispute logic.
+For example, users deposit their assets to Deposit Contract and finally withdraw assets from Deposit Contract. In this scenario, Property stands for the condition which users can withdraw money from Deposit Contract.
 In this document, we describe how we can implement OVM contract.
 
 ### Property
 
-Property stadns for dispute logic and we can claim every Properties to Adjudicator Contract. Property has its predicate address and array of input.
+Property stands for dispute logic and we can claim every Properties to Adjudicator Contract. Property has its predicate address and array of input.
 
 e.g.) This claim stands for the preimage of hash doesn't exist.
 
@@ -185,8 +185,8 @@ Checkpoint(su) := ∀b < B: ∀su ∈ SU(): su().
 
 ### Decider and Quantifier
 
-We are using quantifier elimination technich to make OVM contract imeplementation simple.
-There are 2 rules. So evetything is decider in our implementation.
+We are using quantifier elimination method to make OVM contract implementation simple.
+There are 2 rules. So everything is decider in our implementation.
 
 | original proposition    | eliminated                                  |
 | ----------------------- | ------------------------------------------- |
@@ -195,7 +195,7 @@ There are 2 rules. So evetything is decider in our implementation.
 
 ### Local information
 
-Deciders use local information to make decision.
+Deciders use local information to make a decision.
 
 # Contract Spec
 
@@ -223,11 +223,11 @@ Removes challenge whose decision is set as false.
 
 ### setPredicateDecision
 
-This is called from Predicate. It sets a game decision. For example, you know signature of `IsValidSignature(message, address, signature)`, you can set the game decision true which has this claim through `IsValidSignature` predicate.
+This is called by Predicate. It sets a game decision. For example, you know signature of `IsValidSignature(message, address, signature)`, you can set the game decision true which has this claim through `IsValidSignature` predicate.
 
 ### challenge
 
-Adds new challenge game. AC must check the challenge is valid of parent game.
+Adds a new challenge game. AC must check the challenge is valid of the parent game.
 
 ## Predicate
 
