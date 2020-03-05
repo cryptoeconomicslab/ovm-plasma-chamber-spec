@@ -1,4 +1,6 @@
-# OVM Plasma Chamber Core Spec
+# [framework name] Core Spec
+
+new framework name is comming soon.
 
 # Introduction
 
@@ -21,8 +23,8 @@ Intended audience of this document are
 
 ### CEL's framework
 
-Since OVM is concept we had to implement concrete system to benefit from OVM's advantage.
-CEL's framework is making OVM real by some components, OVM contract, OVM client and compiler.
+Since OVM was originally proposed as a concept of shared language for various Layer2 solutions, we have been focusing to implement a concrete system that realizes OVM's unique advantages into real software. This lead to the advent of [framework name].
+When you break [framework name] down, it has some major components, OVM contract, OVM client and a compiler.
 
 ## Contributers
 
