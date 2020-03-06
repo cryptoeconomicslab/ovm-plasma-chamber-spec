@@ -11,6 +11,8 @@ git clone git@github.com:cryptoeconomicslab/wakkanay-plasma-aggregator.git
 npm i
 ```
 
+You can start the Plasma transaction aggregator and contract in local PC by docker compose.
+
 ```
 docker-compose up
 ```
