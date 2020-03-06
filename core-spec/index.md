@@ -22,8 +22,9 @@ This document is written about our OVM client core library and spec of OVM contr
 
 ### CEL's framework
 
-Since OVM was originally proposed as a concept of shared language for various Layer2 solutions, we have been focusing to implement a concrete system that realizes OVM's unique advantages into real software. This lead to the advent of [framework name].
-When you break [framework name] down, it has some major components, OVM contract, OVM client and a compiler.
+Since OVM was originally proposed as a concept of shared language for various Layer2 protocols, we have been focusing on implement a concrete system to utilize unique advantages of OVM.
+This lead to the advent of [framework name].
+[framework name] consists of three main components: OVM contract, OVM client and compiler.
 
 ## Contributors
 
@@ -101,7 +102,7 @@ L1 adaptor must implements Encoder and Decoder for following primitive types.
 
 ## Wallet
 
-Wallet's responsibility is end-users' private key management. Wallet provides a specific way to manage private keys depending upon connected mainchain.
+Wallet's responsibility is end-users' private key management. Wallet provides a specific way to manage private keys depending on the connected mainchain.
 
 ### Wallet Class
 
@@ -134,7 +135,8 @@ https://hackmd.io/3003WCghTou-oXGBcTmuUg?both
 
 ## Overview
 
-OVM is a concept of shared language to standardize various L2 dispute logic. Dapps developers will only have to write property to define dispute logic to develop a scalable dapp using Layer 2 protocols.
+OVM is abstraction of L2 dispute logic.
+Dapps developers will only have to write property to define dispute logic to develop a scalable dapp using Layer 2 protocols.
 Every property is claimed to the same Contract called Adjudication Contract. Properties are written by predicate logic and it can prove to true or false under dispute logic.
 For example, users deposit their assets to Deposit Contract and finally withdraw assets from Deposit Contract. In this scenario, Property stands for the condition which users can withdraw money from Deposit Contract.
 later in this document, we will describe how you can implement this kind of contract on the OVM.
@@ -211,15 +213,15 @@ Gets the result of whether the claim has been decided or not.
 
 ### decideClaimToTrue
 
-Sets the game decision true whose dispute period has already passed.
+Sets the game decision true when its dispute period has already passed.
 
 ### decideClaimToFalse
 
-Set the game decision false when its challenge has been evaluated to true.
+Sets the game decision false when its challenge has been evaluated to true.
 
 ### removeChallenge
 
-Removes challenge whose decision has been evaluated to false.
+Removes a challenge when its decision has been evaluated to false.
 
 ### setPredicateDecision
 
