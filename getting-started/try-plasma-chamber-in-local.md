@@ -1,5 +1,7 @@
 # Try Plasma Chamber in local
 
+Quick start of Plasma Chamber in your laptop.
+
 ## Setup aggregator
 
 ### 1. Get test aggregator
@@ -11,7 +13,7 @@ git clone git@github.com:cryptoeconomicslab/wakkanay-plasma-aggregator.git
 npm i
 ```
 
-You can start the Plasma transaction aggregator and contract in local PC by docker compose.
+You can start the Plasma transaction aggregator and contract in your laptop by Docker Compose.
 
 ```
 docker-compose up
@@ -27,7 +29,7 @@ cat /build/out.config.json
 
 ### 1. Install
 
-To start L2 transfer, we first need to install Plasma libraries from npm.
+To start Plasma transfer, we first need to install Plasma libraries from npm.
 
 ```
 npm i ethers
