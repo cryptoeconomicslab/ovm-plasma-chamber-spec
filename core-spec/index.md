@@ -94,6 +94,10 @@ Coder provides Encoder for specific Layer 1 blockchain. Developer can implement 
 L1 adaptor must implements Encoder and Decoder for following primitive types.
 
 - Address
+
+Address type has 2 roles first is user account address second is contract address.
+Address is hex string which must be used for signature verification in client and contract, transfer and dynamic calling in contract.
+
 - BigNumber
 - Bytes
 - Tuple
