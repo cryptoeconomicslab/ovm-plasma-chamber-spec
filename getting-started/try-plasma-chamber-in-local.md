@@ -1,6 +1,7 @@
-# Try Plasma Chamber in local
+# Try [framework name] in local
 
-Quick start of Plasma Chamber in your laptop.
+Quick start of [framework name] in your laptop.
+You can create an secure and scalable Plasma application by reading this document.
 
 ## Setup aggregator
 
@@ -130,4 +131,13 @@ You can make your first Plasma transaction!
 
 ```typescript
 await liteClient.transfer(10, to);
+```
+
+## Tips
+
+Do you want to run client on browser?
+You can choose IndexedDb for client database.
+
+```
+import { IndexedDbKeyValueStore } from '@cryptoeconomicslab/indexeddb-kvs'
 ```
