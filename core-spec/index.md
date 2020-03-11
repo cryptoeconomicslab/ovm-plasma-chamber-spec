@@ -260,10 +260,10 @@ If we have `∀x ∈ X : ∀y ∈ Y : p(x, y)`, challenge is `¬p(x/s,y/t)`.
 
 | original      | witness | condition                     |
 | ------------- | ------- | ----------------------------- |
-| P_0 ∨ P_1     | i       | `decide(p_i)`                 |
-| ¬¬P           | ∅       | `decide(P)`                   |
-| ∃x ∈ X : p(x) | t∈X     | `decide(p(x/t))`              |
-| P_0 ∧ P_1     | ∅       | `decide(P_0) and decide(P_1)` |
+| P_0 ∨ P_1     | w[0] is i       | `decide(p_i, w[1:])`                 |
+| ¬¬P           | ∅       | `decide(P, w)`                   |
+| ∃x ∈ X : p(x) | w[0] is t∈X     | `decide(p(x/t), w[1:])`              |
+| P_0 ∧ P_1     | w are [w_0, ...w_i]       | `decide(P_0, w_0) and decide(P_1, w_1)` |
 
 ### Deposit Contract example
 
