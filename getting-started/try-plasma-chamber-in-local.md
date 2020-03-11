@@ -65,6 +65,12 @@ const client = await initializeLightClient({
 });
 ```
 
+Do you want to run client on browser? You can choose IndexedDb for client database.
+
+```typescript
+import { IndexedDbKeyValueStore } from "@cryptoeconomicslab/indexeddb-kvs";
+```
+
 ### 3. Get balance
 
 You can get balance on Plasma.
@@ -107,13 +113,4 @@ const exitList = await liteClient.getExitList();
 if (exitList[0]) {
   await lightClient.finalizeExit(exitList[0]);
 }
-```
-
-## Tips
-
-Do you want to run client on browser?
-You can choose IndexedDb for client database.
-
-```typescript
-import { IndexedDbKeyValueStore } from "@cryptoeconomicslab/indexeddb-kvs";
 ```
