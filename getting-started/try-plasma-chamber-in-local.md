@@ -61,7 +61,8 @@ const wallet = new ethers.Wallet(
 const client = await initializeLightClient({
   wallet,
   kvs,
-  deciderConfig
+  deciderConfig,
+  aggregatorEndpoint: "http://localhost:3000"
 });
 ```
 
