@@ -65,13 +65,13 @@ const client = await initializeLightClient({
 });
 ```
 
-### 4. Get balance
+### 3. Get balance
 
 You can get balance on Plasma.
 
 ```typescript
 const balance = await liteClient.getBalance();
-console.log(balance);
+console.log("balance", balance);
 ```
 
 ### 4. Deposit to Plasma
@@ -88,6 +88,25 @@ You can make your first Plasma transaction!
 
 ```typescript
 await liteClient.transfer(10, DEPOSIT_CONTRACT_ADDRESS, to);
+```
+
+### 6. Exit and withdraw assets from Plasma
+
+Start exit your asset from Plasma.
+
+```typescript
+await liteClient.exit(10, DEPOSIT_CONTRACT_ADDRESS);
+const exitList = await liteClient.getExitList();
+console.log("new exits", exitList);
+```
+
+After dispute period, you can withdraw your asset to Ethereum.
+
+```typescript
+const exitList = await liteClient.getExitList();
+if (exitList[0]) {
+  await lightClient.finalizeExit(exitList[0]);
+}
 ```
 
 ## Tips
