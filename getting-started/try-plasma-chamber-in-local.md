@@ -59,7 +59,7 @@ const wallet = new ethers.Wallet(
   privateKey,
   ethers.providers.JsonRpcProvider("http://127.0.0.1:8545")
 );
-const client = await initializeLightClient({
+const lightClient = await initializeLightClient({
   wallet,
   kvs,
   deciderConfig,
@@ -78,7 +78,7 @@ import { IndexedDbKeyValueStore } from "@cryptoeconomicslab/indexeddb-kvs";
 You can get balance on Plasma.
 
 ```typescript
-const balance = await liteClient.getBalance();
+const balance = await lightClient.getBalance();
 console.log("balance", balance);
 ```
 
@@ -87,7 +87,7 @@ console.log("balance", balance);
 You can deposit L1 token to Plasma.
 
 ```typescript
-await liteClient.deposit(10, DEPOSIT_CONTRACT_ADDRESS);
+await lightClient.deposit(10, DEPOSIT_CONTRACT_ADDRESS);
 ```
 
 ### 5. Transfer
@@ -95,7 +95,7 @@ await liteClient.deposit(10, DEPOSIT_CONTRACT_ADDRESS);
 You can make your first Plasma transaction!
 
 ```typescript
-await liteClient.transfer(10, DEPOSIT_CONTRACT_ADDRESS, to);
+await lightClient.transfer(10, DEPOSIT_CONTRACT_ADDRESS, to);
 ```
 
 ### 6. Exit and withdraw assets from Plasma
@@ -103,15 +103,15 @@ await liteClient.transfer(10, DEPOSIT_CONTRACT_ADDRESS, to);
 Start exit your asset from Plasma.
 
 ```typescript
-await liteClient.exit(10, DEPOSIT_CONTRACT_ADDRESS);
-const exitList = await liteClient.getExitList();
+await lightClient.exit(10, DEPOSIT_CONTRACT_ADDRESS);
+const exitList = await lightClient.getExitList();
 console.log("new exits", exitList);
 ```
 
 After dispute period, you can withdraw your asset to Ethereum.
 
 ```typescript
-const exitList = await liteClient.getExitList();
+const exitList = await lightClient.getExitList();
 if (exitList[0]) {
   await lightClient.finalizeExit(exitList[0]);
 }
