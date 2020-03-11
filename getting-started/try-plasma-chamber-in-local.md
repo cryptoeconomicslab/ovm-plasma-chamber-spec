@@ -2,6 +2,7 @@
 
 Quick start of [framework name] in your laptop.
 You can create an secure and scalable Plasma application by reading this document.
+This quick start using Typescript SDK, you need the latest Node.js version.
 
 ## Setup aggregator
 
