@@ -128,8 +128,117 @@ ContractWrapper and EventWatcher provide concrete interface to access L1 Contrac
 # Client Spec
 
 Design client spec to fit many platforms such as mobile phone, browser, and microcomputer.
-
 https://hackmd.io/3003WCghTou-oXGBcTmuUg?both
+
+## Plasma Light Client API reference
+▸ **deposit**(`amount`: number, `addr`: string): *Promise‹void›*
+
+Deposit given amount of given ERC20Contract's token to corresponding deposit contract.
+
+**Parameters:**
+
+| Name     | Type   | Description              |
+| -------- | ------ | ------------------------ |
+| `amount` | number | amount to deposit        |
+| `addr`   | string | deposit contract address |
+
+**Returns:** *Promise‹void›*
+
+___
+
+▸ **transfer**(`amount`: number, `depositContractAddressString`: string, `toAddress`: string): *Promise‹void›*
+
+
+transfer token to new owner. throw if given invalid inputs.
+
+**Parameters:**
+
+| Name                           | Type   | Description        |
+| ------------------------------ | ------ | ------------------ |
+| `amount`                       | number | amount to transfer |
+| `depositContractAddressString` | string | -                  |
+| `toAddress`                    | string | -                  |
+
+**Returns:** *Promise‹void›*
+
+___
+
+▸ **exit**(`amount`: number, `address`: string): *Promise‹void›*
+
+initiate exit process
+
+**Parameters:**
+
+| Name      | Type   | Description                      |
+| --------- | ------ | -------------------------------- |
+| `amount`  | number | amount to exit                   |
+| `address` | string | deposit contract address to exit |
+
+**Returns:** *Promise‹void›*
+
+___
+
+▸ **finalizeExit**(`exit`: Exit): *Promise‹void›*
+
+
+finalize exit to withdraw token from deposit contract
+
+**Parameters:**
+
+| Name   | Type | Description             |
+| ------ | ---- | ----------------------- |
+| `exit` | Exit | Exit object to finalize |
+
+**Returns:** *Promise‹void›*
+___
+
+▸ **getExitlist**(): *Promise‹Exit[]›*
+
+**Returns:** *Promise‹Exit[]›*
+
+___
+
+▸ **getBalance**(): *Promise‹Array‹object››*
+
+get balance method
+returns array of {tokenAddress: string, amount: number}
+
+**Returns:** *Promise‹Array‹object››*
+
+___
+
+▸ **registerCustomToken**(`erc20Contract`: IERC20Contract, `depositContract`: IDepositContract): *void*
+
+register custom token.
+
+**Parameters:**
+
+| Name              | Type             | Description               |
+| ----------------- | ---------------- | ------------------------- |
+| `erc20Contract`   | IERC20Contract   | IERC20Contract instance   |
+| `depositContract` | IDepositContract | IDepositContract instance |
+
+**Returns:** *void*
+
+___
+
+▸ **registerToken**(`erc20ContractAddress`: string, `depositContractAddress`: string): *void*
+
+register new ERC20 token
+
+**Parameters:**
+
+| Name                     | Type   | Description                                               |
+| ------------------------ | ------ | --------------------------------------------------------- |
+| `erc20ContractAddress`   | string | ERC20 token address to register                           |
+| `depositContractAddress` | string | deposit contract address connecting to tokenAddress above |
+
+**Returns:** *void*
+
+___
+
+
+## Plasma Aggregator API reference
 
 # OVM Spec
 
