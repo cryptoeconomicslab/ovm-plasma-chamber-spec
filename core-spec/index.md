@@ -131,23 +131,29 @@ Design client spec to fit many platforms such as mobile phone, browser, and micr
 https://hackmd.io/3003WCghTou-oXGBcTmuUg?both
 
 ## Plasma Light Client API reference
-▸ **deposit**(`amount`: number, `addr`: string): *Promise‹void›*
 
-Deposit given amount of given ERC20Contract's token to corresponding deposit contract.
+###  deposit
+
+▸ **deposit**(`amount`: number, `depositContractAddress`: string): *Promise‹void›*
+
+Deposit given amount of token to corresponding deposit contract.
+this method calls `approve` method of ERC20 contract and `deposit` method
+of Deposit contract.
 
 **Parameters:**
 
-| Name     | Type   | Description              |
-| -------- | ------ | ------------------------ |
-| `amount` | number | amount to deposit        |
-| `addr`   | string | deposit contract address |
+| Name                     | Type   | Description                              |
+| ------------------------ | ------ | ---------------------------------------- |
+| `amount`                 | number | amount to deposit                        |
+| `depositContractAddress` | string | deposit contract address to deposit into |
 
 **Returns:** *Promise‹void›*
 
 ___
 
-▸ **transfer**(`amount`: number, `depositContractAddressString`: string, `toAddress`: string): *Promise‹void›*
+###  transfer
 
+▸ **transfer**(`amount`: number, `depositContractAddressString`: string, `toAddress`: string): *Promise‹void›*
 
 transfer token to new owner. throw if given invalid inputs.
 
@@ -163,25 +169,35 @@ transfer token to new owner. throw if given invalid inputs.
 
 ___
 
-▸ **exit**(`amount`: number, `address`: string): *Promise‹void›*
+###  exit
 
-initiate exit process
+▸ **exit**(`amount`: number, `depositContractAddress`: string): *Promise‹void›*
+
+Withdrawal process starts from calling this method.
+Given amount and depositContractAddress, checks if client has sufficient token amount.
+If client has sufficient amount, create exitProperty from stateUpdates this client owns,
+calls `claimProperty` method on UniversalAdjudicationContract. Store the property in exitList.
+User can call `finalizeExit` to withdraw actual token after the exitProperty is decided to true on-chain.
 
 **Parameters:**
 
-| Name      | Type   | Description                      |
-| --------- | ------ | -------------------------------- |
-| `amount`  | number | amount to exit                   |
-| `address` | string | deposit contract address to exit |
+| Name                     | Type   | Description                      |
+| ------------------------ | ------ | -------------------------------- |
+| `amount`                 | number | amount to exit                   |
+| `depositContractAddress` | string | deposit contract address to exit |
 
 **Returns:** *Promise‹void›*
 
 ___
 
+###  finalizeExit
+
 ▸ **finalizeExit**(`exit`: Exit): *Promise‹void›*
 
-
-finalize exit to withdraw token from deposit contract
+Given exit instance, finalize exit to withdraw token from deposit contract.
+Client checks if the exitProperty of the exit instance is decided by calling `isDecided` method
+of UniversalAdjudicationContract. If the property claim have not been decided yet, call `decideClaimToTrue`.
+If the exitProperty had been decided to true, call `finalizeExit` method of corresponding payout contract.
 
 **Parameters:**
 
@@ -190,26 +206,39 @@ finalize exit to withdraw token from deposit contract
 | `exit` | Exit | Exit object to finalize |
 
 **Returns:** *Promise‹void›*
-___
-
-▸ **getExitlist**(): *Promise‹Exit[]›*
-
-**Returns:** *Promise‹Exit[]›*
 
 ___
+
+###  getBalance
 
 ▸ **getBalance**(): *Promise‹Array‹object››*
 
-get balance method
-returns array of {tokenAddress: string, amount: number}
+Get current balance of tokens in plasma.
+All ERC20 tokens including Peth registered by `registerCustomToken` method or `registerToken` method are included.
 
 **Returns:** *Promise‹Array‹object››*
 
 ___
 
-▸ **registerCustomToken**(`erc20Contract`: IERC20Contract, `depositContract`: IDepositContract): *void*
+___
 
-register custom token.
+###  getExitlist
+
+▸ **getExitlist**(): *Promise‹Exit[]›*
+
+Get pending exit list
+
+**Returns:** *Promise‹Exit[]›*
+
+___
+
+###  registerCustomToken
+
+*Defined in [LightClient.ts:421](https://github.com/cryptoeconomicslab/wakkanay/blob/a43f185/packages/plasma-light-client/src/LightClient.ts#L421)*
+
+register ERC20 custom token.
+ERC20 contract wrapper is passed directly. This method should be used
+when you want to use custom IERC20 contract. PETH contract use this method.
 
 **Parameters:**
 
@@ -222,9 +251,11 @@ register custom token.
 
 ___
 
+###  registerToken
+
 ▸ **registerToken**(`erc20ContractAddress`: string, `depositContractAddress`: string): *void*
 
-register new ERC20 token
+register ERC20 token. use default ERC20 contract wrapper
 
 **Parameters:**
 
@@ -236,7 +267,6 @@ register new ERC20 token
 **Returns:** *void*
 
 ___
-
 
 ## Plasma Aggregator API reference
 
