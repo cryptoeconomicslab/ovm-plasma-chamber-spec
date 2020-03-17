@@ -24,7 +24,7 @@ docker-compose up
 ### 2. Get out.config.json
 
 ```
-cat /build/out.config.json
+cat contract/build/out.config.json
 ```
 
 ## Create your application
