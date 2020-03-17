@@ -128,7 +128,6 @@ ContractWrapper and EventWatcher provide concrete interface to access L1 Contrac
 # Client Spec
 
 Design client spec to fit many platforms such as mobile phone, browser, and microcomputer.
-
 https://hackmd.io/3003WCghTou-oXGBcTmuUg?both
 
 # OVM Spec
