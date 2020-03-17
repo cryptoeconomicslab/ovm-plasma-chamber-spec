@@ -44,20 +44,19 @@ Copy out.config.json generated in previous section from `wakkanay-plasma-aggrega
 
 You can instantiate light client object using Wallet class of ethers.js.
 
-```typescript
-import * as ethers from "ethers";
-import { Bytes } from "@cryptoeconomicslab/primitives";
-import { LevelKeyValueStore } from "@cryptoeconomicslab/level-kvs";
-import initializeLightClient from "@cryptoeconomicslab/eth-plasma-light-client";
+```javascript
+const ethers = require("ethers");
+const { Bytes } = require("@cryptoeconomicslab/primitives");
+const { LevelKeyValueStore } = require("@cryptoeconomicslab/level-kvs");
+const initializeLightClient = require("@cryptoeconomicslab/eth-plasma-light-client")
+  .default;
 
-import * as deciderConfig from "./out.config.json";
-const DEPOSIT_CONTRACT_ADDRESS =
-  deciderConfig.payoutContracts["DepositContract"];
+const deciderConfig = require("./out.config.json");
 
 const kvs = new LevelKeyValueStore(Bytes.fromString("plasma_light_client"));
 const wallet = new ethers.Wallet(
-  privateKey,
-  ethers.providers.JsonRpcProvider("http://127.0.0.1:8545")
+  "your private key here",
+  new ethers.providers.JsonRpcProvider("http://127.0.0.1:8545")
 );
 const lightClient = await initializeLightClient({
   wallet,
@@ -69,15 +68,15 @@ const lightClient = await initializeLightClient({
 
 Do you want to run client on browser? You can choose IndexedDb for client database.
 
-```typescript
-import { IndexedDbKeyValueStore } from "@cryptoeconomicslab/indexeddb-kvs";
+```javascript
+const { IndexedDbKeyValueStore } = require("@cryptoeconomicslab/indexeddb-kvs");
 ```
 
 ### 3. Get balance
 
 You can get balance on Plasma.
 
-```typescript
+```javascript
 const balance = await lightClient.getBalance();
 console.log("balance", balance);
 ```
@@ -86,7 +85,7 @@ console.log("balance", balance);
 
 You can deposit L1 token to Plasma.
 
-```typescript
+```javascript
 await lightClient.deposit(10, DEPOSIT_CONTRACT_ADDRESS);
 ```
 
@@ -94,7 +93,7 @@ await lightClient.deposit(10, DEPOSIT_CONTRACT_ADDRESS);
 
 You can make your first Plasma transaction!
 
-```typescript
+```javascript
 await lightClient.transfer(10, DEPOSIT_CONTRACT_ADDRESS, to);
 ```
 
@@ -102,7 +101,7 @@ await lightClient.transfer(10, DEPOSIT_CONTRACT_ADDRESS, to);
 
 Start exit your asset from Plasma.
 
-```typescript
+```javascript
 await lightClient.exit(10, DEPOSIT_CONTRACT_ADDRESS);
 const exitList = await lightClient.getExitList();
 console.log("new exits", exitList);
@@ -110,7 +109,7 @@ console.log("new exits", exitList);
 
 After dispute period, you can withdraw your asset to Ethereum.
 
-```typescript
+```javascript
 const exitList = await lightClient.getExitList();
 if (exitList[0]) {
   await lightClient.finalizeExit(exitList[0]);
