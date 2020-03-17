@@ -46,6 +46,8 @@ In this guide, we will examine the building blocks of React apps: elements and c
 <br>
 
 ### API Reference
+- [PlasmaLightClient](/API/plasma-light-client.md)
+- [PlasmaAggregator](/API/plasma-aggregator.md)
 
 ### Testing
 
