@@ -18,6 +18,7 @@ npm i
 You can start the Plasma transaction aggregator and contract in your laptop by Docker Compose.
 
 ```
+cp .sample.env .env
 docker-compose up
 ```
 
@@ -51,19 +52,23 @@ const { LevelKeyValueStore } = require("@cryptoeconomicslab/level-kvs");
 const initializeLightClient = require("@cryptoeconomicslab/eth-plasma-light-client")
   .default;
 
-const deciderConfig = require("./out.config.json");
+const config = require("./out.config.json");
 
-const kvs = new LevelKeyValueStore(Bytes.fromString("plasma_light_client"));
-const wallet = new ethers.Wallet(
-  "your private key here",
-  new ethers.providers.JsonRpcProvider("http://127.0.0.1:8545")
-);
-const lightClient = await initializeLightClient({
-  wallet,
-  kvs,
-  deciderConfig,
-  aggregatorEndpoint: "http://localhost:3000"
-});
+async function main() {
+  const kvs = new LevelKeyValueStore(Bytes.fromString("plasma_light_client"));
+  const wallet = new ethers.Wallet(
+    "your private key here",
+    new ethers.providers.JsonRpcProvider("http://127.0.0.1:8545")
+  );
+  const lightClient = await initializeLightClient({
+    wallet,
+    kvs,
+    config,
+    aggregatorEndpoint: "http://localhost:3000"
+  });
+}
+
+main()
 ```
 
 Do you want to run client on browser? You can choose IndexedDb for client database.
