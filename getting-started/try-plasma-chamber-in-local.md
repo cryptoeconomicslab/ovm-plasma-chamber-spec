@@ -88,7 +88,17 @@ console.log("balance", balance);
 
 ### 4. Deposit to Plasma
 
-You can deposit L1 token to Plasma.
+Let's deposit L1 token to Plasma.
+Plasma requires a contract to deposit L1 tokens to Plasma.
+You can get default Deposit Contract for ETH.
+
+```javascript
+const config = require("./out.config.json");
+// Get default Deposit Contract address
+const DEPOSIT_CONTRACT_ADDRESS = config.payoutContracts.DepositContract;
+```
+
+Deposit 10 wei to Plasma.
 
 ```javascript
 await lightClient.deposit(10, DEPOSIT_CONTRACT_ADDRESS);
