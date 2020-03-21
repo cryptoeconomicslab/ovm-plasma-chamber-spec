@@ -33,6 +33,7 @@ cat contract/build/out.config.json
 ### 1. Install
 
 To start Plasma transfer, we first need to install Plasma libraries from npm.
+copy out.config.json file to your application repository root.
 
 ```
 npm i ethers
