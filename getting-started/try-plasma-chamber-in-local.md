@@ -72,6 +72,7 @@ async function main() {
     config,
     aggregatorEndpoint: "http://localhost:3000"
   });
+  await lightClient.start();
 }
 
 main()
