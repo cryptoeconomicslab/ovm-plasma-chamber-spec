@@ -1,8 +1,12 @@
 # Try [framework name] in local
-
 Quick start of [framework name] on your laptop.
 You can create a secure and scalable Plasma application by reading this document.
 This quick start using Typescript SDK, you need the latest version of Node.js.
+
+## Prerequistes
+- Python2.7
+- Node v10.x
+- Docker  
 
 ## Setup aggregator
 
@@ -11,15 +15,16 @@ This quick start using Typescript SDK, you need the latest version of Node.js.
 Get [plasma-aggregator](https://github.com/cryptoeconomicslab/wakkanay-plasma-aggregator).
 
 ```
-git clone git@github.com:cryptoeconomicslab/wakkanay-plasma-aggregator.git
-npm i
+$ git clone git@github.com:cryptoeconomicslab/wakkanay-plasma-aggregator.git
+$ cd wakkanay-plasma-aggregator
+$ npm i
 ```
 
 You can start the Plasma transaction aggregator and contract in your laptop by Docker Compose.
 
 ```
-cp .sample.env .env
-docker-compose up
+$ cp .sample.env .env
+$ docker-compose up
 ```
 
 ### 2. Get out.config.json
@@ -32,7 +37,7 @@ cat contract/build/out.config.json
 
 ### 1. Install
 
-To start Plasma transfer, we first need to install Plasma libraries from npm.
+To start Plasma transfer, we first need to install Plasma libraries from npm.  
 copy out.config.json file to your application repository root.
 
 ```
