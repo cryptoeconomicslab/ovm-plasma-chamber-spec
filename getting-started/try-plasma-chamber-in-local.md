@@ -24,7 +24,7 @@ You can start the Plasma transaction aggregator and contract in your laptop by D
 
 ```
 $ cp .sample.env .env
-$ docker-compose up
+$ docker-compose up -d
 ```
 
 ### 2. Get out.config.json
