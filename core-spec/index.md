@@ -110,20 +110,23 @@ Wallet's responsibility is end-users' private key management. Wallet provides a 
 
 ContractWrapper and EventWatcher provide concrete interface to access L1 Contract.
 
-### AdjudicatorContract Class
+### Contract wrapper interfaces
 
-### CommitmentContract Class
+L1 adaptor should implement 6 contracts wrapper.
+This is [the link to spec of interfaces](https://github.com/cryptoeconomicslab/wakkanay/tree/master/packages/contract/src/contract/interfaces).
+Contract wrappers are simple interfaces to access the contract.
+Please also see [Contract Spec](#Contract Spec).
 
-### DepositContract Class
+### Sample implementation of Event Watcher
 
-### ERC20Contract Class
+This is an example implementation of Event Watcher for ethereum.
+https://github.com/cryptoeconomicslab/wakkanay/blob/master/packages/eth-contract/src/events/EthEventWatcher.ts
 
-### OwnershipPayout Class
-
-## Examples
+## Example implementations
 
 - [ethereum](https://github.com/cryptoeconomicslab/wakkanay-ethereum)
-- [tezos](https://github.com/cryptoeconomicslab/wakkanay-tezos)
+- [Substrate](https://github.com/cryptoeconomicslab/wakkanay-substrate)
+- [Tezos](https://github.com/cryptoeconomicslab/wakkanay-tezos)
 
 # Client Spec
 
@@ -228,7 +231,7 @@ This is called by Predicate. It sets a game decision. For example, you know sign
 
 ### challenge
 
-Adds a new challenge game. AC must check the challenge is valid of the parent game.
+Adds a new challenge game. Adjudication Contract must check the challenge is valid of the parent game.
 
 ## Predicate
 
@@ -257,12 +260,12 @@ If we have `∀x ∈ X : ∀y ∈ Y : p(x, y)`, challenge is `¬p(x/s,y/t)`.
 
 #### Immediately decide table
 
-| original      | witness | condition                     |
-| ------------- | ------- | ----------------------------- |
-| P_0 ∨ P_1     | w[0] is i       | `decide(p_i, w[1:])`                 |
-| ¬¬P           | ∅       | `decide(P, w)`                   |
-| ∃x ∈ X : p(x) | w[0] is t∈X     | `decide(p(x/t), w[1:])`              |
-| P_0 ∧ P_1     | w are [w_0, ...w_i]       | `decide(P_0, w_0) and decide(P_1, w_1)` |
+| original      | witness             | condition                               |
+| ------------- | ------------------- | --------------------------------------- |
+| P_0 ∨ P_1     | w[0] is i           | `decide(p_i, w[1:])`                    |
+| ¬¬P           | ∅                   | `decide(P, w)`                          |
+| ∃x ∈ X : p(x) | w[0] is t∈X         | `decide(p(x/t), w[1:])`                 |
+| P_0 ∧ P_1     | w are [w_0, ...w_i] | `decide(P_0, w_0) and decide(P_1, w_1)` |
 
 ### Deposit Contract example
 
