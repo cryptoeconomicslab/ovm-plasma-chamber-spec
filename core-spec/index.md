@@ -80,12 +80,12 @@ TODO: Query API spec
 # L1 Adaptor Spec
 
 The main purpose of implementing L1 Adaptor is to support as many Layer 1 blockchains as possible as a mainchain.
-Developer can implement L1 Adaptor following interfaces below.
+Our L2 Client can support new Layer 1 Blockchain by implementing L1 Adaptor.
+This section describes interface spec of L1 Adaptor.
 
 - Coder
 - Wallet
 - ContractWrapper
-- EventWatcher
 
 ## Coder
 
@@ -104,9 +104,7 @@ L1 adaptor must implements Encoder and Decoder for following primitive types.
 
 Wallet's responsibility is end-users' private key management. Wallet provides a specific way to manage private keys depending on the connected mainchain.
 
-### Wallet Class
-
-## ContractWrapper and EventWatcher
+## ContractWrapper
 
 ContractWrapper and EventWatcher provide concrete interface to access L1 Contract.
 
