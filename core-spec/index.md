@@ -80,8 +80,8 @@ TODO: Query API spec
 # L1 Adaptor Spec
 
 The main purpose of implementing L1 Adaptor is to support as many Layer 1 blockchains as possible as a mainchain.
-Our L2 Client can support new Layer 1 Blockchain by implementing L1 Adaptor.
-This section describes interface spec of L1 Adaptor.
+Our L2 Client support any Layer 1 blockchain that supports developing smart contract with enough function to implement L1 Adaptor.
+This section describes interfaces that must be implemented in L1 adaptors.
 
 - Coder
 - Wallet
@@ -110,9 +110,9 @@ ContractWrapper and EventWatcher provide concrete interface to access L1 Contrac
 
 ### Contract wrapper interfaces
 
-L1 adaptor should implement 6 contracts wrapper.
+L1 adaptor must implement 6 contract wrappers.
 This is [the link to spec of interfaces](https://github.com/cryptoeconomicslab/wakkanay/tree/master/packages/contract/src/contract/interfaces).
-Contract wrappers are simple interfaces to access the contract.
+Contract wrappers are simple interfaces to access smart contracts deployed on blockchain.
 Please also see [Contract Spec](#Contract Spec).
 
 ### Sample implementation of Event Watcher
