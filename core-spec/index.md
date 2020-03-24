@@ -80,7 +80,7 @@ TODO: Query API spec
 # L1 Adaptor Spec
 
 The main purpose of implementing L1 Adaptor is to support as many Layer 1 blockchains as possible as a mainchain.
-Our L2 Client support any Layer 1 blockchain that supports developing smart contract with enough function to implement L1 Adaptor.
+L2 client support any layer 1 blockchain on which basic ovm smart contracts(e.g. [ovm-contract](https://github.com/cryptoeconomicslab/ovm-contracts)) deployed and supports L1 adaptors.
 This section describes interfaces that must be implemented in L1 adaptors.
 
 - Coder
