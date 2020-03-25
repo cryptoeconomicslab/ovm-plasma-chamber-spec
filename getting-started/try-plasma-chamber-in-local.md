@@ -45,7 +45,7 @@ const { LevelKeyValueStore } = require("@cryptoeconomicslab/level-kvs");
 const initializeLightClient = require("@cryptoeconomicslab/eth-plasma-light-client")
   .default;
 
-const config = require("./out.config.json");
+const config = require("./config.local.json");
 
 async function main() {
   const kvs = new LevelKeyValueStore(Bytes.fromString("plasma_light_client"));
