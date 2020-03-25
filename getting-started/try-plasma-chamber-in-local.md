@@ -87,7 +87,7 @@ Plasma requires a contract to deposit L1 tokens to Plasma.
 You can get default Deposit Contract for ETH.
 
 ```javascript
-const config = require("./out.config.json");
+const config = require("./config.local.json");
 // Get default Deposit Contract address
 const DEPOSIT_CONTRACT_ADDRESS = config.payoutContracts.DepositContract;
 ```
