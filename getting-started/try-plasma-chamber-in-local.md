@@ -10,42 +10,29 @@ This quick start using Typescript SDK, you need the latest version of Node.js.
 
 ## Setup aggregator
 
-### 1. Get test aggregator
+### 1. Run test aggregator
 
 Get [plasma-aggregator](https://github.com/cryptoeconomicslab/wakkanay-plasma-aggregator).
 
 ```
 $ git clone git@github.com:cryptoeconomicslab/wakkanay-plasma-aggregator.git
 $ cd wakkanay-plasma-aggregator
-$ npm i
+$ npm run docker:build
+$ npm run docker:start
 ```
-
-You can start the Plasma transaction aggregator and contract in your laptop by Docker Compose.
-
-```
-$ cp .sample.env .env
-$ docker-compose up -d
-```
-
-### 2. Get out.config.json
-
-```
-cat contract/build/out.config.json
-```
+Contracts config file `config.local.json` is generated at the root directory after `npm run docker:build` if absent.
 
 ## Create your application
 
 ### 1. Install
 
 To start Plasma transfer, we first need to install Plasma libraries from npm.  
-copy out.config.json file to your application repository root.
+Copy config.local.json file to your application repository root.
 
 ```
 npm i ethers
 npm i @cryptoeconomicslab/eth-plasma-light-client @cryptoeconomicslab/primitives @cryptoeconomicslab/level-kvs
 ```
-
-Copy out.config.json generated in previous section from `wakkanay-plasma-aggregator`.
 
 ### 2. Instantiate
 
@@ -58,7 +45,7 @@ const { LevelKeyValueStore } = require("@cryptoeconomicslab/level-kvs");
 const initializeLightClient = require("@cryptoeconomicslab/eth-plasma-light-client")
   .default;
 
-const config = require("./out.config.json");
+const config = require("./config.local.json");
 
 async function main() {
   const kvs = new LevelKeyValueStore(Bytes.fromString("plasma_light_client"));
@@ -100,7 +87,7 @@ Plasma requires a contract to deposit L1 tokens to Plasma.
 You can get default Deposit Contract for ETH.
 
 ```javascript
-const config = require("./out.config.json");
+const config = require("./config.local.json");
 // Get default Deposit Contract address
 const DEPOSIT_CONTRACT_ADDRESS = config.payoutContracts.DepositContract;
 ```
