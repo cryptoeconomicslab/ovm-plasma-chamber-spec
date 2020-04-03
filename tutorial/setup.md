@@ -21,6 +21,7 @@ Contracts config file `config.local.json` is generated at the root directory aft
 ### Install
 
 To create Plasma CUI Wallet, we first need to install Plasma libraries from npm.
+
 Also, copy `config.local.json` file to your application repository root.
 
 ```bash
@@ -56,7 +57,7 @@ function cuiWalletReadLine() {
   });
 }
 
-async function main() {
+function main() {
   cuiWalletReadLine();
 }
 

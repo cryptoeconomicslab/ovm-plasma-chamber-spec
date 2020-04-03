@@ -79,7 +79,7 @@ function cuiWalletReadLine() {
   });
 }
 
-async function main() {
+function main() {
   cuiWalletReadLine();
 }
 

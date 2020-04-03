@@ -14,7 +14,7 @@ This tutorial is for the [framework name] CUI wallet application.
   - [Aggregator](/tutorial/setup.md#1-aggregator)
   - [Application](/tutorial/setup.md#2-application)
 - [Start Client](/tutorial/start-client.md)
-- [Deposit]()
+- [Deposit](/tutorial/deposit.md)
 - [Show balance]()
 - [Transfer]()
 - [Exit]()
