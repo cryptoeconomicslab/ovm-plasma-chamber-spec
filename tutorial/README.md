@@ -10,9 +10,9 @@ This tutorial is for the [framework name] CUI wallet application.
 
 ## Table of Contents
 
-- [Setup]()
-  - [Aggregator]()
-  - [Application]()
+- [Setup](/tutorial/setup.md)
+  - [Aggregator](/tutorial/setup.md#1-aggregator)
+  - [Application](/tutorial/setup.md#2-application)
 - [Start Client]()
 - [Deposit]()
 - [Show balance]()
@@ -24,4 +24,4 @@ This tutorial is for the [framework name] CUI wallet application.
 ## Go to the next step!
 
 Let's start to develop your plasma wallet application with us!
-Please go to the [Setup]() step.
+Please go to the [Setup](/tutorial/setup.md) step.
