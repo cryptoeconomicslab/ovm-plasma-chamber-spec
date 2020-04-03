@@ -35,4 +35,5 @@ $ cp -p <your wakkanay-plasma-aggregator path>/config.local.json ./config.local.
 ## Go to the next step!
 
 You have set up your project successfully.
-Please go to the [Start Client]() step.
+
+Please go to the [Start Client](/tutorial/start-client.md) step.
