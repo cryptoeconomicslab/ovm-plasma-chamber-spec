@@ -35,6 +35,7 @@ async function startLightClient() {
 ## This is the source code right now
 
 ```javascript
+const readline = require("readline");
 const ethers = require("ethers");
 const { Bytes } = require("@cryptoeconomicslab/primitives");
 const { LevelKeyValueStore } = require("@cryptoeconomicslab/level-kvs");
@@ -44,6 +45,11 @@ const initializeLightClient = require("@cryptoeconomicslab/eth-plasma-light-clie
 // TODO: enter your private key
 const PRIVATE_KEY = "ENTER YOUR PRIVATE KEY";
 const config = require("./config.local.json");
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
 
 async function startLightClient() {
   const kvs = new LevelKeyValueStore(Bytes.fromString("plasma_light_client"));
@@ -60,6 +66,24 @@ async function startLightClient() {
   await lightClient.start();
   return lightClient;
 }
+
+function cuiWalletReadLine() {
+  rl.question(">> ", async input => {
+    const args = input.split(/\s+/);
+    const command = args.shift();
+    switch (command) {
+      default:
+        console.log(`${command} is not found`);
+        cuiWalletReadLine();
+    }
+  });
+}
+
+async function main() {
+  cuiWalletReadLine();
+}
+
+main();
 ```
 
 ## Go to the next step!
