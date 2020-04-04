@@ -1,17 +1,15 @@
-# Deposit
+# Show balance
 
-## 1. Add deposit method
+## 1. Add getBalance method
 
-You can call the `deposit` method from plasma light client.
+You can call the `getBalance` method from plasma light client.
 
 Also, write it into `cuiWalletReadLine` function.
 
 ```javascript
-const DEPOSIT_CONTRACT_ADDRESS = config.payoutContracts.DepositContract;
-
-async function deposit(client, amount) {
-  console.log("deposit:", amount);
-  await client.deposit(amount, DEPOSIT_CONTRACT_ADDRESS);
+async function getBalance(client) {
+  const balance = await client.getBalance();
+  console.log(`${client.address}:`, balance);
 }
 
 function cuiWalletReadLine(client) {
@@ -23,28 +21,25 @@ function cuiWalletReadLine(client) {
         await deposit(client, args[0]);
         cuiWalletReadLine(client);
         break;
+      case "getbalance":
+        await getBalance(client);
+        cuiWalletReadLine(client);
+        break;
       default:
         console.log(`${command} is not found`);
         cuiWalletReadLine(client);
     }
   });
 }
-
-async function main() {
-  const client = await startLightClient();
-  cuiWalletReadLine(client);
-}
-
-main();
 ```
 
-## 2. Deposit your ether from CUI
+## 2. Check your balance from CUI
 
-You can call `deposit` method from CUI. Please enter `deposit <amount>`. (The unit is `wei`)
+You can call `getBalance` method from CUI. Please enter `getbalance`.
 
 ```
 $ node app.js
->> deposit 100
+>> getbalance
 ```
 
 ## This is the source code right now
@@ -72,6 +67,11 @@ async function deposit(client, amount) {
   await client.deposit(amount, DEPOSIT_CONTRACT_ADDRESS);
 }
 
+async function getBalance(client) {
+  const balance = await client.getBalance();
+  console.log(`${client.address}:`, balance);
+}
+
 async function startLightClient() {
   const kvs = new LevelKeyValueStore(Bytes.fromString("plasma_light_client"));
   const wallet = new ethers.Wallet(
@@ -97,6 +97,10 @@ function cuiWalletReadLine(client) {
         await deposit(client, args[0]);
         cuiWalletReadLine(client);
         break;
+      case "getbalance":
+        await getBalance(client);
+        cuiWalletReadLine(client);
+        break;
       default:
         console.log(`${command} is not found`);
         cuiWalletReadLine(client);
@@ -114,6 +118,6 @@ main();
 
 ## Go to the next step!
 
-You have deposited ether to plasma successfully.
+You have checked your ether balance successfully.
 
-Please go to the [Show balance](/tutorial/show-balance.md) step.
+Please go to the [Transfer]() step.

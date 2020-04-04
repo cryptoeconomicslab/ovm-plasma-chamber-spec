@@ -15,7 +15,7 @@ This tutorial is for the [framework name] CUI wallet application.
   - [Application](/tutorial/setup.md#2-application)
 - [Start Client](/tutorial/start-client.md)
 - [Deposit](/tutorial/deposit.md)
-- [Show balance]()
+- [Show balance](/tutorial/show-balance.md)
 - [Transfer]()
 - [Exit]()
 - [Challenge]()
