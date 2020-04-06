@@ -25,7 +25,7 @@ async function startLightClient() {
     wallet,
     kvs,
     config,
-    aggregatorEndpoint: "http://127.0.0.1:3000"
+    aggregatorEndpoint: "http://127.0.0.1:3000",
   });
   await lightClient.start();
   return lightClient;
@@ -48,7 +48,7 @@ const config = require("./config.local.json");
 
 const rl = readline.createInterface({
   input: process.stdin,
-  output: process.stdout
+  output: process.stdout,
 });
 
 async function startLightClient() {
@@ -61,14 +61,14 @@ async function startLightClient() {
     wallet,
     kvs,
     config,
-    aggregatorEndpoint: "http://127.0.0.1:3000"
+    aggregatorEndpoint: "http://127.0.0.1:3000",
   });
   await lightClient.start();
   return lightClient;
 }
 
 function cuiWalletReadLine() {
-  rl.question(">> ", async input => {
+  rl.question(">> ", async (input) => {
     const args = input.split(/\s+/);
     const command = args.shift();
     switch (command) {

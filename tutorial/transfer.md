@@ -1,17 +1,15 @@
-# Deposit
+# Transfer
 
-## 1. Add deposit method
+## 1. Add transfer method
 
-You can call the `deposit` method from plasma light client.
+You can call the `transfer` method from plasma light client.
 
 Also, write it into `cuiWalletReadLine` function.
 
 ```javascript
-const DEPOSIT_CONTRACT_ADDRESS = config.payoutContracts.DepositContract;
-
-async function deposit(client, amount) {
-  console.log("deposit:", amount);
-  await client.deposit(amount, DEPOSIT_CONTRACT_ADDRESS);
+async function transfer(client, amount, to) {
+  console.log("transfer:", to, amount);
+  await client.transfer(amount, DEPOSIT_CONTRACT_ADDRESS, to);
 }
 
 function cuiWalletReadLine(client) {
@@ -19,8 +17,8 @@ function cuiWalletReadLine(client) {
     const args = input.split(/\s+/);
     const command = args.shift();
     switch (command) {
-      case "deposit":
-        await deposit(client, args[0]);
+      case "transfer":
+        await transfer(client, args[0], args[1]);
         cuiWalletReadLine(client);
         break;
       default:
@@ -29,22 +27,15 @@ function cuiWalletReadLine(client) {
     }
   });
 }
-
-async function main() {
-  const client = await startLightClient();
-  cuiWalletReadLine(client);
-}
-
-main();
 ```
 
-## 2. Deposit your ether from CUI
+## 2. Transfer ether from CUI
 
-You can call `deposit` method from CUI. Please enter `deposit <amount>`. (The unit is `wei`)
+You can call `transfer` method from CUI. Please enter `transfer <amount> <to>`.
 
 ```
 $ node app.js
->> deposit 100
+>> transfer 10 0xf17f52151EbEF6C7334FAD080c5704D77216b732
 ```
 
 ## This is the source code right now
@@ -72,6 +63,21 @@ async function deposit(client, amount) {
   await client.deposit(amount, DEPOSIT_CONTRACT_ADDRESS);
 }
 
+async function getBalance(client) {
+  const balance = await client.getBalance();
+  console.log(`${client.address}:`, balance);
+}
+
+async function getL1Balance(client) {
+  const balance = await client.wallet.getL1Balance();
+  console.log(`${client.address}:`, balance.value.raw, balance.symbol);
+}
+
+async function transfer(client, amount, to) {
+  console.log("transfer:", to, amount);
+  await client.transfer(amount, DEPOSIT_CONTRACT_ADDRESS, to);
+}
+
 async function startLightClient() {
   const kvs = new LevelKeyValueStore(Bytes.fromString("plasma_light_client"));
   const wallet = new ethers.Wallet(
@@ -97,6 +103,18 @@ function cuiWalletReadLine(client) {
         await deposit(client, args[0]);
         cuiWalletReadLine(client);
         break;
+      case "getbalance":
+        await getBalance(client);
+        cuiWalletReadLine(client);
+        break;
+      case "getl1balance":
+        await getL1Balance(client);
+        cuiWalletReadLine(client);
+        break;
+      case "transfer":
+        await transfer(client, args[0], args[1]);
+        cuiWalletReadLine(client);
+        break;
       default:
         console.log(`${command} is not found`);
         cuiWalletReadLine(client);
@@ -114,6 +132,6 @@ main();
 
 ## Go to the next step!
 
-You have deposited ether to plasma successfully.
+You have transferred your ether successfully.
 
-Please go to the [Show balance](/tutorial/show-balance.md) step.
+Please go to the [Exit]() step.

@@ -12,17 +12,22 @@ async function getBalance(client) {
   console.log(`${client.address}:`, balance);
 }
 
+async function getL1Balance(client) {
+  const balance = await client.wallet.getL1Balance();
+  console.log(`${client.address}:`, balance.value.raw, balance.symbol);
+}
+
 function cuiWalletReadLine(client) {
-  rl.question(">> ", async input => {
+  rl.question(">> ", async (input) => {
     const args = input.split(/\s+/);
     const command = args.shift();
     switch (command) {
-      case "deposit":
-        await deposit(client, args[0]);
-        cuiWalletReadLine(client);
-        break;
       case "getbalance":
         await getBalance(client);
+        cuiWalletReadLine(client);
+        break;
+      case "getl1balance":
+        await getL1Balance(client);
         cuiWalletReadLine(client);
         break;
       default:
@@ -33,13 +38,22 @@ function cuiWalletReadLine(client) {
 }
 ```
 
-## 2. Check your balance from CUI
+## 2. Check your l2 balance from CUI
 
 You can call `getBalance` method from CUI. Please enter `getbalance`.
 
 ```
 $ node app.js
 >> getbalance
+```
+
+## 3. Check your l1 balance from CUI
+
+You can check your l1 balance with `getl1balance` command.
+
+```
+$ node app.js
+>> getl1balance
 ```
 
 ## This is the source code right now
@@ -59,7 +73,7 @@ const DEPOSIT_CONTRACT_ADDRESS = config.payoutContracts.DepositContract;
 
 const rl = readline.createInterface({
   input: process.stdin,
-  output: process.stdout
+  output: process.stdout,
 });
 
 async function deposit(client, amount) {
@@ -72,6 +86,11 @@ async function getBalance(client) {
   console.log(`${client.address}:`, balance);
 }
 
+async function getL1Balance(client) {
+  const balance = await client.wallet.getL1Balance();
+  console.log(`${client.address}:`, balance.value.raw, balance.symbol);
+}
+
 async function startLightClient() {
   const kvs = new LevelKeyValueStore(Bytes.fromString("plasma_light_client"));
   const wallet = new ethers.Wallet(
@@ -82,14 +101,14 @@ async function startLightClient() {
     wallet,
     kvs,
     config,
-    aggregatorEndpoint: "http://127.0.0.1:3000"
+    aggregatorEndpoint: "http://127.0.0.1:3000",
   });
   await lightClient.start();
   return lightClient;
 }
 
 function cuiWalletReadLine(client) {
-  rl.question(">> ", async input => {
+  rl.question(">> ", async (input) => {
     const args = input.split(/\s+/);
     const command = args.shift();
     switch (command) {
@@ -99,6 +118,10 @@ function cuiWalletReadLine(client) {
         break;
       case "getbalance":
         await getBalance(client);
+        cuiWalletReadLine(client);
+        break;
+      case "getl1balance":
+        await getL1Balance(client);
         cuiWalletReadLine(client);
         break;
       default:
@@ -120,4 +143,4 @@ main();
 
 You have checked your ether balance successfully.
 
-Please go to the [Transfer]() step.
+Please go to the [Transfer](/tutorial/transfer.md) step.

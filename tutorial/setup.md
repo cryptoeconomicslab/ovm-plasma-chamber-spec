@@ -42,11 +42,11 @@ const readline = require("readline");
 
 const rl = readline.createInterface({
   input: process.stdin,
-  output: process.stdout
+  output: process.stdout,
 });
 
 function cuiWalletReadLine() {
-  rl.question(">> ", async input => {
+  rl.question(">> ", (input) => {
     const args = input.split(/\s+/);
     const command = args.shift();
     switch (command) {
