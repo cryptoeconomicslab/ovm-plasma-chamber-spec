@@ -1,10 +1,10 @@
-# Show balance
+# 4. Show balance
 
-## 1. Add getBalance method
+In this chapter, we will implement the method to check the balance of Layer1 and Layer2.
 
-You can call the `getBalance` method from plasma light client.
+## 4-1. Implement to get your balance
 
-Also, write it into `cuiWalletReadLine` function.
+You can call the `ethers.Wallet` object and `getBalance` method from plasma light client.
 
 ```javascript
 async function getBalance(client) {
@@ -38,18 +38,18 @@ function cuiWalletReadLine(client) {
 }
 ```
 
-## 2. Check your l2 balance from CUI
+## 4-2. Check your l2 balance
 
-You can call `getBalance` method from CUI. Please enter `getbalance`.
+Please enter `getbalance` and check your balance of Layer2.
 
 ```
 $ node app.js
 >> getbalance
 ```
 
-## 3. Check your l1 balance from CUI
+## 4-3. Check your l1 balance
 
-You can check your l1 balance with `getl1balance` command.
+Please enter `getl1balance` and check your balance of Layer1.
 
 ```
 $ node app.js
@@ -145,6 +145,6 @@ main();
 
 ## Go to the next step!
 
-You have checked your ether balance successfully.
+You have checked your ether balance of Layer1 and Layer2 successfully.
 
-Please go to the [Transfer](/tutorial/transfer.md) step.
+Move on to the [5. Transfer](/tutorial/transfer.md) step.

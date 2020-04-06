@@ -1,10 +1,17 @@
-# Exit
+# 6. Exit
 
-## 1. Add exit method
+In this chapter, we will implement exit to withdraw ether from Plasma.
 
-You can call the `exit` method from plasma light client.
+## 6-1. Implement exit
 
-Also, write it into `cuiWalletReadLine` function.
+You can call the `exit`, `getExitList` and `finalizeExit` method from plasma light client.
+
+- exit
+  - Withdrawal process starts from calling this method.
+- getExitList
+  - Get pending exit list.
+- finalizeExit
+  - If the exitProperty had been decided to true, call `finalizeExit` method of corresponding payout contract.
 
 ```javascript
 async function exit(client, amount) {
@@ -50,34 +57,34 @@ function cuiWalletReadLine(client) {
 }
 ```
 
-## 2. Exit ether from CUI
+## 6-2. Exit ether
 
-You can call `exit` method from CUI. Please enter `exit <amount>`.
+Please enter `exit <amount>` and exit ether from Plasma.
 
 ```
 $ node app.js
 >> exit 10
 ```
 
-## 3. Check your exit list from CUI
+## 6-3. Check your exit list
 
-You can check your exit list from CUI. Please enter `showexitlist`.
+Please enter `showexitlist` and show your pending exit list.
 
 ```
 $ node app.js
 >> showexitlist
 ```
 
-## 4. Withdraw your ether to layer1
+## 6-4. Withdraw your ether from Plasma
 
-You can withdraw your ether to layer1 from CUI. Please enter `finalizeexit [index]`.
+Please enter `finalizeexit [index]` and withdraw your ether from Plasma.
 
 ```
 $ node app.js
 >> finalizeexit 0
 ```
 
-## 5. Check your balance
+## 6-5. Check your balance
 
 ```bash
 $ node app.js
@@ -213,9 +220,9 @@ async function main() {
 main();
 ```
 
-## Tutorial Plasma CUI Wallet - The End
+## Tutorial [framework name] CUI Wallet - The End
 
-This tutorial is really simple implementation. This wallet is not near production quality we need a lot more work to make it ready for the Mainnet usage.
+This tutorial is very simple implementation. This wallet is not near production quality we need a lot more work to make it ready for the Mainnet usage.
 
 By the way, we really appriciate your interest in [framework name].
 Looking forward to seeing your next project running on [framework name].

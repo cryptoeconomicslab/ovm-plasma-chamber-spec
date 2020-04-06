@@ -1,10 +1,10 @@
-# Deposit
+# 3. Deposit
 
-## 1. Add deposit method
+In this chapter, we will implement deposit to use tokens on Plasma.
+
+## 3-1. Implement deposit
 
 You can call the `deposit` method from plasma light client.
-
-Also, write it into `cuiWalletReadLine` function.
 
 ```javascript
 const DEPOSIT_CONTRACT_ADDRESS = config.payoutContracts.DepositContract;
@@ -38,9 +38,9 @@ async function main() {
 main();
 ```
 
-## 2. Deposit your ether from CUI
+## 3-2. Deposit your ether
 
-You can call `deposit` method from CUI. Please enter `deposit <amount>`. (The unit is `wei`)
+Please enter `deposit<amount>` and deposit ether to Plasma.
 
 ```
 $ node app.js
@@ -118,6 +118,6 @@ main();
 
 ## Go to the next step!
 
-You have deposited ether to plasma successfully.
+You have deposited ether to Plasma successfully.
 
-Please go to the [Show balance](/tutorial/show-balance.md) step.
+Move on to the [4. Show balance](/tutorial/show-balance.md) step.

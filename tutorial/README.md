@@ -1,6 +1,7 @@
 # Tutorial [framework name] CUI wallet
 
-This tutorial is for the [framework name] CUI wallet application.
+In this tutorial, we will implement the CUI Plasma Wallet using [framework name].
+This is the process from Deposit to Exit, which is the sequence of steps required to exchange on Plasma.
 
 ## Prerequistes
 
@@ -10,17 +11,15 @@ This tutorial is for the [framework name] CUI wallet application.
 
 ## Table of Contents
 
-- [Setup](/tutorial/setup.md)
-  - [Aggregator](/tutorial/setup.md#1-aggregator)
-  - [Application](/tutorial/setup.md#2-application)
-- [Start Client](/tutorial/start-client.md)
-- [Deposit](/tutorial/deposit.md)
-- [Show balance](/tutorial/show-balance.md)
-- [Transfer](/tutorial/transfer.md)
-- [Exit](/tutorial/exit.md)
+1. [Setup](/tutorial/setup.md)
+2. [Start client](/tutorial/start-client.md)
+3. [Deposit](/tutorial/deposit.md)
+4. [Show balance](/tutorial/show-balance.md)
+5. [Transfer](/tutorial/transfer.md)
+6. [Exit](/tutorial/exit.md)
 
 ## Go to the next step!
 
-Let's start to develop your plasma wallet application with us!
+Let's implement CUI Plasma Wallet application together!
 
-Please go to the [Setup](/tutorial/setup.md) step.
+Move on to the [Setup](/tutorial/setup.md) step.

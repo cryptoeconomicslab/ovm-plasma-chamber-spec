@@ -1,6 +1,8 @@
-# Start plasma-light-client
+# 2. Start client
 
-## 1. Start client
+In this chapter, we will start the light client to communicate with Plasma.
+
+## 2-1. Implement to start client
 
 You can instantiate light client object using `Wallet` class of `ethers.js`.
 
@@ -94,4 +96,4 @@ main();
 
 You have started plasma light client successfully.
 
-Please go to the [Deposit]() step.
+Move on to the [3. Deposit](/tutorial/deposit.md) step.

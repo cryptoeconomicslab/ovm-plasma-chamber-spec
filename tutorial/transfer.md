@@ -1,10 +1,10 @@
-# Transfer
+# 5. Transfer
 
-## 1. Add transfer method
+In this chapter, we'll be implementing remittances on Plasma.
+
+## 5-1. Implement transfer
 
 You can call the `transfer` method from plasma light client.
-
-Also, write it into `cuiWalletReadLine` function.
 
 ```javascript
 async function transfer(client, amount, to) {
@@ -29,16 +29,16 @@ function cuiWalletReadLine(client) {
 }
 ```
 
-## 2. Transfer ether from CUI
+## 5-2. Transfer ether
 
-You can call `transfer` method from CUI. Please enter `transfer <amount> <to>`.
+Please enter `transfer<amount to>` and transfer ether to the other party.
 
 ```
 $ node app.js
 >> transfer 10 0xf17f52151EbEF6C7334FAD080c5704D77216b732
 ```
 
-## 3. Check your balance
+## 5-3. Check your balance
 
 You can check your balance after the transfer.
 
@@ -147,4 +147,4 @@ main();
 
 You have transferred your ether successfully.
 
-Please go to the [Exit](/tutorial/exit.md) step.
+Move on to the [6. Exit](/tutorial/exit.md) step.
