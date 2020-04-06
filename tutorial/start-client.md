@@ -72,6 +72,10 @@ function cuiWalletReadLine() {
     const args = input.split(/\s+/);
     const command = args.shift();
     switch (command) {
+      case "quit":
+        console.log("Bye.");
+        rl.close();
+        process.exit();
       default:
         console.log(`${command} is not found`);
         cuiWalletReadLine();

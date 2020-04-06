@@ -38,6 +38,15 @@ $ node app.js
 >> transfer 10 0xf17f52151EbEF6C7334FAD080c5704D77216b732
 ```
 
+## 3. Check your balance
+
+You can check your balance after the transfer.
+
+```
+$ node app.js
+>> getbalance
+```
+
 ## This is the source code right now
 
 ```javascript
@@ -115,6 +124,10 @@ function cuiWalletReadLine(client) {
         await transfer(client, args[0], args[1]);
         cuiWalletReadLine(client);
         break;
+      case "quit":
+        console.log("Bye.");
+        rl.close();
+        process.exit();
       default:
         console.log(`${command} is not found`);
         cuiWalletReadLine(client);
@@ -134,4 +147,4 @@ main();
 
 You have transferred your ether successfully.
 
-Please go to the [Exit]() step.
+Please go to the [Exit](/tutorial/exit.md) step.

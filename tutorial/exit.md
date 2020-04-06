@@ -1,20 +1,28 @@
-# Show balance
+# Exit
 
-## 1. Add getBalance method
+## 1. Add exit method
 
-You can call the `getBalance` method from plasma light client.
+You can call the `exit` method from plasma light client.
 
 Also, write it into `cuiWalletReadLine` function.
 
 ```javascript
-async function getBalance(client) {
-  const balance = await client.getBalance();
-  console.log(`${client.address}:`, balance);
+async function exit(client, amount) {
+  console.log("exit:", DEPOSIT_CONTRACT_ADDRESS, amount);
+  await client.exit(amount, DEPOSIT_CONTRACT_ADDRESS);
+  await showExitList(client);
 }
 
-async function getL1Balance(client) {
-  const balance = await client.wallet.getL1Balance();
-  console.log(`${client.address}:`, balance.value.raw, balance.symbol);
+async function showExitList(client) {
+  const exitList = await client.getExitList();
+  console.log("exit list:", exitList);
+}
+
+async function finalizeExit(client, index) {
+  const exitList = await getExitList(client);
+  if (exitList[index]) {
+    await client.finalizeExit(exitList[index]);
+  }
 }
 
 function cuiWalletReadLine(client) {
@@ -22,12 +30,16 @@ function cuiWalletReadLine(client) {
     const args = input.split(/\s+/);
     const command = args.shift();
     switch (command) {
-      case "getbalance":
-        await getBalance(client);
+      case "showexitlist":
+        await showExitList(client);
         cuiWalletReadLine(client);
         break;
-      case "getl1balance":
-        await getL1Balance(client);
+      case "exit":
+        await exit(client, args[0]);
+        cuiWalletReadLine(client);
+        break;
+      case "finalizeexit":
+        await finalizeExit(client, args[0]);
         cuiWalletReadLine(client);
         break;
       default:
@@ -38,22 +50,41 @@ function cuiWalletReadLine(client) {
 }
 ```
 
-## 2. Check your l2 balance from CUI
+## 2. Exit ether from CUI
 
-You can call `getBalance` method from CUI. Please enter `getbalance`.
-
-```
-$ node app.js
->> getbalance
-```
-
-## 3. Check your l1 balance from CUI
-
-You can check your l1 balance with `getl1balance` command.
+You can call `exit` method from CUI. Please enter `exit <amount>`.
 
 ```
 $ node app.js
+>> exit 10
+```
+
+## 3. Check your exit list from CUI
+
+You can check your exit list from CUI. Please enter `showexitlist`.
+
+```
+$ node app.js
+>> showexitlist
+```
+
+## 4. Withdraw your ether to layer1
+
+You can withdraw your ether to layer1 from CUI. Please enter `finalizeexit [index]`.
+
+```
+$ node app.js
+>> finalizeexit 0
+```
+
+## 5. Check your balance
+
+```bash
+$ node app.js
+# check l1 balance
 >> getl1balance
+# check l2 balance
+>> getbalance
 ```
 
 ## This is the source code right now
@@ -91,6 +122,29 @@ async function getL1Balance(client) {
   console.log(`${client.address}:`, balance.value.raw, balance.symbol);
 }
 
+async function transfer(client, amount, to) {
+  console.log("transfer:", to, amount);
+  await client.transfer(amount, DEPOSIT_CONTRACT_ADDRESS, to);
+}
+
+async function exit(client, amount) {
+  console.log("exit:", DEPOSIT_CONTRACT_ADDRESS, amount);
+  await client.exit(amount, DEPOSIT_CONTRACT_ADDRESS);
+  await showExitList(client);
+}
+
+async function showExitList(client) {
+  const exitList = await client.getExitList();
+  console.log("exit list:", exitList);
+}
+
+async function finalizeExit(client, index) {
+  const exitList = await getExitList(client);
+  if (exitList[index]) {
+    await client.finalizeExit(exitList[index]);
+  }
+}
+
 async function startLightClient() {
   const kvs = new LevelKeyValueStore(Bytes.fromString("plasma_light_client"));
   const wallet = new ethers.Wallet(
@@ -124,6 +178,22 @@ function cuiWalletReadLine(client) {
         await getL1Balance(client);
         cuiWalletReadLine(client);
         break;
+      case "transfer":
+        await transfer(client, args[0], args[1]);
+        cuiWalletReadLine(client);
+        break;
+      case "showexitlist":
+        await showExitList(client);
+        cuiWalletReadLine(client);
+        break;
+      case "exit":
+        await exit(client, args[0]);
+        cuiWalletReadLine(client);
+        break;
+      case "finalizeexit":
+        await finalizeExit(client, args[0]);
+        cuiWalletReadLine(client);
+        break;
       case "quit":
         console.log("Bye.");
         rl.close();
@@ -143,8 +213,11 @@ async function main() {
 main();
 ```
 
-## Go to the next step!
+## Tutorial Plasma CUI Wallet - The End
 
-You have checked your ether balance successfully.
+This tutorial is really simple implementation. This wallet is not near production quality we need a lot more work to make it ready for the Mainnet usage.
 
-Please go to the [Transfer](/tutorial/transfer.md) step.
+By the way, we really appriciate your interest in [framework name].
+Looking forward to seeing your next project running on [framework name].
+
+Please let us know on [Telegram](https://t.me/cryptoeocnomicslab) if you have any questions.

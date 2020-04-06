@@ -97,6 +97,10 @@ function cuiWalletReadLine(client) {
         await deposit(client, args[0]);
         cuiWalletReadLine(client);
         break;
+      case "quit":
+        console.log("Bye.");
+        rl.close();
+        process.exit();
       default:
         console.log(`${command} is not found`);
         cuiWalletReadLine(client);
