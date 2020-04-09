@@ -5,7 +5,7 @@ This is the process from Deposit to Exit, which is the sequence of steps require
 
 ## Prerequistes
 
-- Python2.7
+- Python (for `node-gyp`)
 - Node v10.x
 - Docker
 
