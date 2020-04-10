@@ -6,6 +6,8 @@ In this chapter, we will implement the method to check the balance of Layer1 and
 
 You can call the `ethers.Wallet` object and `getBalance` method from plasma light client.
 
+[Plasma Light Client API reference | getBalance](/API/plasma-light-client.md#getbalance)
+
 ```javascript
 async function getBalance(client) {
   const balance = await client.getBalance();

@@ -13,6 +13,7 @@ $ git clone https://github.com/cryptoeconomicslab/wakkanay-plasma-aggregator.git
 $ cd wakkanay-plasma-aggregator
 $ cp -p .sample.env .env
 $ npm run docker:build
+$ npm run docker:cp
 $ npm run docker:start
 ```
 

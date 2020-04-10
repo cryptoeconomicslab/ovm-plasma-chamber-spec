@@ -1,10 +1,12 @@
 # 3. Deposit
 
-In this chapter, we will implement deposit to use tokens on Plasma.
+In this chapter, we will implement deposit feature. If the deposit is successful, the tokens will be locked in DepositContract and mint the corresponding tokens that can be used in Plasma.
 
 ## 3-1. Implement deposit
 
 You can call the `deposit` method from plasma light client.
+
+[Plasma Light Client API reference | deposit](/API/plasma-light-client.md#deposit)
 
 ```javascript
 const DEPOSIT_CONTRACT_ADDRESS = config.payoutContracts.DepositContract;

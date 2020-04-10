@@ -1,7 +1,12 @@
 # Tutorial [framework name] CUI wallet
 
 In this tutorial, we will implement the CUI Plasma Wallet using [framework name].
-This is the process from Deposit to Exit, which is the sequence of steps required to exchange on Plasma.
+
+Once this tutorial is complete, you will be able to create a Wallet that can do the following.
+
+- deposit Ether and ERC20 tokens to Plasma
+- transfer tokens on Plasma.
+- withdraw a token from Plasma to Layer1.
 
 ## Prerequistes
 

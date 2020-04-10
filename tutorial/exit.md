@@ -6,12 +6,11 @@ In this chapter, we will implement exit to withdraw ether from Plasma.
 
 You can call the `exit`, `getExitList` and `finalizeExit` method from plasma light client.
 
-- exit
-  - Withdrawal process starts from calling this method.
-- getExitList
-  - Get pending exit list.
-- finalizeExit
-  - If the exitProperty had been decided to true, call `finalizeExit` method of corresponding payout contract.
+[Plasma Light Client API reference | exit](/API/plasma-light-client.md#exit)
+
+[Plasma Light Client API reference | getExitlist](/API/plasma-light-client.md#getexitlist)
+
+[Plasma Light Client API reference | finalizeExit](/API/plasma-light-client.md#finalizeexit)
 
 ```javascript
 async function exit(client, amount) {

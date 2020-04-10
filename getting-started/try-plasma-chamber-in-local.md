@@ -1,12 +1,14 @@
 # Try [framework name] in local
+
 Quick start of [framework name] on your laptop.
 You can create a secure and scalable Plasma application by reading this document.
 This quick start using Typescript SDK, you need the latest version of Node.js.
 
 ## Prerequistes
+
 - Python2.7
 - Node v10.x
-- Docker  
+- Docker
 
 ## Setup aggregator
 
@@ -18,15 +20,17 @@ Get [plasma-aggregator](https://github.com/cryptoeconomicslab/wakkanay-plasma-ag
 $ git clone git@github.com:cryptoeconomicslab/wakkanay-plasma-aggregator.git
 $ cd wakkanay-plasma-aggregator
 $ npm run docker:build
+$ npm run docker:cp
 $ npm run docker:start
 ```
+
 Contracts config file `config.local.json` is generated at the root directory after `npm run docker:build` if absent.
 
 ## Create your application
 
 ### 1. Install
 
-To start Plasma transfer, we first need to install Plasma libraries from npm.  
+To start Plasma transfer, we first need to install Plasma libraries from npm.
 Copy config.local.json file to your application repository root.
 
 ```
@@ -62,7 +66,7 @@ async function main() {
   await lightClient.start();
 }
 
-main()
+main();
 ```
 
 Do you want to run client on browser? You can choose IndexedDb for client database.

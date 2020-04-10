@@ -6,6 +6,8 @@ In this chapter, we'll be implementing remittances on Plasma.
 
 You can call the `transfer` method from plasma light client.
 
+[Plasma Light Client API reference | transfer](/API/plasma-light-client.md#transfer)
+
 ```javascript
 async function transfer(client, amount, to) {
   console.log("transfer:", to, amount);
