@@ -58,7 +58,10 @@ $ node app.js
 >> getl1balance
 ```
 
-## This is the source code right now
+## Current source code
+
+<details>
+<summary>Click here</summary>
 
 ```javascript
 const readline = require("readline");
@@ -144,6 +147,8 @@ async function main() {
 
 main();
 ```
+
+</details>
 
 ## Go to the next step!
 
