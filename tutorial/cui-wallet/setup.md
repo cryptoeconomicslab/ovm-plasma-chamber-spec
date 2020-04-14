@@ -1,12 +1,16 @@
 # 1. Setup
 
+Now, let's develop the Plasma Wallet!
+
 In this chapter, we will start the transaction aggregator required to run Plasma and install the Library required for the Wallet Application.
 
-## 1-1. Aggregator
+## 1-1. Transaction Aggregator
 
 ### Run local aggregator
 
-Get [plasma-aggregator](https://github.com/cryptoeconomicslab/wakkanay-plasma-aggregator).
+Get the aggregator from [here](https://github.com/cryptoeconomicslab/wakkanay-plasma-aggregator).
+
+And then, start it with Docker.
 
 ```bash
 $ git clone https://github.com/cryptoeconomicslab/wakkanay-plasma-aggregator.git
@@ -23,7 +27,7 @@ Contracts config file `config.local.json` is generated at the root directory aft
 
 ### Install
 
-Install the Library from npm required to implement Plasma Wallet.
+Install the libraries from npm required to implement Plasma Wallet.
 
 After that, copy `config.local.json` file to your application repository root.
 
@@ -38,7 +42,7 @@ $ cp -p <your wakkanay-plasma-aggregator path>/config.local.json ./config.local.
 
 ### Prepare the ReadLine for CUI application
 
-Set up ReadLine, which is necessary for implementation of CUI Application.
+This is the initial settings of ReadLine, which is required to implement an interactive CUI Wallet.
 
 ```javascript
 const readline = require("readline");

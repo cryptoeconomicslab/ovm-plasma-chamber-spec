@@ -4,7 +4,9 @@ In this chapter, we will implement deposit feature. If the deposit is successful
 
 ## 3-1. Implement deposit
 
-You can call the `deposit` method from plasma light client.
+You can call the `deposit` function from the plasma light client.
+
+The users can deposit them tokens on Plasma just by invoking this function. Very simple, isn't it?
 
 [Plasma Light Client API reference | deposit](/API/plasma-light-client.md#deposit)
 
@@ -15,7 +17,13 @@ async function deposit(client, amount) {
   console.log("deposit:", amount);
   await client.deposit(amount, DEPOSIT_CONTRACT_ADDRESS);
 }
+```
 
+## 3-2. Add deposit function to the CUI
+
+In order to be able to use the `deposit` function from the CUI Wallet, write a process to execute the `deposit` function when deposit is entered in ReadLine.
+
+```javascript
 function cuiWalletReadLine(client) {
   rl.question(">> ", async (input) => {
     const args = input.split(/\s+/);
@@ -40,14 +48,18 @@ async function main() {
 main();
 ```
 
-## 3-2. Deposit your ether
+## 3-3. Deposit your ether
 
-Please enter `deposit<amount>` and deposit ether to Plasma.
+Launch the CUI Wallet and deposit your ether into Plasma!
+
+Start the app with the node command and try typing `deposit <amount>`.
 
 ```
 $ node app.js
 >> deposit 100
 ```
+
+\* At this time, the unit is wei.
 
 ## Current source code
 
@@ -126,5 +138,7 @@ main();
 ## Go to the next step!
 
 You have deposited ether to Plasma successfully.
+
+Now it's time to check your balance to see if your deposit was successful.
 
 Move on to the [4. Show balance](/tutorial/show-balance.md) step.

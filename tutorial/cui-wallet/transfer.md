@@ -4,7 +4,9 @@ In this chapter, we'll be implementing remittances on Plasma.
 
 ## 5-1. Implement transfer
 
-You can call the `transfer` method from plasma light client.
+You can call the `transfer` method from the plasma light client.
+
+You can easily send the tokens on Plasma by simply passing the amount you want to send, DepositContractAddress and the recipient as arguments!
 
 [Plasma Light Client API reference | transfer](/API/plasma-light-client.md#transfer)
 
@@ -13,7 +15,13 @@ async function transfer(client, amount, to) {
   console.log("transfer:", to, amount);
   await client.transfer(amount, DEPOSIT_CONTRACT_ADDRESS, to);
 }
+```
 
+## 5-2. Add transfer function to the CUI
+
+To call the `transfer` function in the CUI Wallet, add some processing to the ReadLine.
+
+```javascript
 function cuiWalletReadLine(client) {
   rl.question(">> ", async (input) => {
     const args = input.split(/\s+/);
@@ -31,18 +39,22 @@ function cuiWalletReadLine(client) {
 }
 ```
 
-## 5-2. Transfer ether
+## 5-3. Transfer ether
 
-Please enter `transfer<amount to>` and transfer ether to the other party.
+Now, let's launch the CUI Wallet and actually make the transfer!
+
+Please enter `transfer <amount> <to>` and transfer ether to the other party.
 
 ```
 $ node app.js
 >> transfer 10 0xf17f52151EbEF6C7334FAD080c5704D77216b732
 ```
 
-## 5-3. Check your balance
+## 5-4. Check your balance
 
-You can check your balance after the transfer.
+If your balance is down, you've probably succeeded in transferring the money!
+
+\* If you can, launch another Wallet at the destination address and check the balance. That's more certain.
 
 ```
 $ node app.js
@@ -152,6 +164,8 @@ main();
 
 ## Go to the next step!
 
-You have transferred your ether successfully.
+Now you can transfer the token on Plasma!
+
+In the last chapter, we'll be working on withdrawing tokens to Layer1.
 
 Move on to the [6. Exit](/tutorial/exit.md) step.

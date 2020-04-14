@@ -1,16 +1,16 @@
 # 6. Exit
 
-In this chapter, we will implement exit to withdraw ether from Plasma.
+In this chapter, we will implement exit to withdraw your tokens from Plasma.
+
+By submitting your correct transaction history, you can withdraw your tokens that are locked in DepositContract on Layer1.
 
 ## 6-1. Implement exit
 
-You can call the `exit`, `getExitList` and `finalizeExit` method from plasma light client.
+You can call the `exit` function from the plasma light client.
+
+This allows users to claim how much they have withdrawn and with their transaction history.
 
 [Plasma Light Client API reference | exit](/API/plasma-light-client.md#exit)
-
-[Plasma Light Client API reference | getExitlist](/API/plasma-light-client.md#getexitlist)
-
-[Plasma Light Client API reference | finalizeExit](/API/plasma-light-client.md#finalizeexit)
 
 ```javascript
 async function exit(client, amount) {
@@ -18,26 +18,54 @@ async function exit(client, amount) {
   await client.exit(amount, DEPOSIT_CONTRACT_ADDRESS);
   await showExitList(client);
 }
+```
 
-async function showExitList(client) {
+## 6-2. Implement getExitList
+
+You can call the `getExitList` function from the plasma light client.
+
+You can get a list of the exits that the user is currently claiming.
+
+[Plasma Light Client API reference | getExitlist](/API/plasma-light-client.md#getexitlist)
+
+```javascript
+async function getExitList(client) {
   const exitList = await client.getExitList();
   console.log("exit list:", exitList);
 }
+```
 
+## 6-3. Implement finalizeExit
+
+You can call the `finalizeExit` function from the plasma light client.
+
+By specifying the index of the exit that you want to withdraw from the exit list, you can withdraw the tokens to Layer1.
+
+At this time, the exit must have passed the challenge period.
+
+[Plasma Light Client API reference | finalizeExit](/API/plasma-light-client.md#finalizeexit)
+
+```javascript
 async function finalizeExit(client, index) {
   const exitList = await getExitList(client);
   if (exitList[index]) {
     await client.finalizeExit(exitList[index]);
   }
 }
+```
 
+## 6-4. Add exit functions to the CUI
+
+To call the `exit`, `getExitList` and `finalizeExit` functions in the CUI Wallet, add some processing to the ReadLine.
+
+```javascript
 function cuiWalletReadLine(client) {
   rl.question(">> ", async (input) => {
     const args = input.split(/\s+/);
     const command = args.shift();
     switch (command) {
-      case "showexitlist":
-        await showExitList(client);
+      case "getexitlist":
+        await getExitList(client);
         cuiWalletReadLine(client);
         break;
       case "exit":
@@ -56,37 +84,44 @@ function cuiWalletReadLine(client) {
 }
 ```
 
-## 6-2. Exit ether
+## 6-5. Exit ether
 
-Please enter `exit <amount>` and exit ether from Plasma.
+Launch the CUI Wallet and start the exit process!
+
+Start the app with node command and try typing `exit <amount>`.
 
 ```
 $ node app.js
 >> exit 10
 ```
 
-## 6-3. Check your exit list
+## 6-6. Check your exit list
 
-Please enter `showexitlist` and show your pending exit list.
+Let's show the Exit List to see if the Exit has been claimed correctly.
 
-```
-$ node app.js
->> showexitlist
-```
-
-## 6-4. Withdraw your ether from Plasma
-
-Please enter `finalizeexit [index]` and withdraw your ether from Plasma.
+Try typing `getexitlist`.
 
 ```
-$ node app.js
+>> getexitlist
+```
+
+## 6-7. Withdraw your ether from Plasma
+
+Specify the index number of the Exit you want to finalize and pull the token from Plasma!
+
+Try typing `finalizeexit <index>`.
+
+```
 >> finalizeexit 0
 ```
 
-## 6-5. Check your balance
+## 6-8. Check your balance
+
+Let's look at the balance using the `getBalance` and `getl1balance` functions we just created to see if we've successfully withdrawn the token!
+
+If the balance has changed correctly, the exit is complete.
 
 ```bash
-$ node app.js
 # check l1 balance
 >> getl1balance
 # check l2 balance
@@ -142,7 +177,7 @@ async function exit(client, amount) {
   await showExitList(client);
 }
 
-async function showExitList(client) {
+async function getExitList(client) {
   const exitList = await client.getExitList();
   console.log("exit list:", exitList);
 }
@@ -191,8 +226,8 @@ function cuiWalletReadLine(client) {
         await transfer(client, args[0], args[1]);
         cuiWalletReadLine(client);
         break;
-      case "showexitlist":
-        await showExitList(client);
+      case "getexitlist":
+        await getExitList(client);
         cuiWalletReadLine(client);
         break;
       case "exit":
@@ -226,9 +261,14 @@ main();
 
 ## Tutorial [framework name] CUI Wallet - The End
 
-This tutorial is very simple implementation. This wallet is not near production quality we need a lot more work to make it ready for the Mainnet usage.
+Congratulations!
+Now we've developed a CUI Plasma Wallet with basic functions from deposit to exit!
+
+Once again, this tutorial is very simple implementation. This wallet is not near production quality. We need a lot more work to make it ready for the Mainnet usage.
 
 By the way, we really appriciate your interest in [framework name].
 Looking forward to seeing your next project running on [framework name].
 
 Please let us know on [Telegram](https://t.me/cryptoeocnomicslab) if you have any questions.
+
+Thank you so much for giving it a try.

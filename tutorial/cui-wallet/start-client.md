@@ -1,10 +1,17 @@
 # 2. Start client
 
-In this chapter, we will start the light client to communicate with Plasma.
+In this chapter, we will start the light client with Plasma.
+
+Once this chapter is complete, you will be able to easily communicate with the Plasma Aggregator.
 
 ## 2-1. Implement to start client
 
-You can instantiate light client object using `Wallet` class of `ethers.js`.
+You can instantiate light client with
+
+- `Wallet` class of `ethers.js`
+- Database to use
+- Configuration file
+- Aggregator endpoint
 
 ```javascript
 const ethers = require("ethers");
@@ -100,5 +107,7 @@ main();
 ## Go to the next step!
 
 You have started plasma light client successfully.
+
+This makes it easy to communicate with Plasma using some of the client's methods.
 
 Move on to the [3. Deposit](/tutorial/deposit.md) step.

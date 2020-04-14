@@ -1,10 +1,12 @@
 # 4. Show balance
 
-In this chapter, we will implement the method to check the balance of Layer1 and Layer2.
+In this chapter, we will implement the methods to check the balance of Layer1 and Layer2.
 
-## 4-1. Implement to get your balance
+Let's check to see if the deposit we just made was successful!
 
-You can call the `ethers.Wallet` object and `getBalance` method from plasma light client.
+## 4-1. Implement to get your l2 balance
+
+Just call the `getBalance` function of the plasma light client to easily check your balance.
 
 [Plasma Light Client API reference | getBalance](/API/plasma-light-client.md#getbalance)
 
@@ -13,12 +15,24 @@ async function getBalance(client) {
   const balance = await client.getBalance();
   console.log(`${client.address}:`, balance);
 }
+```
 
+## 4-2. Implement to get your l1 balance
+
+In order to make sure that your Layer1 balance has been properly reduced after the deposit, you should also prepare a method to obtain the Layer1 balance.
+
+```javascript
 async function getL1Balance(client) {
   const balance = await client.wallet.getL1Balance();
   console.log(`${client.address}:`, balance.value.raw, balance.symbol);
 }
+```
 
+## 4-3. Add getBalance functions to the CUI
+
+To call the `getBalance` function in the CUI Wallet, add some processing to the ReadLine.
+
+```javascript
 function cuiWalletReadLine(client) {
   rl.question(">> ", async (input) => {
     const args = input.split(/\s+/);
@@ -40,18 +54,22 @@ function cuiWalletReadLine(client) {
 }
 ```
 
-## 4-2. Check your l2 balance
+## 4-4. Check your l2 balance
 
-Please enter `getbalance` and check your balance of Layer2.
+Launch the CUI Wallet and check your balance of Layer2!
+
+Start the app with the node command and try typing `getbalance`.
 
 ```
 $ node app.js
 >> getbalance
 ```
 
-## 4-3. Check your l1 balance
+## 4-5. Check your l1 balance
 
-Please enter `getl1balance` and check your balance of Layer1.
+Also, check to see if your balance in Layer1 is decreasing.
+
+Try typing `getl1balance`.
 
 ```
 $ node app.js
@@ -152,6 +170,8 @@ main();
 
 ## Go to the next step!
 
-You have checked your ether balance of Layer1 and Layer2 successfully.
+Now that you've checked your balance and confirmed that the token has been properly deposited to Plasma, right?
+
+In the next chapter, we'll be transferring tokens on Plasma!
 
 Move on to the [5. Transfer](/tutorial/transfer.md) step.
