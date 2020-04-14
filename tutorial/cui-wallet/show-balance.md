@@ -174,4 +174,4 @@ Now that you've checked your balance and confirmed that the token has been prope
 
 In the next chapter, we'll be transferring tokens on Plasma!
 
-Move on to the [5. Transfer](/tutorial/transfer.md) step.
+Move on to the [5. Transfer](/tutorial/cui-wallet/transfer.md) step.

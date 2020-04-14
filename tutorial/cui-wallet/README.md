@@ -20,15 +20,15 @@ Once this tutorial is complete, you will be able to create a Wallet very easily 
 
 ## Table of Contents
 
-1. [Setup](/tutorial/setup.md)
-2. [Start client](/tutorial/start-client.md)
-3. [Deposit](/tutorial/deposit.md)
-4. [Show balance](/tutorial/show-balance.md)
-5. [Transfer](/tutorial/transfer.md)
-6. [Exit](/tutorial/exit.md)
+1. [Setup](/tutorial/cui-wallet/setup.md)
+2. [Start client](/tutorial/cui-wallet/start-client.md)
+3. [Deposit](/tutorial/cui-wallet/deposit.md)
+4. [Show balance](/tutorial/cui-wallet/show-balance.md)
+5. [Transfer](/tutorial/cui-wallet/transfer.md)
+6. [Exit](/tutorial/cui-wallet/exit.md)
 
 ## Go to the next step!
 
 Let's implement CUI Plasma Wallet application together!
 
-Move on to the [Setup](/tutorial/setup.md) step.
+Move on to the [Setup](/tutorial/cui-wallet/setup.md) step.

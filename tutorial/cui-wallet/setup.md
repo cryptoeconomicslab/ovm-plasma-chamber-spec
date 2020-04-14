@@ -79,4 +79,4 @@ main();
 
 The setup is now complete.
 
-Move on to the [2. Start client](/tutorial/start-client.md) step.
+Move on to the [2. Start client](/tutorial/cui-wallet/start-client.md) step.

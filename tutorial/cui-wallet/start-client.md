@@ -110,4 +110,4 @@ You have started plasma light client successfully.
 
 This makes it easy to communicate with Plasma using some of the client's methods.
 
-Move on to the [3. Deposit](/tutorial/deposit.md) step.
+Move on to the [3. Deposit](/tutorial/cui-wallet/deposit.md) step.

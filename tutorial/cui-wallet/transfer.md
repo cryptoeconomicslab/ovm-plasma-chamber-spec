@@ -168,4 +168,4 @@ Now you can transfer the token on Plasma!
 
 In the last chapter, we'll be working on withdrawing tokens to Layer1.
 
-Move on to the [6. Exit](/tutorial/exit.md) step.
+Move on to the [6. Exit](/tutorial/cui-wallet/exit.md) step.

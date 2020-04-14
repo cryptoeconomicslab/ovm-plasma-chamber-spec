@@ -141,4 +141,4 @@ You have deposited ether to Plasma successfully.
 
 Now it's time to check your balance to see if your deposit was successful.
 
-Move on to the [4. Show balance](/tutorial/show-balance.md) step.
+Move on to the [4. Show balance](/tutorial/cui-wallet/show-balance.md) step.
