@@ -1,8 +1,8 @@
 # 4. Show balance
 
-In this chapter, we will implement the methods to check the balance of Layer1 and Layer2.
+In this chapter, we will implement the methods to check the balances in the main chain and Plasma chain.
 
-Let's check to see if the deposit we just made was successful!
+Let's see if you deposited successfully!
 
 ## 4-1. Implement to get your l2 balance
 
@@ -19,7 +19,7 @@ async function getBalance(client) {
 
 ## 4-2. Implement to get your l1 balance
 
-In order to make sure that your Layer1 balance has been properly reduced after the deposit, you should also prepare a method to obtain the Layer1 balance.
+In order to make sure that your main chain balance has been properly reduced after the deposit, you should also prepare a method to obtain the main chain balance.
 
 ```javascript
 async function getL1Balance(client) {
@@ -58,7 +58,7 @@ function cuiWalletReadLine(client) {
 
 Launch the CUI Wallet and check your balance of Layer2!
 
-Start the app with the node command and try typing `getbalance`.
+Start the app with the node command and try `getbalance`.
 
 ```
 $ node app.js
@@ -67,9 +67,9 @@ $ node app.js
 
 ## 4-5. Check your l1 balance
 
-Also, check to see if your balance in Layer1 is decreasing.
+Also, check your balance in the main chain was reduced.
 
-Try typing `getl1balance`.
+Try `getl1balance`.
 
 ```
 $ node app.js

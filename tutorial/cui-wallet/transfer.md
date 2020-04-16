@@ -43,7 +43,7 @@ function cuiWalletReadLine(client) {
 
 Now, let's launch the CUI Wallet and actually make the transfer!
 
-Please enter `transfer <amount> <to>` and transfer ether to the other party.
+Please enter `transfer <amount> <to>` and transfer Ether to the other party.
 
 ```
 $ node app.js
@@ -164,8 +164,8 @@ main();
 
 ## Go to the next step!
 
-Now you can transfer the token on Plasma!
+Now you can transfer funds in Plasma chain!
 
-In the last chapter, we'll be working on withdrawing tokens to Layer1.
+In the last chapter, we'll be working on withdrawing some tokens back to the main chain.
 
 Move on to the [6. Exit](/tutorial/cui-wallet/exit.md) step.

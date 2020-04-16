@@ -21,15 +21,15 @@ $ npm run docker:cp
 $ npm run docker:start
 ```
 
-Contracts config file `config.local.json` is generated at the root directory after `npm run docker:build` if absent.
+Contracts config file `config.local.json` is generated at the root directory after `npm run docker:build` f you have not installed them yet.
 
 ## 1-2. Application
 
 ### Install
 
-Install the libraries from npm required to implement Plasma Wallet.
+Install the following libraries using npm to enable fund transfers in Plasma.
 
-After that, copy `config.local.json` file to your application repository root.
+Copy `config.local.json` file to your application repository root.
 
 ```bash
 $ mkdir plasma-wallet

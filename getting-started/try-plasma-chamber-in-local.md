@@ -1,8 +1,7 @@
 # Try [framework name] in local
 
-Quick start of [framework name] on your laptop.
-You can create a secure and scalable Plasma application by reading this document.
-This quick start using Typescript SDK, you need the latest version of Node.js.
+Following this document, you will be able to build secure and scalable Dapps using Plasma.
+For this quick start document using Typescript SDK, you need Node.js with the version later than v.10.x.
 
 ## Prerequistes
 
@@ -24,18 +23,26 @@ $ npm run docker:cp
 $ npm run docker:start
 ```
 
-Contracts config file `config.local.json` is generated at the root directory after `npm run docker:build` if absent.
+Contracts config file `config.local.json` is generated at the root directory after `npm run docker:build` f you have not installed them yet.
 
 ## Create your application
 
 ### 1. Install
 
-To start Plasma transfer, we first need to install Plasma libraries from npm.
-Copy config.local.json file to your application repository root.
+Install the following libraries using npm to enable fund transfers in Plasma.
+
+- @cryptoeconomicslab/eth-plasma-light-client
+  - A client for communication between Plasma and Application.
+- @cryptoeconomicslab/primitives
+  - A primitive type to be handled on OVM.
+- @cryptoeconomicslab/level-kvs
+  - A database used by the Client.
+
+Copy `config.local.json` file to your application repository root.
 
 ```
-npm i ethers
-npm i @cryptoeconomicslab/eth-plasma-light-client @cryptoeconomicslab/primitives @cryptoeconomicslab/level-kvs
+$ npm i ethers
+$ npm i @cryptoeconomicslab/eth-plasma-light-client @cryptoeconomicslab/primitives @cryptoeconomicslab/level-kvs
 ```
 
 ### 2. Instantiate
@@ -61,7 +68,7 @@ async function main() {
     wallet,
     kvs,
     config,
-    aggregatorEndpoint: "http://localhost:3000"
+    aggregatorEndpoint: "http://localhost:3000",
   });
   await lightClient.start();
 }

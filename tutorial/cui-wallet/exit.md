@@ -1,8 +1,8 @@
 # 6. Exit
 
-In this chapter, we will implement exit to withdraw your tokens from Plasma.
+In this chapter, we will implement exit functionality to withdraw your tokens from Plasma.
 
-By submitting your correct transaction history, you can withdraw your tokens that are locked in DepositContract on Layer1.
+By submitting your correct transaction history, you can withdraw your tokens that are locked in DepositContract on the main chain.
 
 ## 6-1. Implement exit
 
@@ -39,7 +39,7 @@ async function getExitList(client) {
 
 You can call the `finalizeExit` function from the plasma light client.
 
-By specifying the index of the exit that you want to withdraw from the exit list, you can withdraw the tokens to Layer1.
+By specifying the index of exit object from the exitList, you can withdraw the excitable tokens to the main chain.
 
 At this time, the exit must have passed the challenge period.
 
@@ -88,7 +88,7 @@ function cuiWalletReadLine(client) {
 
 Launch the CUI Wallet and start the exit process!
 
-Start the app with node command and try typing `exit <amount>`.
+Start the app with node command and try `exit <amount>`.
 
 ```
 $ node app.js
@@ -97,19 +97,19 @@ $ node app.js
 
 ## 6-6. Check your exit list
 
-Let's show the Exit List to see if the Exit has been claimed correctly.
+Let's take a look at exitList to see if the exit has been claimed correctly.
 
-Try typing `getexitlist`.
+Try `getexitlist`.
 
 ```
 >> getexitlist
 ```
 
-## 6-7. Withdraw your ether from Plasma
+## 6-7. Withdraw your Ether from Plasma
 
 Specify the index number of the Exit you want to finalize and pull the token from Plasma!
 
-Try typing `finalizeexit <index>`.
+Try `finalizeexit <index>`.
 
 ```
 >> finalizeexit 0
@@ -264,10 +264,9 @@ main();
 Congratulations!
 Now we've developed a CUI Plasma Wallet with basic functions from deposit to exit!
 
-Once again, this tutorial is very simple implementation. This wallet is not near production quality. We need a lot more work to make it ready for the Mainnet usage.
+Once again, this tutorial and the framework is not production-ready yet. Please refrain from using it on the main net until we announce the alpha version and it is ready for production use.
 
-By the way, we really appriciate your interest in [framework name].
-Looking forward to seeing your next project running on [framework name].
+We really appreciate your interest in [framework name] from the early stage and look forward to seeing your next project built with [framework name].
 
 Please let us know on [Telegram](https://t.me/cryptoeocnomicslab) if you have any questions.
 

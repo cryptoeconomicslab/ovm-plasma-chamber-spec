@@ -2,15 +2,15 @@
 
 In this tutorial, we will implement the CUI Plasma Wallet using [framework name].
 
-Once this tutorial is complete, you will be able to create a Wallet very easily that can do the following.
+Once you complete this tutorial, you will be able to create a wallet that enables you to do the following.
 
 - deposit Ether and ERC20 tokens to Plasma
-- transfer tokens on Plasma
-- withdraw a token from Plasma to Layer1
+- transfer tokens on Plasma chain
+- withdraw a token from Plasma chain to the main chain, which is Ethereum in this version
 
 > **Notice**
 >
-> This tutorial is very simple implementation. This wallet is not near production quality. We need a lot more work to make it ready for the Mainnet usage.
+> This tutorial and the framework is not production-ready yet. Please refrain from using it on the main net until we announce the alpha version and it is ready for production use.
 
 ## Prerequistes
 
