@@ -1,4 +1,8 @@
-# Plasma Chamber Specifications
+---
+id: README
+title: Plasma Chamber Specifications
+sidebar_label: Introduction
+---
 
 Plasma Chamber is a dapps development framework which grantees security, scalabilty, and userbility, based on the OVM.
 
@@ -13,7 +17,7 @@ Plasma Chamber is a blockchain application framework, which integrated Layer2 sc
 
 ##### Try Plasma Chamber in local
 
-[Try Plasma Chamber in local](/getting-started/try-plasma-chamber-in-local.md)
+[Try Plasma Chamber in local](getting-started/Try_Plasma_Chamber_In_Local)
 
 #### Learn Plasma Chamber
 
@@ -47,12 +51,12 @@ In this guide, we will examine the building blocks of React apps: elements and c
 
 ### API Reference
 
-- [PlasmaLightClient](/API/plasma-light-client.md)
-- [PlasmaAggregator](/API/plasma-aggregator.md)
+- [Plasma Light Client](api/Plasma_Light_Client)
+- [Plasma Aggregator](api/Plasma_Aggregator)
 
 ### Framework Core Spec
 
-- [Framework Core Spec Documentation](/core-spec/index.md)
+- [Framework Core Spec Documentation](core-spec/README)
 
 ### Testing
 

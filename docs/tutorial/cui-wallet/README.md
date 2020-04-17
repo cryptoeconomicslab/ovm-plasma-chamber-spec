@@ -1,4 +1,8 @@
-# Tutorial [framework name] CUI wallet
+---
+id: README
+title: Tutorial [framework name] CUI wallet
+sidebar_label: Introduction
+---
 
 In this tutorial, we will implement the CUI Plasma Wallet using [framework name].
 
@@ -20,15 +24,15 @@ Once you complete this tutorial, you will be able to create a wallet that enable
 
 ## Table of Contents
 
-1. [Setup](/tutorial/cui-wallet/setup.md)
-2. [Start client](/tutorial/cui-wallet/start-client.md)
-3. [Deposit](/tutorial/cui-wallet/deposit.md)
-4. [Show balance](/tutorial/cui-wallet/show-balance.md)
-5. [Transfer](/tutorial/cui-wallet/transfer.md)
-6. [Exit](/tutorial/cui-wallet/exit.md)
+1. [Setup](Setup)
+2. [Start client](Start_Client)
+3. [Deposit](Deposit)
+4. [Show balance](Show_Balance)
+5. [Transfer](Transfer)
+6. [Exit](Exit)
 
 ## Go to the next step!
 
 Let's implement CUI Plasma Wallet application together!
 
-Move on to the [Setup](/tutorial/cui-wallet/setup.md) step.
+Move on to the [Setup](Setup) step.
