@@ -12,8 +12,9 @@
       "tutorial/cui-wallet/Exit"
     ],
     "API Reference": ["api/Plasma_Aggregator", "api/Plasma_Light_Client"],
-    "Core Spec": ["core-spec/README"],
-    "Main Concept": ["main-concepts/Related_Repositories"],
-    "For Contributors": ["contributors/Code_Of_Conduct"]
+    "For Contributors": [
+      "contributors/Related_Repositories",
+      "contributors/Code_Of_Conduct"
+    ]
   }
 }
