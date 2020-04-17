@@ -1,4 +1,8 @@
-# 1. Setup
+---
+id: Setup
+title: 1. Setup
+sidebar_label: Setup
+---
 
 Now, let's develop the Plasma Wallet!
 
@@ -79,4 +83,4 @@ main();
 
 The setup is now complete.
 
-Move on to the [2. Start client](/tutorial/cui-wallet/start-client.md) step.
+Move on to the [2. Start client](Start_Client) step.

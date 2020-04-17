@@ -1,4 +1,8 @@
-# [framework name] Core Spec
+---
+id: README
+title: [framework name] Core Spec
+sidebar_label: Core Spec
+---
 
 The new framework name is coming soon.
 

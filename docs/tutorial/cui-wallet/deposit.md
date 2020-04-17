@@ -1,4 +1,8 @@
-# 3. Deposit
+---
+id: Deposit
+title: 3. Deposit
+sidebar_label: Deposit
+---
 
 If you successfully deposited some tokens, they will be locked into DepositContract, and the contract will mint the corresponding, equivalent amount of tokens that will be used in Plasma.
 
@@ -8,7 +12,7 @@ You can call the `deposit` function from the plasma light client.
 
 The users can simply deposit tokens into Plasma just by invoking this function.
 
-[Plasma Light Client API reference | deposit](/API/plasma-light-client.md#deposit)
+[Plasma Light Client API reference | deposit](/docs/api/Plasma_Light_Client#deposit)
 
 ```javascript
 const DEPOSIT_CONTRACT_ADDRESS = config.payoutContracts.DepositContract;
@@ -141,4 +145,4 @@ You have now deposited your Ether to Plasma.
 
 Let's see if your deposit was successfully completed, by checking your balance.
 
-Move on to the [4. Show balance](/tutorial/cui-wallet/show-balance.md) step.
+Move on to the [4. Show balance](tutorial/cui-wallet/show-balance.md) step.

@@ -1,4 +1,8 @@
-# 6. Exit
+---
+id: Exit
+title: 6. Exit
+sidebar_label: Exit
+---
 
 In this chapter, we will implement exit functionality to withdraw your tokens from Plasma.
 
@@ -10,7 +14,7 @@ You can call the `exit` function from the plasma light client.
 
 This allows users to claim how much they have withdrawn and with their transaction history.
 
-[Plasma Light Client API reference | exit](/API/plasma-light-client.md#exit)
+[Plasma Light Client API reference | exit](/docs/api/Plasma_Light_Client#exit)
 
 ```javascript
 async function exit(client, amount) {
@@ -26,7 +30,7 @@ You can call the `getExitList` function from the plasma light client.
 
 You can get a list of the exits that the user is currently claiming.
 
-[Plasma Light Client API reference | getExitlist](/API/plasma-light-client.md#getexitlist)
+[Plasma Light Client API reference | getExitlist](/docs/api/Plasma_Light_Client#getexitlist)
 
 ```javascript
 async function getExitList(client) {
@@ -43,7 +47,7 @@ By specifying the index of exit object from the exitList, you can withdraw the e
 
 At this time, the exit must have passed the challenge period.
 
-[Plasma Light Client API reference | finalizeExit](/API/plasma-light-client.md#finalizeexit)
+[Plasma Light Client API reference | finalizeExit](/docs/api/Plasma_Light_Client#finalizeexit)
 
 ```javascript
 async function finalizeExit(client, index) {

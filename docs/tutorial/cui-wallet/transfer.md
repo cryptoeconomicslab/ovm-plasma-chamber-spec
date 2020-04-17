@@ -1,4 +1,8 @@
-# 5. Transfer
+---
+id: Transfer
+title: 5. Transfer
+sidebar_label: Transfer
+---
 
 In this chapter, we'll be implementing remittances on Plasma.
 
@@ -8,7 +12,7 @@ You can call the `transfer` method from the plasma light client.
 
 You can easily send the tokens on Plasma by simply passing the amount you want to send, DepositContractAddress and the recipient as arguments!
 
-[Plasma Light Client API reference | transfer](/API/plasma-light-client.md#transfer)
+[Plasma Light Client API reference | transfer](/docs/api/Plasma_Light_Client#transfer)
 
 ```javascript
 async function transfer(client, amount, to) {
@@ -168,4 +172,4 @@ Now you can transfer funds in Plasma chain!
 
 In the last chapter, we'll be working on withdrawing some tokens back to the main chain.
 
-Move on to the [6. Exit](/tutorial/cui-wallet/exit.md) step.
+Move on to the [6. Exit](Exit) step.

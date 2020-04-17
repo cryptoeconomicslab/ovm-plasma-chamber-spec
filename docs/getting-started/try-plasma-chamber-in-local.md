@@ -1,4 +1,8 @@
-# Try [framework name] in local
+---
+id: Try_Plasma_Chamber_In_Local
+title: Try [framework name] in local
+sidebar_label: Try [framework name] in local
+---
 
 Following this document, you will be able to build secure and scalable Dapps using Plasma.
 For this quick start document using Typescript SDK, you need Node.js with the version later than v.10.x.

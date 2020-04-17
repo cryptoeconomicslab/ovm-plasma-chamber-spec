@@ -1,4 +1,8 @@
-# 4. Show balance
+---
+id: Show_Balance
+title: 4. Show balance
+sidebar_label: Show balance
+---
 
 In this chapter, we will implement the methods to check the balances in the main chain and Plasma chain.
 
@@ -8,7 +12,7 @@ Let's see if you deposited successfully!
 
 Just call the `getBalance` function of the plasma light client to easily check your balance.
 
-[Plasma Light Client API reference | getBalance](/API/plasma-light-client.md#getbalance)
+[Plasma Light Client API reference | getBalance](/docs/api/Plasma_Light_Client#getbalance)
 
 ```javascript
 async function getBalance(client) {
@@ -174,4 +178,4 @@ Now that you've checked your balance and confirmed that the token has been prope
 
 In the next chapter, we'll be transferring tokens on Plasma!
 
-Move on to the [5. Transfer](/tutorial/cui-wallet/transfer.md) step.
+Move on to the [5. Transfer](Transfer) step.
