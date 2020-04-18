@@ -17,7 +17,7 @@ Plasma Chamber is a blockchain application framework, which integrated Layer2 sc
 
 ##### Try Plasma Chamber in local
 
-[Try Plasma Chamber in local](getting-started/Try_Plasma_Chamber_In_Local)
+[Try Plasma Chamber in local](getting-started/try_plasma_chamber_in_local)
 
 #### Learn Plasma Chamber
 
