@@ -1,6 +1,6 @@
 ---
 id: Plasma_Light_Client
-title: Plasma Light Client API reference
+title: Plasma Light Client API
 sidebar_label: Plasma Light Client
 ---
 

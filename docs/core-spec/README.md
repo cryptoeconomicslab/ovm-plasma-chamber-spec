@@ -1,6 +1,6 @@
 ---
 id: README
-title: [framework name] Core Spec
+title: framework name Core Spec
 sidebar_label: Core Spec
 ---
 
