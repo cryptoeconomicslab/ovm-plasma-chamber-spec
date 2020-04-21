@@ -1,0 +1,130 @@
+.root {
+  background: linear-gradient(113.96deg, #211d2c 0%, #161516 100%);
+  color: #fff;
+  position: relative;
+  padding: 6rem 2rem 9rem;
+  overflow: hidden;
+  @media screen and (max-width: 500px) {
+    padding: 4rem 1.125rem 8rem;
+  }
+}
+
+.inner {
+  max-width: 73.75rem;
+  margin: 0 auto;
+}
+
+.copy {
+  max-width: 50rem;
+  margin: 0 auto;
+  text-align: center;
+  @media screen and (max-width: 500px) {
+    text-align: left;
+  }
+}
+
+.headline {
+  font-size: 2.75rem;
+  line-height: 1.2;
+  margin: 0 auto;
+  font-weight: 900;
+}
+
+.desc {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--sub-text-color);
+  margin: 2rem auto 3rem;
+}
+
+.btnWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hr {
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  height: 1px;
+  margin: 4rem 0;
+}
+
+.features {
+  display: flex;
+  margin: 0 -2rem;
+  @media screen and (max-width: 768px) {
+    display: block;
+  }
+}
+
+.feature {
+  flex: 1;
+  padding: 0 2rem;
+  &__title {
+    font-size: 1.75rem;
+    font-weight: 900;
+    margin-bottom: 1.25rem;
+    padding-left: 2.5rem;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.1875rem;
+      width: 1rem;
+      height: 1rem;
+      border: 6px var(--yellow) solid;
+      border-radius: 50%;
+    }
+  }
+  &__desc {
+    font-size: 1rem;
+    color: var(--sub-text-color);
+  }
+  &:first-child {
+    .feature__title {
+      &::after {
+        border-color: var(--red);
+      }
+    }
+  }
+  &:last-child {
+    .feature__title {
+      &::after {
+        border-color: var(--blue);
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    & + & {
+      margin-top: 2.5rem;
+    }
+  }
+}
+
+.img,
+.imgSp {
+  position: absolute;
+  width: 100%;
+  height: 3.5rem;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.img {
+  min-width: 75rem;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+.imgSp {
+  min-width: 54rem;
+  display: none;
+  @media screen and (max-width: 768px) {
+    display: block;
+  }
+}
