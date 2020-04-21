@@ -1,6 +1,6 @@
 ---
 id: Plasma_Aggregator
-title: Plasma Aggregator API reference
+title: Plasma Aggregator API
 sidebar_label: Plasma Aggregator
 ---
 

@@ -27,11 +27,11 @@ Plasma Chamber is a blockchain application framework, which integrated Layer2 sc
 
 #### Something Missing?
 
-<br>
+<br/>
 
 ### Related Repositories
 
-<br>
+<br/>
 
 ### Main Concepts
 
@@ -47,7 +47,7 @@ In this guide, we will examine the building blocks of React apps: elements and c
 
 #### Merkle Root Submission
 
-<br>
+<br/>
 
 ### API Reference
 
