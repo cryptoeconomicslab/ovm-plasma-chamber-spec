@@ -15,6 +15,18 @@
   --ifm-color-primary-lighter: rgb(102, 212, 189);
   --ifm-color-primary-lightest: rgb(146, 224, 208);
   --ifm-code-font-size: 95%;
+  --ifm-font-family-base: Roboto, sans-serif;
+  --ifm-navbar-link-color: rgba(255, 255, 255, 0.9);
+  --ifm-navbar-link-hover-color: #eb3959;
+  --ifm-navbar-background-color: #171619;
+  --ifm-menu-color: rgba(255, 255, 255, 0.9);
+  --ifm-line-height-base: 1.7;
+
+  // crypto original
+  --sub-text-color: rgba(255, 255, 255, 0.5);
+  --red: #eb3959;
+  --blue: #2baef8;
+  --yellow: #eff313;
 }
 
 .docusaurus-highlight-code-line {
@@ -22,4 +34,17 @@
   display: block;
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 var(--ifm-pre-padding);
+}
+
+.navbar {
+  background: linear-gradient(169.29deg, #211d2c 0%, #161516 100%);
+  &__toggle {
+    color: var(--ifm-navbar-link-color);
+  }
+  &__title {
+    visibility: hidden;
+  }
+  &__brand {
+    padding: 0.375rem;
+  }
 }
