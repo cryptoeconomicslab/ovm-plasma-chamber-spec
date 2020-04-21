@@ -9,10 +9,10 @@ module.exports = {
   themeConfig: {
     disableDarkMode: true,
     navbar: {
-      title: "Plasma Chamber",
+      title: "Gazelle",
       logo: {
-        alt: "Plasma Chamber",
-        src: "img/logo.svg",
+        alt: "Gazelle",
+        src: "img/logo-w.svg",
       },
       links: [
         {
@@ -98,9 +98,13 @@ module.exports = {
             "https://github.com/facebook/docusaurus/edit/master/website/",
         },
         theme: {
-          customCss: require.resolve("./src/css/custom.css"),
+          customCss: require.resolve("./src/css/custom.scss"),
         },
       },
     ],
+  ],
+  plugins: ["docusaurus-plugin-sass"],
+  stylesheets: [
+    "https://fonts.googleapis.com/css2?family=Roboto:wght@500;700;900&display=swap",
   ],
 };

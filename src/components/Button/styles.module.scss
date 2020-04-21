@@ -1,0 +1,23 @@
+.root {
+  background: linear-gradient(
+    137.4deg,
+    rgba(79, 47, 171, 0) 0.21%,
+    #2c309a 93.55%
+  );
+  background-color: #4f2fab;
+  box-shadow: 0px 1px 24px rgba(58, 55, 173, 0.7);
+  border-radius: 5px;
+  border: none;
+  color: var(--ifm-navbar-link-color);
+  padding: 1.25rem 4rem;
+  font-size: 1.125rem;
+  font-weight: 900;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  &:hover {
+    background-color: #31309c;
+  }
+  @media screen and (max-width: 500px) {
+    width: 100%;
+  }
+}
