@@ -28,13 +28,14 @@
   line-height: 1.2;
   margin: 0 auto;
   font-weight: 900;
+  color: inherit;
 }
 
 .desc {
   font-size: 1.25rem;
   font-weight: 700;
   line-height: 1.5;
-  color: var(--sub-text-color);
+  color: var(--sub-text-white);
   margin: 2rem auto 3rem;
 }
 
@@ -63,6 +64,7 @@
   flex: 1;
   padding: 0 2rem;
   &__title {
+    color: inherit;
     font-size: 1.75rem;
     font-weight: 900;
     margin-bottom: 1.25rem;
@@ -81,7 +83,7 @@
   }
   &__desc {
     font-size: 1rem;
-    color: var(--sub-text-color);
+    color: var(--sub-text-white);
   }
   &:first-child {
     .feature__title {
