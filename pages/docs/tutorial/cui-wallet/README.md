@@ -1,10 +1,10 @@
 ---
 id: README
-title: Tutorial [framework name] CUI wallet
+title: Tutorial Gazelle CUI wallet
 sidebar_label: Introduction
 ---
 
-In this tutorial, we will implement the CUI Plasma Wallet using [framework name].
+In this tutorial, we will implement the CUI Plasma Wallet using Gazelle.
 
 Once you complete this tutorial, you will be able to create a wallet that enables you to do the following.
 

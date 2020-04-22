@@ -1,10 +1,10 @@
 ---
 id: README
-title: framework name Core Spec
+title: Gazelle Core Spec
 sidebar_label: Core Spec
 ---
 
-The new framework name is coming soon.
+The new Gazelle is coming soon.
 
 # Introduction
 
@@ -27,8 +27,8 @@ This document is written about our OVM client core library and spec of OVM contr
 ### CEL's framework
 
 Since OVM was originally proposed as a concept of shared language for various Layer2 protocols, we have been focusing on implement a concrete system to utilize unique advantages of OVM.
-This lead to the advent of [framework name].
-[framework name] consists of three main components: OVM contract, OVM client and compiler.
+This lead to the advent of Gazelle.
+Gazelle consists of three main components: OVM contract, OVM client and compiler.
 
 ## Contributors
 
@@ -58,7 +58,7 @@ And also, developers will be required to write less client logic.
 
 ### Serialization
 
-[framework name] uses Ethereum ABI encoding.
+Gazelle uses Ethereum ABI encoding.
 
 ### Github repositories of our implementation
 
