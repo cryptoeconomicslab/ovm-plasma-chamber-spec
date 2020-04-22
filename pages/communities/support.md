@@ -6,7 +6,9 @@ sidebar_label: Support
 
 ## Chat
 
-["Chat"]() has been one of the popular communication channels among Gazelle's developers. Please visit there and connect with each other.
+<!-- TODO: chat page -->
+
+[Chat](https://t.me/cryptoeocnomicslab) has been one of the popular communication channels among Gazelle's developers. Please visit there and connect with each other.
 
 ## Forum
 
