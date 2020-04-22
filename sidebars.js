@@ -8,8 +8,8 @@ module.exports = {
     ],
   },
   docs: {
-    Introduction: ["docs/README"],
-    "Getting Started": ["docs/getting-started/Try_Plasma_Chamber_In_Local"],
+    Introduction: ["Introduction"],
+    "Getting Started": ["getting-started/Try_Plasma_Chamber_In_Local"],
     Tutorial: [
       "docs/tutorial/cui-wallet/README",
       "docs/tutorial/cui-wallet/Setup",

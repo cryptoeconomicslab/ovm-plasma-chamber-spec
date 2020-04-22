@@ -16,7 +16,7 @@ module.exports = {
       },
       links: [
         {
-          to: "docs/README",
+          to: "docs/Introduction",
           activeBasePath: "docs",
           label: "Docs",
           position: "right",
