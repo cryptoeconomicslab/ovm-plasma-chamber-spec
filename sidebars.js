@@ -1,6 +1,6 @@
 module.exports = {
   docs: {
-    Introduction: ["README"],
+    Introduction: ["Introduction"],
     "Getting Started": ["getting-started/Try_Plasma_Chamber_In_Local"],
     Tutorial: [
       "tutorial/cui-wallet/README",
