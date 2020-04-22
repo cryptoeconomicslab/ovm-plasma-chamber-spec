@@ -1,0 +1,19 @@
+.root {
+  .card {
+    width: 100%;
+    margin: 1rem auto;
+    padding: 2rem 4rem;
+    text-align: center;
+    box-shadow: 0 0 8px gray;
+    border-radius: 8px;
+
+    @media screen and (max-width: 768px) {
+      width: 75%;
+    }
+
+    .header {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+  }
+}

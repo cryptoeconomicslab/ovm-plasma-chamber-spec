@@ -1,0 +1,29 @@
+.root {
+  padding-top: 0.5rem;
+
+  img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    border-radius: 8px;
+    margin: 0 auto;
+    display: block;
+
+    @media screen and (max-width: 768px) {
+      width: 320px;
+    }
+  }
+
+  .name {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+  }
+
+  .desc {
+    @media screen and (max-width: 768px) {
+      text-align: center;
+    }
+  }
+}

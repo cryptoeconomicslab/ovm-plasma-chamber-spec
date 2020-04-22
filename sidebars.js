@@ -1,20 +1,31 @@
 module.exports = {
+  communities: {
+    Community: [
+      "communities/Support",
+      "communities/News",
+      "communities/Team",
+      "communities/Collaboration",
+    ],
+  },
   docs: {
     Introduction: ["Introduction"],
     "Getting Started": ["getting-started/Try_Plasma_Chamber_In_Local"],
     Tutorial: [
-      "tutorial/cui-wallet/README",
-      "tutorial/cui-wallet/Setup",
-      "tutorial/cui-wallet/Start_Client",
-      "tutorial/cui-wallet/Deposit",
-      "tutorial/cui-wallet/Show_Balance",
-      "tutorial/cui-wallet/Transfer",
-      "tutorial/cui-wallet/Exit",
+      "docs/tutorial/cui-wallet/README",
+      "docs/tutorial/cui-wallet/Setup",
+      "docs/tutorial/cui-wallet/Start_Client",
+      "docs/tutorial/cui-wallet/Deposit",
+      "docs/tutorial/cui-wallet/Show_Balance",
+      "docs/tutorial/cui-wallet/Transfer",
+      "docs/tutorial/cui-wallet/Exit",
     ],
-    "API Reference": ["api/Plasma_Aggregator", "api/Plasma_Light_Client"],
+    "API Reference": [
+      "docs/api/Plasma_Aggregator",
+      "docs/api/Plasma_Light_Client",
+    ],
     "For Contributors": [
-      "contributors/Related_Repositories",
-      "contributors/Code_Of_Conduct",
+      "docs/contributors/Related_Repositories",
+      "docs/contributors/Code_Of_Conduct",
     ],
   },
 };
