@@ -1,25 +1,25 @@
 ---
 id: README
-title: Plasma Chamber Specifications
+title: Gazelle Specifications
 sidebar_label: Introduction
 ---
 
-Plasma Chamber is a dapps development framework which grantees security, scalabilty, and userbility, based on the OVM.
+Gazelle is a dapps development framework which grantees security, scalabilty, and userbility, based on the OVM.
 
 ## Table of contents
 
 ### Getting Started
 
-This page provides an overview of the Plasma Chamber documentation and related resources.
-Plasma Chamber is a blockchain application framework, which integrated Layer2 scaling solution.
+This page provides an overview of the Gazelle documentation and related resources.
+Gazelle is a blockchain application framework, which integrated Layer2 scaling solution.
 
-#### Try Plasma Chamber
+#### Try Gazelle
 
-##### Try Plasma Chamber in local
+##### Try Gazelle in local
 
-[Try Plasma Chamber in local](getting-started/Try_Plasma_Chamber_In_Local)
+[Try Gazelle in local](getting-started/Try_Gazelle_In_Local)
 
-#### Learn Plasma Chamber
+#### Learn Gazelle
 
 #### Staying Informed
 

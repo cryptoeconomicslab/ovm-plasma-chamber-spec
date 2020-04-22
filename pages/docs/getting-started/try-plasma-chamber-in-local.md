@@ -1,7 +1,7 @@
 ---
-id: Try_Plasma_Chamber_In_Local
-title: Try [framework name] in local
-sidebar_label: Try [framework name] in local
+id: Try_Gazelle_In_Local
+title: Try Gazelle in local
+sidebar_label: Try Gazelle in local
 ---
 
 Following this document, you will be able to build secure and scalable Dapps using Plasma.

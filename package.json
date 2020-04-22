@@ -1,5 +1,5 @@
 {
-  "name": "ovm-plasma-chamber-spec",
+  "name": "gazelle-website",
   "version": "0.0.1",
   "scripts": {
     "start": "docusaurus start",

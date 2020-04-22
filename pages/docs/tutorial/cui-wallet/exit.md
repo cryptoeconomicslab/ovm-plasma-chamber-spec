@@ -263,14 +263,14 @@ main();
 
 </details>
 
-## Tutorial [framework name] CUI Wallet - The End
+## Tutorial Gazelle CUI Wallet - The End
 
 Congratulations!
 Now we've developed a CUI Plasma Wallet with basic functions from deposit to exit!
 
 Once again, this tutorial and the framework is not production-ready yet. Please refrain from using it on the main net until we announce the alpha version and it is ready for production use.
 
-We really appreciate your interest in [framework name] from the early stage and look forward to seeing your next project built with [framework name].
+We really appreciate your interest in Gazelle from the early stage and look forward to seeing your next project built with Gazelle.
 
 Please let us know on [Telegram](https://t.me/cryptoeocnomicslab) if you have any questions.
 

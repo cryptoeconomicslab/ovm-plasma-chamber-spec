@@ -13,7 +13,9 @@ function Hero() {
             app secure, scalable, and usable with the Layer 2 technology.
           </p>
           <div className={styles.btnWrap}>
-            <Button>Get Started</Button>
+            <a href="docs/getting-started/Try_Gazelle_In_Local">
+              <Button>Get Started</Button>
+            </a>
           </div>
         </div>
         <hr className={styles.hr} />
