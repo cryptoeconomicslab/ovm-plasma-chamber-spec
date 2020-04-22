@@ -1,4 +1,12 @@
 module.exports = {
+  communities: {
+    Community: [
+      "communities/Support",
+      "communities/News",
+      "communities/Team",
+      "communities/Collaboration",
+    ],
+  },
   docs: {
     Introduction: ["docs/README"],
     "Getting Started": ["docs/getting-started/Try_Plasma_Chamber_In_Local"],

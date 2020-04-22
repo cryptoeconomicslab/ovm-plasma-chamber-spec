@@ -1,11 +1,11 @@
 module.exports = {
-  title: "Plasma Chamber",
+  title: "Gazelle",
   tagline: "The tagline of my site",
   url: "https://your-docusaurus-test-site.com",
   baseUrl: "/",
   favicon: "img/favicon.ico",
   organizationName: "Cryptoeconomics Lab", // Usually your GitHub org/user name.
-  projectName: "plasma-chamber", // Usually your repo name.
+  projectName: "gazelle", // Usually your repo name.
   themeConfig: {
     disableDarkMode: true,
     navbar: {
@@ -22,7 +22,8 @@ module.exports = {
           position: "right",
         },
         {
-          to: "community",
+          to: "communities/Support",
+          activeBasePath: "communities",
           label: "Community",
           position: "right",
         },
@@ -96,8 +97,6 @@ module.exports = {
           path: "pages",
           routeBasePath: "",
           sidebarPath: require.resolve("./sidebars.js"),
-          editUrl:
-            "https://github.com/facebook/docusaurus/edit/master/website/",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.scss"),
