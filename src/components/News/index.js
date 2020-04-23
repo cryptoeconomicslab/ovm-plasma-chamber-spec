@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./styles.module.scss";
-import SubscribeForm from "../SubscribeForm";
+import SubscribeForm from "../Form/SubscribeForm";
 
 function News() {
   return (

@@ -1,19 +1,14 @@
 import React from "react";
-import Layout from "@theme/Layout";
+import Thanks from "../../components/Form/Thanks";
 
-function Thanks() {
+function SubscribeThanks() {
   return (
-    <Layout title="Subscribe success">
-      <div className="container margin-vert--xl">
-        <div className="row">
-          <div className="col col--6 col--offset-3">
-            <h1 className="hero__title">Thank you for your subscribe!</h1>
-            <p>We will contact you if there are any updates.</p>
-          </div>
-        </div>
-      </div>
-    </Layout>
+    <Thanks
+      title="Subscribe success"
+      header="Thank you for subscribing"
+      desc="We will let you know if there are any updates."
+    />
   );
 }
 
-export default Thanks;
+export default SubscribeThanks;

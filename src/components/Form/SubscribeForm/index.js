@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./styles.module.scss";
-import Button from "../Button";
+import Button from "../../Button";
 
 function SubscribeForm(props) {
   return (

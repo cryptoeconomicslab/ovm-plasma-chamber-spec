@@ -99,7 +99,10 @@ module.exports = {
           sidebarPath: require.resolve("./sidebars.js"),
         },
         theme: {
-          customCss: require.resolve("./src/css/custom.scss"),
+          customCss: [
+            require.resolve("./src/css/custom.scss"),
+            require.resolve("./src/css/input.scss"),
+          ],
         },
       },
     ],
