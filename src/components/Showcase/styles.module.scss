@@ -1,12 +1,9 @@
 .root {
-  padding: 4rem 0;
-  @media screen and (max-width: 500px) {
-    padding: 4rem 0;
-  }
+  margin: 4rem 0 0;
 }
 
 .headline {
-  font-size: 3.75rem;
+  font-size: var(--top-headline-font-size);
   text-align: center;
   margin-bottom: 0.5rem;
 }
@@ -25,7 +22,7 @@
 }
 
 .showcaseWrapper {
-  max-width: 73.75rem;
+  max-width: var(--container-width);
   margin: 0 auto;
 }
 
@@ -104,7 +101,7 @@
 }
 
 .tool {
-  max-width: 73.75rem;
+  max-width: var(--container-width);
   margin: 0 auto;
 }
 

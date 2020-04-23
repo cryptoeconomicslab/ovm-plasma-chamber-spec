@@ -6,6 +6,7 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import Hero from "../components/Hero";
 import Showcase from "../components/Showcase";
+import Roadmap from "../components/Roadmap";
 
 function Home() {
   const context = useDocusaurusContext();
@@ -17,6 +18,7 @@ function Home() {
     >
       <Hero />
       <Showcase />
+      <Roadmap />
     </Layout>
   );
 }

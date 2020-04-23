@@ -1,7 +1,54 @@
 import React from "react";
 import styles from "./styles.module.scss";
 
-function Showcase() {
+const showcases = [
+  {
+    img: "https://picsum.photos/422/290",
+    title: "Your Plasma Wallet",
+    desc: `Plasma Chamber is a DApps development framework that
+    guarantees your.`,
+    link: "/",
+    linkTxt: "Play with Wallet",
+  },
+  {
+    img: "https://picsum.photos/422/290",
+    title: "Playground",
+    desc: `Plasma Chamber is a DApps development framework that
+    guarantees your.`,
+    link: "/",
+    linkTxt: "Start Building",
+  },
+];
+
+const tools = [
+  {
+    img: "https://picsum.photos/422/290",
+    title: "Your Plasma Wallet",
+    desc: `Plasma Chamber is a DApps development framework that
+  guarantees your.`,
+    link: "/",
+    linkTxt: "Play with Wallet",
+  },
+];
+
+function Showcase({ img, title, desc, link, linkTxt }) {
+  return (
+    <div className={styles.showcase}>
+      <div className={styles.showcase__imgWrap}>
+        <img src={img} className={styles.showcase__img} />
+      </div>
+      <div className={styles.showcase__body}>
+        <h3 className={styles.showcase__title}>{title}</h3>
+        <p className={styles.showcase__desc}>{desc}</p>
+        <a href={link} className={styles.showcase__link}>
+          {linkTxt}
+        </a>
+      </div>
+    </div>
+  );
+}
+
+function Showcases() {
   return (
     <div className={styles.root}>
       <div className={styles.showcaseRoot}>
@@ -11,42 +58,9 @@ function Showcase() {
         </p>
         <div className={styles.showcaseWrapper}>
           <div className={styles.showcases}>
-            <div className={styles.showcase}>
-              <div className={styles.showcase__imgWrap}>
-                <img
-                  src="https://picsum.photos/422/290"
-                  className={styles.showcase__img}
-                />
-              </div>
-              <div className={styles.showcase__body}>
-                <h3 className={styles.showcase__title}>Your Plasma Wallet</h3>
-                <p className={styles.showcase__desc}>
-                  Plasma Chamber is a DApps development framework that
-                  guarantees your.
-                </p>
-                <a href="/" className={styles.showcase__link}>
-                  Play with Wallet
-                </a>
-              </div>
-            </div>
-            <div className={styles.showcase}>
-              <div className={styles.showcase__imgWrap}>
-                <img
-                  src="https://picsum.photos/422/290"
-                  className={styles.showcase__img}
-                />
-              </div>
-              <div className={styles.showcase__body}>
-                <h3 className={styles.showcase__title}>Playground</h3>
-                <p className={styles.showcase__desc}>
-                  Plasma Chamber is a DApps development framework that
-                  guarantees your.
-                </p>
-                <a href="/" className={styles.showcase__link}>
-                  Start Building
-                </a>
-              </div>
-            </div>
+            {showcases.map((showcase, i) => (
+              <Showcase {...showcase} key={i} />
+            ))}
           </div>
         </div>
       </div>
@@ -59,24 +73,7 @@ function Showcase() {
                 supports developers to create real cases of blockchain
               </p>
             </div>
-            <div className={styles.showcase}>
-              <div className={styles.showcase__imgWrap}>
-                <img
-                  src="https://picsum.photos/422/290"
-                  className={styles.showcase__img}
-                />
-              </div>
-              <div className={styles.showcase__body}>
-                <h3 className={styles.showcase__title}>Your Plasma Wallet</h3>
-                <p className={styles.showcase__desc}>
-                  Plasma Chamber is a DApps development framework that
-                  guarantees your.
-                </p>
-                <a href="/" className={styles.showcase__link}>
-                  Play with Wallet
-                </a>
-              </div>
-            </div>
+            <Showcase {...tools[0]} />
           </div>
         </div>
       </div>
@@ -84,4 +81,4 @@ function Showcase() {
   );
 }
 
-export default Showcase;
+export default Showcases;
