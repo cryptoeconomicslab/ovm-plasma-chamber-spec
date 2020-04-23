@@ -2,7 +2,7 @@
   background: linear-gradient(113.96deg, #211d2c 0%, #161516 100%);
   color: #fff;
   position: relative;
-  padding: 6rem 2rem 9rem;
+  padding: 4rem 2rem 9rem;
   overflow: hidden;
   @media screen and (max-width: 500px) {
     padding: 4rem 1.125rem 8rem;
@@ -28,14 +28,15 @@
   line-height: 1.2;
   margin: 0 auto;
   font-weight: 900;
+  color: inherit;
 }
 
 .desc {
   font-size: 1.25rem;
   font-weight: 700;
   line-height: 1.5;
-  color: var(--sub-text-color);
-  margin: 2rem auto 3rem;
+  color: var(--sub-text-white);
+  margin: 1.5rem auto 2.5rem;
 }
 
 .btnWrap {
@@ -48,7 +49,7 @@
   border: none;
   background: rgba(255, 255, 255, 0.1);
   height: 1px;
-  margin: 4rem 0;
+  margin: 3rem 0;
 }
 
 .features {
@@ -63,6 +64,7 @@
   flex: 1;
   padding: 0 2rem;
   &__title {
+    color: inherit;
     font-size: 1.75rem;
     font-weight: 900;
     margin-bottom: 1.25rem;
@@ -81,7 +83,7 @@
   }
   &__desc {
     font-size: 1rem;
-    color: var(--sub-text-color);
+    color: var(--sub-text-white);
   }
   &:first-child {
     .feature__title {
