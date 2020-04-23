@@ -5,7 +5,7 @@ import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import Hero from "../components/Hero";
-import styles from "./styles.module.scss";
+import Showcase from "../components/Showcase";
 
 function Home() {
   const context = useDocusaurusContext();
@@ -16,7 +16,7 @@ function Home() {
       description="Description will go into a meta tag in <head />"
     >
       <Hero />
-      <div className={styles.showcase}>a</div>
+      <Showcase />
     </Layout>
   );
 }
