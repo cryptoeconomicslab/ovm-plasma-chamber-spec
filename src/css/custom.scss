@@ -38,6 +38,10 @@
   --red: #eb3959;
   --blue: #2baef8;
   --yellow: #eff313;
+  --purple: #6356f5;
+  --gradient: linear-gradient(169.29deg, #211d2c 0%, #161516 100%);
+  --top-headline-font-size: 3.75rem;
+  --container-width: 73.75rem;
 }
 
 .docusaurus-highlight-code-line {
@@ -48,7 +52,7 @@
 }
 
 .navbar {
-  background: linear-gradient(169.29deg, #211d2c 0%, #161516 100%);
+  background: var(--gradient);
   &__toggle {
     color: var(--ifm-navbar-link-color);
   }
