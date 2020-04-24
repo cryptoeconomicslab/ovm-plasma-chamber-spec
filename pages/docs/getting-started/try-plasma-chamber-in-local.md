@@ -19,7 +19,7 @@ For this quick start document using Typescript SDK, you need Node.js with the ve
 
 Get [plasma-aggregator](https://github.com/cryptoeconomicslab/wakkanay-plasma-aggregator).
 
-```
+```bash
 $ git clone git@github.com:cryptoeconomicslab/wakkanay-plasma-aggregator.git
 $ cd wakkanay-plasma-aggregator
 $ npm run docker:build
@@ -44,7 +44,7 @@ Install the following libraries using npm to enable fund transfers in Plasma.
 
 Copy `config.local.json` file to your application repository root.
 
-```
+```bash
 $ npm i ethers
 $ npm i @cryptoeconomicslab/eth-plasma-light-client @cryptoeconomicslab/primitives @cryptoeconomicslab/level-kvs
 ```
