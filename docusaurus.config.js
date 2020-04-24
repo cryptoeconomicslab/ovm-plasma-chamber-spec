@@ -10,6 +10,9 @@ module.exports = {
   projectName: "gazelle", // Usually your repo name.
   themeConfig: {
     disableDarkMode: true,
+    prism: {
+      theme: require("prism-react-renderer/themes/nightOwl"),
+    },
     navbar: {
       title: "Gazelle",
       logo: {

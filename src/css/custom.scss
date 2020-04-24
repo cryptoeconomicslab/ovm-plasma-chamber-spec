@@ -7,29 +7,34 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: rgb(33, 175, 144);
-  --ifm-color-primary-darker: rgb(31, 165, 136);
-  --ifm-color-primary-darkest: rgb(26, 136, 112);
-  --ifm-color-primary-light: rgb(70, 203, 174);
-  --ifm-color-primary-lighter: rgb(102, 212, 189);
-  --ifm-color-primary-lightest: rgb(146, 224, 208);
+  --ifm-color-primary: #2baef8;
+  --ifm-color-primary-dark: #0fa3f7;
+  --ifm-color-primary-darker: #089cef;
+  --ifm-color-primary-darkest: #0780c5;
+  --ifm-color-primary-light: #47b9f9;
+  --ifm-color-primary-lighter: #55bef9;
+  --ifm-color-primary-lightest: #80cefb;
 
-  --ifm-code-font-size: 95%;
+  --ifm-code-font-size: 0.875rem;
 
   --ifm-font-family-base: Roboto, sans-serif;
   --ifm-line-height-base: 1.7;
   --ifm-font-base-color: #25212d;
   --ifm-link-color: #2baef8;
+  --ifm-contents-border-color: rgba(0, 0, 0, 0.06);
+
+  --ifm-leading-desktop: 2.25;
 
   --ifm-heading-color: #25212d;
   --ifm-heading-font-weight: 900;
+
+  --ifm-h2-font-size: 2rem;
 
   --ifm-navbar-link-color: rgba(255, 255, 255, 0.6);
   --ifm-navbar-link-hover-color: #fff;
   --ifm-navbar-background-color: #171619;
 
-  --ifm-menu-color: #b5b2be;
+  --ifm-menu-color: #8a8693;
   --ifm-menu-color-active: #25212d;
 
   // CEL original
@@ -46,11 +51,16 @@
   --container-width: 73.75rem;
 }
 
-.docusaurus-highlight-code-line {
-  background-color: rgb(72, 77, 91);
-  display: block;
-  margin: 0 calc(-1 * var(--ifm-pre-padding));
-  padding: 0 var(--ifm-pre-padding);
+.markdown {
+  --ifm-h1-line-height: 2;
+  --ifm-h2-line-height: 1.3;
+  --ifm-heading-line-height: 1;
+  --ifm-h1-vertical-rhythm-top: 4;
+  --ifm-h2-vertical-rhythm-top: 1.5;
+  --ifm-h3-vertical-rhythm-top: 1.5;
+  --ifm-heading-vertical-rhythm-top: 1.5;
+  --ifm-h1-vertical-rhythm-bottom: 1;
+  --ifm-heading-vertical-rhythm-bottom: 0.5;
 }
 
 .navbar {
@@ -78,5 +88,37 @@
         left: 1rem;
       }
     }
+  }
+}
+
+.container {
+  padding-top: 2rem;
+  font-size: 1.125rem;
+  h1 {
+    font-size: 3.75rem;
+  }
+  ul,
+  ol {
+    margin-top: 2rem;
+    ul,
+    ol {
+      margin-top: 0;
+    }
+  }
+}
+
+.pagination-nav {
+  margin-top: 4rem;
+  background: #ffffff;
+  box-shadow: 0px 2px 54px rgba(123, 116, 168, 0.1);
+  border-radius: 1.875rem;
+  padding: 1rem;
+  .pagination-nav__link {
+    border: none;
+  }
+  .pagination-nav__link--sublabel {
+    font-size: 1rem;
+    font-weight: 900;
+    margin-bottom: 0.5rem;
   }
 }
