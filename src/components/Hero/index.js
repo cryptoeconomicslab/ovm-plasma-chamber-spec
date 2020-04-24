@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./styles.module.scss";
 import Button from "../Button";
+import RoundDivider from "../RoundDivider";
 
 const features = [
   {
@@ -54,8 +55,7 @@ function Hero() {
             <Feature {...feature} key={i} />
           ))}
         </div>
-        <img src="/img/hero_divider.png" className={styles.img} />
-        <img src="/img/hero_divider_sp.png" className={styles.imgSp} />
+        <RoundDivider />
       </div>
     </div>
   );

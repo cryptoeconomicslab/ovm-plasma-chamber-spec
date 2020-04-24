@@ -6,12 +6,18 @@
   font-size: var(--top-headline-font-size);
   text-align: center;
   margin-bottom: 0.5rem;
+  @media screen and (max-width: 500px) {
+    text-align: left;
+  }
 }
 
 .desc {
   text-align: center;
   color: var(--sub-text-black);
   font-size: 1.125rem;
+  @media screen and (max-width: 500px) {
+    text-align: left;
+  }
 }
 
 .showcaseRoot {
@@ -93,7 +99,7 @@
 }
 
 .toolRoot {
-  background-color: #f8f9fb;
+  background-color: var(--background);
   padding: 6rem 2rem;
   @media screen and (max-width: 500px) {
     padding: 3rem 1.125rem;
