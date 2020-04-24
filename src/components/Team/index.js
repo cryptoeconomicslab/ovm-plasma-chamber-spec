@@ -1,7 +1,5 @@
 import React from "react";
-import Button from "../Button";
 import Card from "../Card";
-import styles from "./styles.module.scss";
 
 const cards = [
   {
@@ -22,16 +20,11 @@ const cards = [
     desc:
       "Jumped into a Ethereum Space in early 2018. Now developing coolest L2 apps at CEL. World traveler since high school, professional foodie since a baby.",
   },
-  {
-    name: "You",
-    img: "/img/team/profile.svg",
-    desc: "...and you might be a next one!",
-  },
 ];
 
 function Team() {
   return (
-    <div className={styles.root}>
+    <div>
       <p>
         Gazelle development is led by a small dedicated team working full time
         at Cryptoeconomics Lab. It also receives contributions from people all
@@ -47,19 +40,17 @@ function Team() {
           </div>
         ))}
       </div>
-      <div className="row">
-        <div className={styles.card}>
-          <p className={styles.header}>Yes, we are hiring!</p>
-          <p>
-            Cryptoeconomics Lab's R&D team is looking forward to meet someone
-            who are passionate about blockchain production.
-          </p>
-          {/* TODO: change color */}
-          <a href="https://www.cryptoeconomicslab.com" target="_blank">
-            <Button>Apply</Button>
-          </a>
-        </div>
-      </div>
+
+      <hr />
+
+      <p>
+        Cryptoeconomics Lab's R&D team is looking for someone to contribute to
+        the Gazelle! If you're interested, click&nbsp;
+        <a href="https://www.cryptoeconomicslab.com" target="_blank">
+          here
+        </a>
+        !
+      </p>
     </div>
   );
 }
