@@ -1,3 +1,5 @@
+const fa = require("@fortawesome/free-brands-svg-icons");
+
 module.exports = {
   title: "Gazelle",
   tagline: "The tagline of my site",
@@ -43,50 +45,52 @@ module.exports = {
       style: "dark",
       links: [
         {
-          title: "Docs",
+          title: "Home",
           items: [
             {
-              label: "Style Guide",
-              to: "docs/doc1",
+              label: "Showcase",
+              to: "/#showcase",
             },
             {
-              label: "Second Doc",
-              to: "docs/doc2",
+              label: "Roadmap",
+              to: "/#roadmap",
+            },
+            {
+              label: "Supporters",
+              to: "/#supporters",
             },
           ],
         },
         {
-          title: "Community",
+          title: "Resources",
           items: [
             {
-              label: "Stack Overflow",
-              href: "https://stackoverflow.com/questions/tagged/docusaurus",
+              label: "Docs",
+              to: "docs/Introduction",
             },
             {
-              label: "Discord",
-              href: "https://discordapp.com/invite/docusaurus",
+              label: "Community",
+              to: "communities/Support",
             },
-          ],
-        },
-        {
-          title: "Social",
-          items: [
             {
               label: "Blog",
-              to: "blog",
+              href: "https://medium.com/cryptoeconomics-lab",
             },
             {
-              label: "GitHub",
-              href: "https://github.com/facebook/docusaurus",
-            },
-            {
-              label: "Twitter",
-              href: "https://twitter.com/docusaurus",
+              label: "Github",
+              href: "https://github.com/cryptoeconomicslab",
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Cryptoeconomics Lab, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Cryptoeconomics Lab, Inc.`,
+      socials: [
+        { name: "twitter", link: "/", icon: fa.faTwitter },
+        { name: "medium", link: "/", icon: fa.faMedium },
+        { name: "telegram", link: "/", icon: fa.faTelegramPlane },
+        { name: "linkedin", link: "/", icon: fa.faLinkedin },
+        { name: "youtube", link: "/", icon: fa.faYoutube },
+      ],
     },
   },
   presets: [
