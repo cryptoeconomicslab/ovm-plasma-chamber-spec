@@ -17,7 +17,8 @@
 
   --ifm-code-font-size: 0.875rem;
 
-  --ifm-font-family-base: Roboto, sans-serif;
+  --ifm-font-family-base: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI,
+    Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
   --ifm-line-height-base: 1.7;
   --ifm-font-base-color: #25212d;
   --ifm-link-color: #2baef8;
@@ -34,8 +35,11 @@
   --ifm-navbar-link-hover-color: #fff;
   --ifm-navbar-background-color: #171619;
 
-  --ifm-menu-color: #8a8693;
+  --ifm-menu-color: #a6a1b1;
   --ifm-menu-color-active: #25212d;
+  --ifm-menu-link-sublist-icon: url("/img/icon_chevron_up.svg");
+
+  --ifm-contents-link-color: #a6a1b1;
 
   // CEL original
   --sub-text-white: rgba(255, 255, 255, 0.5);
@@ -116,11 +120,30 @@
   padding: 1rem;
   .pagination-nav__link {
     border: none;
+    &:hover {
+      .pagination-nav__link--label {
+        text-decoration: underline;
+      }
+    }
   }
   .pagination-nav__link--sublabel {
     font-size: 1rem;
     font-weight: 900;
     margin-bottom: 0.5rem;
+  }
+}
+
+.contents {
+  padding: 0 0.5rem;
+  .contents__link {
+    font-weight: 900;
+    &.contents__link--active,
+    &:hover {
+      color: var(--red);
+    }
+  }
+  &.contents__left-border {
+    border-left-width: 3px;
   }
 }
 
@@ -151,6 +174,57 @@
         }
         &:active {
           background-color: #000;
+        }
+      }
+    }
+  }
+}
+
+:not(.navbar-sidebar__items) {
+  > .menu {
+    padding-left: 1rem;
+    .menu__link {
+      &:hover,
+      &--active {
+        background-color: transparent !important;
+        color: var(--ifm-font-base-color);
+      }
+      &--active {
+        font-weight: 900;
+      }
+      &--sublist {
+        padding-left: 2rem;
+        &:after {
+          position: absolute;
+          left: 1rem;
+          background-size: 11px 7px;
+          background-repeat: no-repeat;
+          transform: rotate(180deg);
+          transform-origin: center;
+        }
+      }
+    }
+    .menu__list-item--collapsed {
+      .menu__link {
+        &--sublist {
+          &:after {
+            transform: rotate(90deg);
+            transform-origin: center;
+          }
+        }
+      }
+    }
+    .menu__list-item:not(.menu__list-item--collapsed) {
+      .menu__list {
+        position: relative;
+        &:after {
+          content: "";
+          top: 0.25rem;
+          left: -0.5rem;
+          width: 3px;
+          height: calc(100% - 0.5rem);
+          position: absolute;
+          background: var(--border);
         }
       }
     }

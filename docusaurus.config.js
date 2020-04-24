@@ -11,7 +11,7 @@ module.exports = {
   themeConfig: {
     disableDarkMode: true,
     prism: {
-      theme: require("prism-react-renderer/themes/nightOwl"),
+      theme: require("prism-react-renderer/themes/vsDark"),
     },
     navbar: {
       title: "Gazelle",
