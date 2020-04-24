@@ -13,7 +13,13 @@ function SubscribeForm(props) {
       {...props}
     >
       <input type="hidden" name="form-name" value="subscribe" />
-      <input type="text" name="email" placeholder="cel@example.com" required />
+      <input
+        type="text"
+        name="email"
+        className="form-control"
+        placeholder="cel@example.com"
+        required
+      />
       <Button type="submit">Subscribe</Button>
     </form>
   );

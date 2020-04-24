@@ -42,8 +42,8 @@ function Team() {
 
       <div className="row">
         {cards.map((card, i) => (
-          <div className="col col--4">
-            <Card {...card} key={i} />
+          <div className="col col--4" key={i}>
+            <Card {...card} />
           </div>
         ))}
       </div>

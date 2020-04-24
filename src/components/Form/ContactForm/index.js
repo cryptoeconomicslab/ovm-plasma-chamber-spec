@@ -13,8 +13,20 @@ function ContactForm(props) {
       {...props}
     >
       <input type="hidden" name="form-name" value="contact" />
-      <input type="text" name="name" placeholder="John Doe" required />
-      <input type="text" name="email" placeholder="cel@example.com" required />
+      <input
+        type="text"
+        name="name"
+        className="form-control"
+        placeholder="John Doe"
+        required
+      />
+      <input
+        type="text"
+        name="email"
+        className="form-control"
+        placeholder="cel@example.com"
+        required
+      />
       <textarea name="description" placeholder="Message here" required />
       <Button type="submit">Send</Button>
     </form>
