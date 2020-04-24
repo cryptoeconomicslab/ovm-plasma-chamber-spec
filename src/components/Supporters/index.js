@@ -12,7 +12,7 @@ const supporters = [
   },
   {
     img: "/img/supporters/web3_foundation.png",
-    title: "web3 foundation",
+    title: "Web3 Foundation",
   },
 ];
 
