@@ -24,7 +24,7 @@
   --ifm-link-color: #2baef8;
   --ifm-contents-border-color: rgba(0, 0, 0, 0.06);
 
-  --ifm-leading-desktop: 2.25;
+  --ifm-leading-desktop: 1.75;
 
   --ifm-heading-color: #25212d;
   --ifm-heading-font-weight: 900;
@@ -35,15 +35,18 @@
   --ifm-navbar-link-hover-color: #fff;
   --ifm-navbar-background-color: #171619;
 
-  --ifm-menu-color: #a6a1b1;
+  --ifm-menu-color: #a19cad;
   --ifm-menu-color-active: #25212d;
   --ifm-menu-link-sublist-icon: url("/img/icon_chevron_up.svg");
 
   --ifm-contents-link-color: #a6a1b1;
 
+  --ifm-blockquote-padding-vertical: 1.5rem;
+  --ifm-blockquote-padding-horizontal: 1.5rem;
+
   // CEL original
-  --sub-text-white: rgba(255, 255, 255, 0.5);
-  --sub-text-black: rgba(0, 0, 0, 0.5);
+  --sub-text-white: rgba(255, 255, 255, 0.6);
+  --sub-text-black: rgba(0, 0, 0, 0.6);
   --red: #eb3959;
   --blue: #2baef8;
   --yellow: #eff313;
@@ -64,7 +67,11 @@
   --ifm-h3-vertical-rhythm-top: 1.5;
   --ifm-heading-vertical-rhythm-top: 1.5;
   --ifm-h1-vertical-rhythm-bottom: 1;
-  --ifm-heading-vertical-rhythm-bottom: 0.5;
+  --ifm-heading-vertical-rhythm-bottom: 0.85;
+}
+
+blockquote {
+  background-color: #f3f6f9;
 }
 
 .navbar {
