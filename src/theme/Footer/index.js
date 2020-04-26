@@ -54,11 +54,11 @@ function Footer() {
           </form>
           <ul className={styles.socials}>
             {socials.map(({ link, name, icon }) => (
-              <li className={styles.social}>
+              <li className={styles.social} key={name}>
                 <a
                   href={link}
                   target="_blank"
-                  key={name}
+                  rel="noopener"
                   className={styles.social__link}
                 >
                   <FontAwesomeIcon icon={icon} size="2x" />
