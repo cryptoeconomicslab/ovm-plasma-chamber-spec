@@ -69,11 +69,11 @@ module.exports = {
           items: [
             {
               label: "Docs",
-              to: "docs/Introduction",
+              to: "/docs/Introduction",
             },
             {
               label: "Community",
-              to: "communities/Support",
+              to: "/communities/Support",
             },
             {
               label: "Blog",
