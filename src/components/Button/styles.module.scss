@@ -11,7 +11,7 @@
   border-radius: 5px;
   border: none;
   color: rgba(255, 255, 255, 0.9);
-  padding: 1.25rem 4rem;
+  padding: 1em 4em;
   font-size: 1.125rem;
   font-weight: 900;
   cursor: pointer;
@@ -20,6 +20,11 @@
     background-color: #31309c;
     color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
+  }
+  &.inline {
+    font-size: 1rem;
+    padding-left: 2em;
+    padding-right: 2em;
   }
   @media screen and (max-width: 500px) {
     width: 100%;

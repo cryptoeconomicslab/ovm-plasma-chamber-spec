@@ -21,9 +21,15 @@ function Home() {
       description="Description will go into a meta tag in <head />"
     >
       <Hero />
-      <Showcase />
-      <Roadmap />
-      <Supporters />
+      <section id="showcase">
+        <Showcase />
+      </section>
+      <section id="roadmap">
+        <Roadmap />
+      </section>
+      <section id="supporters">
+        <Supporters />
+      </section>
       <div className={styles.cta}>
         <RoundDivider top />
         <Button to="docs/getting-started/Try_Gazelle_In_Local">
