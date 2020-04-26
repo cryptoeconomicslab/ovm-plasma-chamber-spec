@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./styles.module.scss";
 import Button from "../../Button";
 
-function SubscribeForm(props) {
+function SubscribeForm() {
   return (
     <form
       className={styles.root}
@@ -10,7 +10,6 @@ function SubscribeForm(props) {
       name="subscribe"
       method="POST"
       data-netlify="true"
-      {...props}
     >
       <input type="hidden" name="form-name" value="subscribe" />
       <input

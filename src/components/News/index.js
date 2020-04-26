@@ -8,13 +8,21 @@ function News() {
       <div className={styles.twitter}>
         <h2>Twitter</h2>
         <p>
-          <a href="https://twitter.com/cryptoeconlab" target="_blank">
+          <a
+            href="https://twitter.com/cryptoeconlab"
+            target="_blank"
+            rel="noopener"
+          >
             Follow @cryptoeconlab on Twitter
           </a>
           to get the up-to-date news. Tweet us any comments, we are excited to
           see some unique usecase.
           <br />
-          <a href="https://twitter.com/cryptoeconlab" target="_blank">
+          <a
+            href="https://twitter.com/cryptoeconlab"
+            target="_blank"
+            rel="noopener"
+          >
             -> Follow @cryptoeconlab on Twitter
           </a>
         </p>
@@ -36,6 +44,7 @@ function News() {
           <a
             href="https://www.youtube.com/channel/UCp1w3jQNBDD2Pz4kool36Pw"
             target="_blank"
+            rel="noopener"
           >
             -> Visit Gazelle's YouTube page.
           </a>
@@ -47,7 +56,11 @@ function News() {
           Gazelle core dev team has posted some articles explaining the
           technology in the framework.
           <br />
-          <a href="https://medium.com/cryptoeconomics-lab" target="_blank">
+          <a
+            href="https://medium.com/cryptoeconomics-lab"
+            target="_blank"
+            rel="noopener"
+          >
             -> Go read blog posts.
           </a>
         </p>

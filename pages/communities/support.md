@@ -16,7 +16,7 @@ If you come up with any discussion topic about the Gazelle implementation, pleas
 
 ## Question
 
-If you are stuck with some trouble while developing with Gazelle, you can ask peers and Cryptoeconomics Lab developers about the issue on [Stackoverflow] with #Gazelle tag in the post.
+If you are stuck with some trouble while developing with Gazelle, you can ask peers and Cryptoeconomics Lab developers about the issue on [Stackoverflow](https://stackoverflow.com/) with #Gazelle tag in the post.
 
 ## Bug Report
 

@@ -34,8 +34,8 @@ function Team() {
       <hr />
 
       <div className="row">
-        {cards.map((card, i) => (
-          <div className="col col--4" key={i}>
+        {cards.map((card) => (
+          <div className="col col--4" key={card.name}>
             <Card {...card} />
           </div>
         ))}
@@ -46,7 +46,11 @@ function Team() {
       <p>
         Cryptoeconomics Lab's R&D team is looking for someone to contribute to
         the Gazelle! If you're interested, click&nbsp;
-        <a href="https://www.cryptoeconomicslab.com" target="_blank">
+        <a
+          href="https://www.cryptoeconomicslab.com"
+          target="_blank"
+          rel="noopener"
+        >
           here
         </a>
         !
