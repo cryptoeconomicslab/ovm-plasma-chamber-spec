@@ -23,30 +23,30 @@ async function deposit(client, amount) {
 }
 ```
 
-## 3-2. Add deposit function to the CUI
+## 3-2. Add deposit function to the CLI
 
-In order to enable invoking `deposit` function from the CUI Wallet, write a process to execute the `deposit` function when the deposit is entered in ReadLine.
+In order to enable invoking `deposit` function from the CLI Wallet, write a process to execute the `deposit` function when the deposit is entered in ReadLine.
 
 ```javascript
-function cuiWalletReadLine(client) {
+function cliWalletReadLine(client) {
   rl.question(">> ", async (input) => {
     const args = input.split(/\s+/);
     const command = args.shift();
     switch (command) {
       case "deposit":
         await deposit(client, args[0]);
-        cuiWalletReadLine(client);
+        cliWalletReadLine(client);
         break;
       default:
         console.log(`${command} is not found`);
-        cuiWalletReadLine(client);
+        cliWalletReadLine(client);
     }
   });
 }
 
 async function main() {
   const client = await startLightClient();
-  cuiWalletReadLine(client);
+  cliWalletReadLine(client);
 }
 
 main();
@@ -54,7 +54,7 @@ main();
 
 ## 3-3. Deposit your ether
 
-Launch the CUI Wallet and deposit your Ether into Plasma!
+Launch the CLI Wallet and deposit your Ether into Plasma!
 
 Start the app with the node command and try `deposit <amount>`.
 
@@ -109,14 +109,14 @@ async function startLightClient() {
   return lightClient;
 }
 
-function cuiWalletReadLine(client) {
+function cliWalletReadLine(client) {
   rl.question(">> ", async (input) => {
     const args = input.split(/\s+/);
     const command = args.shift();
     switch (command) {
       case "deposit":
         await deposit(client, args[0]);
-        cuiWalletReadLine(client);
+        cliWalletReadLine(client);
         break;
       case "quit":
         console.log("Bye.");
@@ -124,14 +124,14 @@ function cuiWalletReadLine(client) {
         process.exit();
       default:
         console.log(`${command} is not found`);
-        cuiWalletReadLine(client);
+        cliWalletReadLine(client);
     }
   });
 }
 
 async function main() {
   const client = await startLightClient();
-  cuiWalletReadLine(client);
+  cliWalletReadLine(client);
 }
 
 main();
@@ -145,4 +145,4 @@ You have now deposited your Ether to Plasma.
 
 Let's see if your deposit was successfully completed, by checking your balance.
 
-Move on to the [4. Show balance](tutorial/cui-wallet/show-balance.md) step.
+Move on to the [4. Show balance](Show_Balance) step.

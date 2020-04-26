@@ -58,31 +58,31 @@ async function finalizeExit(client, index) {
 }
 ```
 
-## 6-4. Add exit functions to the CUI
+## 6-4. Add exit functions to the CLI
 
-To call the `exit`, `getExitList` and `finalizeExit` functions in the CUI Wallet, add some processing to the ReadLine.
+To call the `exit`, `getExitList` and `finalizeExit` functions in the CLI Wallet, add some processing to the ReadLine.
 
 ```javascript
-function cuiWalletReadLine(client) {
+function cliWalletReadLine(client) {
   rl.question(">> ", async (input) => {
     const args = input.split(/\s+/);
     const command = args.shift();
     switch (command) {
       case "getexitlist":
         await getExitList(client);
-        cuiWalletReadLine(client);
+        cliWalletReadLine(client);
         break;
       case "exit":
         await exit(client, args[0]);
-        cuiWalletReadLine(client);
+        cliWalletReadLine(client);
         break;
       case "finalizeexit":
         await finalizeExit(client, args[0]);
-        cuiWalletReadLine(client);
+        cliWalletReadLine(client);
         break;
       default:
         console.log(`${command} is not found`);
-        cuiWalletReadLine(client);
+        cliWalletReadLine(client);
     }
   });
 }
@@ -90,7 +90,7 @@ function cuiWalletReadLine(client) {
 
 ## 6-5. Exit ether
 
-Launch the CUI Wallet and start the exit process!
+Launch the CLI Wallet and start the exit process!
 
 Start the app with node command and try `exit <amount>`.
 
@@ -209,38 +209,38 @@ async function startLightClient() {
   return lightClient;
 }
 
-function cuiWalletReadLine(client) {
+function cliWalletReadLine(client) {
   rl.question(">> ", async (input) => {
     const args = input.split(/\s+/);
     const command = args.shift();
     switch (command) {
       case "deposit":
         await deposit(client, args[0]);
-        cuiWalletReadLine(client);
+        cliWalletReadLine(client);
         break;
       case "getbalance":
         await getBalance(client);
-        cuiWalletReadLine(client);
+        cliWalletReadLine(client);
         break;
       case "getl1balance":
         await getL1Balance(client);
-        cuiWalletReadLine(client);
+        cliWalletReadLine(client);
         break;
       case "transfer":
         await transfer(client, args[0], args[1]);
-        cuiWalletReadLine(client);
+        cliWalletReadLine(client);
         break;
       case "getexitlist":
         await getExitList(client);
-        cuiWalletReadLine(client);
+        cliWalletReadLine(client);
         break;
       case "exit":
         await exit(client, args[0]);
-        cuiWalletReadLine(client);
+        cliWalletReadLine(client);
         break;
       case "finalizeexit":
         await finalizeExit(client, args[0]);
-        cuiWalletReadLine(client);
+        cliWalletReadLine(client);
         break;
       case "quit":
         console.log("Bye.");
@@ -248,14 +248,14 @@ function cuiWalletReadLine(client) {
         process.exit();
       default:
         console.log(`${command} is not found`);
-        cuiWalletReadLine(client);
+        cliWalletReadLine(client);
     }
   });
 }
 
 async function main() {
   const client = await startLightClient();
-  cuiWalletReadLine(client);
+  cliWalletReadLine(client);
 }
 
 main();
@@ -263,10 +263,10 @@ main();
 
 </details>
 
-## Tutorial Gazelle CUI Wallet - The End
+## Tutorial Gazelle CLI Wallet - The End
 
 Congratulations!
-Now we've developed a CUI Plasma Wallet with basic functions from deposit to exit!
+Now we've developed a CLI Plasma Wallet with basic functions from deposit to exit!
 
 Once again, this tutorial and the framework is not production-ready yet. Please refrain from using it on the main net until we announce the alpha version and it is ready for production use.
 

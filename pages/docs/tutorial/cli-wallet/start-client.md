@@ -83,7 +83,7 @@ async function startLightClient() {
   return lightClient;
 }
 
-function cuiWalletReadLine() {
+function cliWalletReadLine() {
   rl.question(">> ", async (input) => {
     const args = input.split(/\s+/);
     const command = args.shift();
@@ -94,13 +94,13 @@ function cuiWalletReadLine() {
         process.exit();
       default:
         console.log(`${command} is not found`);
-        cuiWalletReadLine();
+        cliWalletReadLine();
     }
   });
 }
 
 function main() {
-  cuiWalletReadLine();
+  cliWalletReadLine();
 }
 
 main();

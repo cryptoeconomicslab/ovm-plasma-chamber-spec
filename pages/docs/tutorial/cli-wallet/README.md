@@ -33,6 +33,6 @@ Once you complete this tutorial, you will be able to create a wallet that enable
 
 ## Go to the next step!
 
-Let's implement CUI Plasma Wallet application together!
+Let's implement CLI Plasma Wallet application together!
 
 Move on to the [Setup](Setup) step.
