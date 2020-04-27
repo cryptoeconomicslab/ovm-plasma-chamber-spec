@@ -17,7 +17,7 @@ Get the aggregator from [here](https://github.com/cryptoeconomicslab/wakkanay).
 And then, start it with Docker.
 
 ```bash
-$ git clone https://github.com/cryptoeconomicslab/wakkanay.git
+$ git clone -b handson https://github.com/cryptoeconomicslab/wakkanay.git
 $ cd wakkanay
 $ cp -p integration-test/aggregator/.sample.env integration-test/aggregator/.env
 $ npm run docker:build

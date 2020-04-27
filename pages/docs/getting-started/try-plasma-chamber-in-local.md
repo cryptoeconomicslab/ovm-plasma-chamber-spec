@@ -20,7 +20,7 @@ For this quick start document using Typescript SDK, you need Node.js with the ve
 Get Plasma aggregator from [wakkanay repository](https://github.com/cryptoeconomicslab/wakkanay).
 
 ```bash
-$ git clone https://github.com/cryptoeconomicslab/wakkanay.git
+$ git clone -b handson https://github.com/cryptoeconomicslab/wakkanay.git
 $ cd wakkanay
 $ cp -p integration-test/aggregator/.sample.env integration-test/aggregator/.env
 $ npm run docker:build
