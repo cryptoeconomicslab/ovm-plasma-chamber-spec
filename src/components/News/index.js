@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./styles.module.scss";
 import SubscribeForm from "../Form/SubscribeForm";
+import YouTube from "../YouTube";
 
 function News() {
   return (
@@ -33,13 +34,7 @@ function News() {
           Go to our YouTube page and watch some talks explaining OVM and
           framework in general. Also there are some demo videos.
         </p>
-        <iframe
-          className={styles.iframe}
-          src="https://www.youtube.com/embed/St1-YmucrTM"
-          frameBorder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe>
+        <YouTube youtubeId="St1-YmucrTM" />
         <p>
           <a
             href="https://www.youtube.com/channel/UCp1w3jQNBDD2Pz4kool36Pw"

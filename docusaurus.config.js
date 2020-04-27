@@ -69,11 +69,11 @@ module.exports = {
           items: [
             {
               label: "Docs",
-              to: "docs/Introduction",
+              to: "/docs/Introduction",
             },
             {
               label: "Community",
-              to: "communities/Support",
+              to: "/communities/Support",
             },
             {
               label: "Blog",
@@ -113,6 +113,6 @@ module.exports = {
   ],
   plugins: ["docusaurus-plugin-sass"],
   stylesheets: [
-    "https://fonts.googleapis.com/css2?family=Roboto:wght@500;700;900&display=swap",
+    "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap",
   ],
 };
