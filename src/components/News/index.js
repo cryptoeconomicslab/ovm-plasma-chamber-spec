@@ -1,12 +1,11 @@
 import React from "react";
-import styles from "./styles.module.scss";
 import SubscribeForm from "../Form/SubscribeForm";
 import YouTube from "../YouTube";
 
 function News() {
   return (
     <div>
-      <div className={styles.twitter}>
+      <div>
         <h2>Twitter</h2>
         <p>
           <a
@@ -28,7 +27,7 @@ function News() {
           </a>
         </p>
       </div>
-      <div className={styles.youtube}>
+      <div>
         <h2>YouTube</h2>
         <p>
           Go to our YouTube page and watch some talks explaining OVM and
@@ -45,7 +44,7 @@ function News() {
           </a>
         </p>
       </div>
-      <div className={styles.blog}>
+      <div>
         <h2>Blog</h2>
         <p>
           Gazelle core dev team has posted some articles explaining the
@@ -60,7 +59,7 @@ function News() {
           </a>
         </p>
       </div>
-      <div className={styles.newsletters}>
+      <div>
         <h2>Newsletters</h2>
         <p>
           Subscribe to Gazelle's newsletters mailing list for getting the latest

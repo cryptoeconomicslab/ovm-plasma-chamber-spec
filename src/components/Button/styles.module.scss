@@ -25,6 +25,10 @@
     font-size: 1rem;
     padding-left: 2em;
     padding-right: 2em;
+    box-shadow: none;
+  }
+  &.full {
+    width: 100%;
   }
   @media screen and (max-width: 500px) {
     width: 100%;

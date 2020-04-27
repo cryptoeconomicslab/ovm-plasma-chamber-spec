@@ -52,7 +52,9 @@
   --yellow: #eff313;
   --purple: #6356f5;
   --border: rgba(0, 0, 0, 0.1);
-  --background: #f8f9fb;
+  --placeholder: rgba(0, 0, 0, 0.1);
+  --placeholder-white: rgba(255, 255, 255, 0.1);
+  --background: #f3f5f6;
   --gradient: linear-gradient(169.29deg, #211d2c 0%, #161516 100%);
   --top-headline-font-size: 3.75rem;
   --container-width: 73.75rem;
@@ -102,17 +104,19 @@ blockquote {
   }
 }
 
-input.form-control {
+.form-control {
   width: 100%;
   padding: 1rem;
   border-radius: 4px;
   font-size: 1rem;
-  color: #495057;
-  background-color: #fff;
-  border: 1px solid #ced4da;
-
-  @media screen and (max-width: 768px) {
-    display: block;
+  background-color: var(--background);
+  border: 1px solid transparent;
+  &:focus {
+    outline: none;
+    border-color: var(--purple);
+  }
+  &::placeholder {
+    color: var(--placeholder);
   }
 }
 
