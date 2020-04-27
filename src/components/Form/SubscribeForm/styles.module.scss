@@ -7,43 +7,25 @@
   }
 }
 
-input {
+.input {
   margin-right: 0.5rem;
+  flex: 1;
 
-  @media screen and (max-width: 768px) {
-    display: block;
-    width: 100%;
+  @media screen and (max-width: 500px) {
+    margin-bottom: 0.5rem;
   }
 
   &.footer {
     color: #fff;
     background: rgba(255, 255, 255, 0.07);
-    border: 1px solid transparent;
-    flex: 1;
     &::placeholder {
-      color: rgba(255, 255, 255, 0.1);
-    }
-    &:focus {
-      outline: none;
-      border-color: var(--purple);
-    }
-
-    @media screen and (max-width: 500px) {
-      margin-bottom: 1rem;
+      color: var(--placeholder-white);
     }
   }
 }
 
-button {
-  padding: 0.6rem 2.5rem;
-  font-size: 1rem;
+.button {
   font-weight: normal !important;
-
-  @media screen and (max-width: 768px) {
-    margin-top: 0.5rem;
-    display: block;
-  }
-
   &.footer {
     flex-basis: 3rem;
   }

@@ -4,23 +4,27 @@ import classnames from "classnames";
 import styles from "./styles.module.scss";
 
 function Button(props) {
-  const { to, inline, children } = props;
+  const { to, inline, full, className, children, ...restProps } = props;
   return (
     <>
       {!to ? (
         <button
-          {...props}
-          className={classnames(styles.root, {
+          /* Exceptionally use props-spreading in order to use like native <button> */
+          {...restProps}
+          className={classnames(className, styles.root, {
             [styles.inline]: inline,
+            [styles.full]: full,
           })}
         >
           {children}
         </button>
       ) : (
         <Link
-          {...props}
-          className={classnames(styles.root, {
+          {...restProps}
+          to={to}
+          className={classnames(className, styles.root, {
             [styles.inline]: inline,
+            [styles.full]: full,
           })}
         >
           {children}
