@@ -17,11 +17,12 @@ For this quick start document using Typescript SDK, you need Node.js with the ve
 
 ### 1. Run test aggregator
 
-Get [plasma-aggregator](https://github.com/cryptoeconomicslab/wakkanay-plasma-aggregator).
+Get Plasma aggregator from [wakkanay repository](https://github.com/cryptoeconomicslab/wakkanay).
 
 ```bash
-$ git clone git@github.com:cryptoeconomicslab/wakkanay-plasma-aggregator.git
-$ cd wakkanay-plasma-aggregator
+$ git clone https://github.com/cryptoeconomicslab/wakkanay.git
+$ cd wakkanay
+$ cp -p integration-test/aggregator/.sample.env integration-test/aggregator/.env
 $ npm run docker:build
 $ npm run docker:cp
 $ npm run docker:start
