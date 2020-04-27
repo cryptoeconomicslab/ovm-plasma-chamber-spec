@@ -1,83 +1,68 @@
 ---
-id: Show_Balance
-title: 4. Show balance
-sidebar_label: Show balance
+id: Transfer
+title: 5. Transfer
+sidebar_label: Transfer
 ---
 
-In this chapter, we will implement the methods to check the balances in the main chain and Plasma chain.
+In this chapter, we'll be implementing remittances on Plasma.
 
-Let's see if you deposited successfully!
+## 5-1. Implement transfer
 
-## 4-1. Implement to get your l2 balance
+You can call the `transfer` method from the plasma light client.
 
-Just call the `getBalance` function of the plasma light client to easily check your balance.
+You can easily send the tokens on Plasma by simply passing the amount you want to send, DepositContractAddress and the recipient as arguments!
 
-[Plasma Light Client API reference | getBalance](/docs/api/Plasma_Light_Client#getbalance)
+[Plasma Light Client API reference | transfer](/docs/api/Plasma_Light_Client#transfer)
 
 ```javascript
-async function getBalance(client) {
-  const balance = await client.getBalance();
-  console.log(`${client.address}:`, balance);
+async function transfer(client, amount, to) {
+  console.log("transfer:", to, amount);
+  await client.transfer(amount, DEPOSIT_CONTRACT_ADDRESS, to);
 }
 ```
 
-## 4-2. Implement to get your l1 balance
+## 5-2. Add transfer function to the CLI
 
-In order to make sure that your main chain balance has been properly reduced after the deposit, you should also prepare a method to obtain the main chain balance.
-
-```javascript
-async function getL1Balance(client) {
-  const balance = await client.wallet.getL1Balance();
-  console.log(`${client.address}:`, balance.value.raw, balance.symbol);
-}
-```
-
-## 4-3. Add getBalance functions to the CUI
-
-To call the `getBalance` function in the CUI Wallet, add some processing to the ReadLine.
+To call the `transfer` function in the CLI Wallet, add some processing to the ReadLine.
 
 ```javascript
-function cuiWalletReadLine(client) {
+function cliWalletReadLine(client) {
   rl.question(">> ", async (input) => {
     const args = input.split(/\s+/);
     const command = args.shift();
     switch (command) {
-      case "getbalance":
-        await getBalance(client);
-        cuiWalletReadLine(client);
-        break;
-      case "getl1balance":
-        await getL1Balance(client);
-        cuiWalletReadLine(client);
+      case "transfer":
+        await transfer(client, args[0], args[1]);
+        cliWalletReadLine(client);
         break;
       default:
         console.log(`${command} is not found`);
-        cuiWalletReadLine(client);
+        cliWalletReadLine(client);
     }
   });
 }
 ```
 
-## 4-4. Check your l2 balance
+## 5-3. Transfer ether
 
-Launch the CUI Wallet and check your balance of Layer2!
+Now, let's launch the CLI Wallet and actually make the transfer!
 
-Start the app with the node command and try `getbalance`.
+Please enter `transfer <amount> <to>` and transfer Ether to the other party.
+
+```
+$ node app.js
+>> transfer 10 0xf17f52151EbEF6C7334FAD080c5704D77216b732
+```
+
+## 5-4. Check your balance
+
+If your balance is down, you've probably succeeded in transferring the money!
+
+\* If you can, launch another Wallet at the destination address and check the balance. That's more certain.
 
 ```
 $ node app.js
 >> getbalance
-```
-
-## 4-5. Check your l1 balance
-
-Also, check your balance in the main chain was reduced.
-
-Try `getl1balance`.
-
-```
-$ node app.js
->> getl1balance
 ```
 
 ## Current source code
@@ -118,6 +103,11 @@ async function getL1Balance(client) {
   console.log(`${client.address}:`, balance.value.raw, balance.symbol);
 }
 
+async function transfer(client, amount, to) {
+  console.log("transfer:", to, amount);
+  await client.transfer(amount, DEPOSIT_CONTRACT_ADDRESS, to);
+}
+
 async function startLightClient() {
   const kvs = new LevelKeyValueStore(Bytes.fromString("plasma_light_client"));
   const wallet = new ethers.Wallet(
@@ -134,22 +124,26 @@ async function startLightClient() {
   return lightClient;
 }
 
-function cuiWalletReadLine(client) {
+function cliWalletReadLine(client) {
   rl.question(">> ", async (input) => {
     const args = input.split(/\s+/);
     const command = args.shift();
     switch (command) {
       case "deposit":
         await deposit(client, args[0]);
-        cuiWalletReadLine(client);
+        cliWalletReadLine(client);
         break;
       case "getbalance":
         await getBalance(client);
-        cuiWalletReadLine(client);
+        cliWalletReadLine(client);
         break;
       case "getl1balance":
         await getL1Balance(client);
-        cuiWalletReadLine(client);
+        cliWalletReadLine(client);
+        break;
+      case "transfer":
+        await transfer(client, args[0], args[1]);
+        cliWalletReadLine(client);
         break;
       case "quit":
         console.log("Bye.");
@@ -157,14 +151,14 @@ function cuiWalletReadLine(client) {
         process.exit();
       default:
         console.log(`${command} is not found`);
-        cuiWalletReadLine(client);
+        cliWalletReadLine(client);
     }
   });
 }
 
 async function main() {
   const client = await startLightClient();
-  cuiWalletReadLine(client);
+  cliWalletReadLine(client);
 }
 
 main();
@@ -174,8 +168,8 @@ main();
 
 ## Go to the next step!
 
-Now that you've checked your balance and confirmed that the token has been properly deposited to Plasma, right?
+Now you can transfer funds in Plasma chain!
 
-In the next chapter, we'll be transferring tokens on Plasma!
+In the last chapter, we'll be working on withdrawing some tokens back to the main chain.
 
-Move on to the [5. Transfer](Transfer) step.
+Move on to the [6. Exit](Exit) step.

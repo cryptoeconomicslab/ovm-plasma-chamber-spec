@@ -44,9 +44,9 @@ $ npm i @cryptoeconomicslab/eth-plasma-light-client @cryptoeconomicslab/primitiv
 $ cp -p <your wakkanay-plasma-aggregator path>/config.local.json ./config.local.json
 ```
 
-### Prepare the ReadLine for CUI application
+### Prepare the ReadLine for CLI application
 
-This is the initial settings of ReadLine, which is required to implement an interactive CUI Wallet.
+This is the initial settings of ReadLine, which is required to implement an interactive CLI Wallet.
 
 ```javascript
 const readline = require("readline");
@@ -56,7 +56,7 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
-function cuiWalletReadLine() {
+function cliWalletReadLine() {
   rl.question(">> ", (input) => {
     const args = input.split(/\s+/);
     const command = args.shift();
@@ -67,13 +67,13 @@ function cuiWalletReadLine() {
         process.exit();
       default:
         console.log(`${command} is not found`);
-        cuiWalletReadLine();
+        cliWalletReadLine();
     }
   });
 }
 
 function main() {
-  cuiWalletReadLine();
+  cliWalletReadLine();
 }
 
 main();

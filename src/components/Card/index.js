@@ -6,7 +6,7 @@ function Card(props) {
     <div className={styles.root}>
       <img src={props.img} alt={props.name} />
       <p className={styles.name}>{props.name}</p>
-      <p className={styles.desc}>{props.children}</p>
+      <p className={styles.desc}>{props.desc}</p>
     </div>
   );
 }

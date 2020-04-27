@@ -1,10 +1,10 @@
 ---
 id: README
-title: Tutorial Gazelle CUI wallet
+title: Tutorial CLI wallet
 sidebar_label: Introduction
 ---
 
-In this tutorial, we will implement the CUI Plasma Wallet using Gazelle.
+In this tutorial, we will implement the CLI Wallet using Gazelle.
 
 Once you complete this tutorial, you will be able to create a wallet that enables you to do the following.
 
@@ -33,6 +33,6 @@ Once you complete this tutorial, you will be able to create a wallet that enable
 
 ## Go to the next step!
 
-Let's implement CUI Plasma Wallet application together!
+Let's implement CLI Plasma Wallet application together!
 
 Move on to the [Setup](Setup) step.
