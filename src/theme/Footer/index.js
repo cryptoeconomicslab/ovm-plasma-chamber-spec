@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import styles from "./styles.module.scss";
 import Button from "../../components/Button";
+import SubscribeForm from "../../components/Form/SubscribeForm";
 
 function Footer() {
   const context = useDocusaurusContext();
@@ -46,12 +47,7 @@ function Footer() {
         ))}
         <div className={`${styles.column} ${styles.columnExpand}`}>
           <h3 className={styles.title}>Sign up for our updates</h3>
-          <form className={styles.form}>
-            <input className={styles.input} placeholder="cel@example.com" />
-            <Button inline="true" className={styles.btn}>
-              Subscribe
-            </Button>
-          </form>
+          <SubscribeForm isFooter={true} />
           <ul className={styles.socials}>
             {socials.map(({ link, name, icon }) => (
               <li className={styles.social} key={name}>

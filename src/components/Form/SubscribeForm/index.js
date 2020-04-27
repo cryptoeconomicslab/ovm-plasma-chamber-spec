@@ -2,7 +2,8 @@ import React from "react";
 import styles from "./styles.module.scss";
 import Button from "../../Button";
 
-function SubscribeForm() {
+function SubscribeForm(props) {
+  const { isFooter } = props;
   return (
     <form
       className={styles.root}
@@ -15,11 +16,17 @@ function SubscribeForm() {
       <input
         type="text"
         name="email"
-        className="form-control"
+        className={`form-control ${isFooter ? styles.footer : ""}`}
         placeholder="cel@example.com"
         required
       />
-      <Button type="submit">Subscribe</Button>
+      <Button
+        inline="true"
+        type="submit"
+        className={isFooter ? styles.footer : ""}
+      >
+        Subscribe
+      </Button>
     </form>
   );
 }

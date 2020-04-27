@@ -1,26 +1,51 @@
 .root {
   display: flex;
+  margin: 1.5rem 0;
+
+  @media screen and (max-width: 500px) {
+    display: block;
+  }
+}
+
+input {
+  margin-right: 0.5rem;
 
   @media screen and (max-width: 768px) {
     display: block;
+    width: 100%;
   }
 
-  input {
-    @media screen and (max-width: 768px) {
-      display: block;
-      width: 90%;
+  &.footer {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid transparent;
+    flex: 1;
+    border: none;
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.1);
+    }
+    &:focus {
+      outline: none;
+      border-color: var(--purple);
+    }
+
+    @media screen and (max-width: 500px) {
+      margin-bottom: 1rem;
     }
   }
+}
 
-  button {
-    padding: 0.6rem 2.5rem;
-    font-size: 1rem;
-    font-weight: normal;
+button {
+  padding: 0.6rem 2.5rem;
+  font-size: 1rem;
+  font-weight: normal !important;
 
-    @media screen and (max-width: 768px) {
-      margin-top: 0.5rem;
-      display: block;
-      width: 90%;
-    }
+  @media screen and (max-width: 768px) {
+    margin-top: 0.5rem;
+    display: block;
+  }
+
+  &.footer {
+    flex-basis: 3rem;
   }
 }

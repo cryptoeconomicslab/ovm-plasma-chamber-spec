@@ -66,7 +66,7 @@ function News() {
           Subscribe to Gazelle's newsletters mailing list for getting the latest
           updates.
         </p>
-        <SubscribeForm />
+        <SubscribeForm isFooter={false} />
       </div>
     </div>
   );
