@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "../Card";
+import styles from "./styles.module.scss";
 
 const cards = [
   {
@@ -24,28 +25,22 @@ const cards = [
 
 function Team() {
   return (
-    <div>
+    <div className={styles.root}>
       <p>
         Gazelle development is led by a small dedicated team working full time
         at Cryptoeconomics Lab. It also receives contributions from people all
         over the world.
       </p>
 
-      <hr />
-
-      <div className="row">
+      <div className={styles.row}>
         {cards.map((card) => (
-          <div className="col col--4" key={card.name}>
-            <Card {...card} />
-          </div>
+          <Card className={styles.cell} {...card} />
         ))}
       </div>
 
-      <hr />
-
       <p>
-        Cryptoeconomics Lab's R&D team is looking for someone to contribute to
-        the Gazelle! If you're interested, click&nbsp;
+        Cryptoeconomics Lab's R&amp;D team is looking for someone to contribute
+        to the Gazelle! If you're interested, click&nbsp;
         <a
           href="https://www.cryptoeconomicslab.com"
           target="_blank"

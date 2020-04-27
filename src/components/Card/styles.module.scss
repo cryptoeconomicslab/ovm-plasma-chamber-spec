@@ -1,29 +1,60 @@
 .root {
   padding-top: 0.5rem;
+}
 
-  img {
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-    border-radius: 8px;
-    margin: 0 auto;
+.imgWrap {
+  position: relative;
+  overflow: hidden;
+  &::before,
+  &::after {
     display: block;
-
-    @media screen and (max-width: 768px) {
-      width: 320px;
+    content: "";
+    position: absolute;
+    border-width: 3rem;
+    border-style: solid;
+    @media screen and (max-width: 600px) {
+      border-width: 20vw;
     }
   }
-
-  .name {
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin: 0.5rem 0;
+  &::after {
+    z-index: 1;
+    top: -7.5%;
+    left: 20%;
+    transform: rotate(135deg);
+    transform-origin: top left;
+    border-color: #fff transparent transparent transparent;
   }
-
-  .desc {
-    @media screen and (max-width: 768px) {
-      text-align: center;
-    }
+  &::before {
+    z-index: 1;
+    top: auto;
+    left: auto;
+    bottom: -7.5%;
+    right: 20%;
+    transform: rotate(135deg);
+    transform-origin: bottom right;
+    border-color: transparent transparent #fff transparent;
   }
+}
+
+.img {
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  position: relative;
+}
+
+.name {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin: 1.5rem 0 0.75rem;
+  line-height: 1.2;
+  @media screen and (max-width: 600px) {
+    text-align: left;
+  }
+}
+
+.desc {
+  color: var(--sub-text-black);
+  font-size: 0.875rem;
 }
