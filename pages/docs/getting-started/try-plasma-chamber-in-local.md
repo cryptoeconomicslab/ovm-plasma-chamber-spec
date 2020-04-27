@@ -7,7 +7,7 @@ sidebar_label: Try Gazelle in local
 Following this document, you will be able to build secure and scalable Dapps using Plasma.
 For this quick start document using Typescript SDK, you need Node.js with the version later than v.10.x.
 
-## Prerequistes
+## Prerequisites
 
 - Python2.7
 - Node v10.x
