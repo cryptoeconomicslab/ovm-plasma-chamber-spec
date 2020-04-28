@@ -11,7 +11,7 @@ import RoundDivider from "../components/RoundDivider";
 function Home() {
   return (
     <Layout
-      title={`OVM Plasma Framework`}
+      title="OVM Plasma Framework"
       description="Gazelle is a scaling technology for blockchain based on Plasma and OVM. Current scope of it's functionality includes transfer of WrappedETH and ERC20 tokens."
     >
       <Hero />
