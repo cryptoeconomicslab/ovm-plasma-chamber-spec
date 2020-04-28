@@ -3,11 +3,11 @@ const fa = require("@fortawesome/free-brands-svg-icons");
 module.exports = {
   title: "Gazelle",
   tagline: "The tagline of my site",
-  url: "https://your-docusaurus-test-site.com",
+  url: "https://gzle.io",
   baseUrl: "/",
-  favicon: "img/favicon.ico",
-  organizationName: "Cryptoeconomics Lab", // Usually your GitHub org/user name.
-  projectName: "gazelle", // Usually your repo name.
+  favicon: "",
+  organizationName: "Cryptoeconomics Lab",
+  projectName: "Gazelle",
   themeConfig: {
     disableDarkMode: true,
     prism: {
@@ -88,11 +88,31 @@ module.exports = {
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Cryptoeconomics Lab, Inc.`,
       socials: [
-        { name: "twitter", link: "/", icon: fa.faTwitter },
-        { name: "medium", link: "/", icon: fa.faMedium },
-        { name: "telegram", link: "/", icon: fa.faTelegramPlane },
-        { name: "linkedin", link: "/", icon: fa.faLinkedin },
-        { name: "youtube", link: "/", icon: fa.faYoutube },
+        {
+          name: "twitter",
+          link: "https://twitter.com/cryptoeconlab",
+          icon: fa.faTwitter,
+        },
+        {
+          name: "medium",
+          link: "https://medium.com/cryptoeconomics-lab",
+          icon: fa.faMedium,
+        },
+        {
+          name: "telegram",
+          link: "https://t.me/cryptoeocnomicslab",
+          icon: fa.faTelegramPlane,
+        },
+        {
+          name: "linkedin",
+          link: "https://www.linkedin.com/company/cryptoeconomics-lab/",
+          icon: fa.faLinkedin,
+        },
+        {
+          name: "youtube",
+          link: "https://www.youtube.com/channel/UCp1w3jQNBDD2Pz4kool36Pw",
+          icon: fa.faYoutube,
+        },
       ],
     },
   },

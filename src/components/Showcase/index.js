@@ -3,19 +3,19 @@ import styles from "./styles.module.scss";
 
 const showcases = [
   {
-    img: "https://picsum.photos/422/290",
+    img: "img/showcases/wallet.png",
     title: "Your Plasma Wallet",
     desc: `Plasma Chamber is a DApps development framework that
     guarantees your.`,
-    link: "/",
+    link: "https://wallet.gzle.io/",
     linkTxt: "Play with Wallet",
   },
   {
-    img: "https://picsum.photos/422/290",
+    img: "img/showcases/playground.png",
     title: "Playground",
     desc: `Plasma Chamber is a DApps development framework that
     guarantees your.`,
-    link: "/",
+    link: "https://playground.gzle.io/",
     linkTxt: "Start Building",
   },
 ];
@@ -40,7 +40,12 @@ function Showcase({ img, title, desc, link, linkTxt }) {
       <div className={styles.showcase__body}>
         <h3 className={styles.showcase__title}>{title}</h3>
         <p className={styles.showcase__desc}>{desc}</p>
-        <a href={link} className={styles.showcase__link}>
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener"
+          className={styles.showcase__link}
+        >
           {linkTxt}
         </a>
       </div>
@@ -64,7 +69,7 @@ function Showcases() {
           </div>
         </div>
       </div>
-      <div className={styles.toolRoot}>
+      {/* <div className={styles.toolRoot}>
         <div className={styles.tool}>
           <div className={styles.toolInner}>
             <div className={styles.section}>
@@ -76,7 +81,7 @@ function Showcases() {
             <Showcase {...tools[0]} />
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

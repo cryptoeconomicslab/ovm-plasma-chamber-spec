@@ -4,54 +4,58 @@ import styles from "./styles.module.scss";
 const roadmaps = [
   {
     title: "Developing Plasma Chamber in TypeScript",
-    link: "/",
+    link: "https://github.com/cryptoeconomicslab/plasma-chamber",
     linkTxt: "See source code",
   },
   {
     title: "EDCON 2019",
-    link: "/",
+    link: "https://www.youtube.com/watch?v=87TJbdKtyis",
     linkTxt: "Watch our talk",
   },
   {
-    title: "SCALING ETHEREUM",
-    link: "/",
+    title: "Scaling Ethereum",
+    link: "https://youtu.be/uXVE6lF1eDA?t=4645",
     linkTxt: "Watch our talk",
   },
   {
     title: "Developing OVM-based Plasma Chamber in Rust",
-    link: "/",
+    link: "https://github.com/cryptoeconomicslab/plasma-rust-framework",
     linkTxt: "See source code",
   },
   {
-    title: "ETHBOSTON",
+    title: "ETHBoston - Ethereum Blockchain Hackathon",
     link: "/",
-    linkTxt: "Watch our talk",
+    linkTxt: "",
   },
   {
     title: "Devcon5",
-    link: "/",
+    link: "https://www.youtube.com/watch?v=St1-YmucrTM",
     linkTxt: "Watch our talk",
   },
   {
-    title:
-      "Developing OVM-based Plasma Chamber in Typescript, Mobile L2 Wallet, Browser dev portal",
-    link: "/",
+    title: "Developing OVM-based Plasma in Typescript",
+    link: "https://github.com/cryptoeconomicslab/wakkanay",
     linkTxt: "See source code",
   },
-];
+]
 
 function RoadmapItem({ title, link, linkTxt }) {
   return (
     <li className={styles.roadmap__item}>
       <span className={styles.roadmap__txt}>{title}</span>
-      <a href={link} className={styles.roadmap__link}>
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener"
+        className={styles.roadmap__link}
+      >
         {linkTxt}
       </a>
     </li>
-  );
+  )
 }
 
-function Roadmap(props) {
+function Roadmap() {
   return (
     <div className={styles.root}>
       <div className={styles.inner}>
