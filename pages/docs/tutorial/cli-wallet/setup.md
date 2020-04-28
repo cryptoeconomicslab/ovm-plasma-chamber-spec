@@ -12,7 +12,7 @@ In this chapter, we will start the transaction aggregator required to run Plasma
 
 ### Run local aggregator
 
-Get the aggregator from [here](https://github.com/cryptoeconomicslab/wakkanay).
+Get the aggregator from [here](https://github.com/cryptoeconomicslab/wakkanay/releases/tag/handson-april).
 
 And then, start it with Docker.
 

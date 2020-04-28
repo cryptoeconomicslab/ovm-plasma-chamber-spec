@@ -17,7 +17,7 @@ For this quick start document using Typescript SDK, you need Node.js with the ve
 
 ### 1. Run test aggregator
 
-Get Plasma aggregator from [wakkanay repository](https://github.com/cryptoeconomicslab/wakkanay).
+Get Plasma aggregator from [wakkanay repository](https://github.com/cryptoeconomicslab/wakkanay/releases/tag/handson-april).
 
 ```bash
 $ git clone -b handson https://github.com/cryptoeconomicslab/wakkanay.git
