@@ -1,13 +1,8 @@
 import React from "react";
-import classnames from "classnames";
-
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import useBaseUrl from "@docusaurus/useBaseUrl";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import styles from "./styles.module.scss";
-import Button from "../../components/Button";
 import SubscribeForm from "../../components/Form/SubscribeForm";
 
 function Footer() {

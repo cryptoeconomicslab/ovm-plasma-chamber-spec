@@ -15,16 +15,8 @@ function News() {
           >
             Follow @cryptoeconlab on Twitter
           </a>
-          to get the up-to-date news. Tweet us any comments, we are excited to
-          see some unique usecase.
-          <br />
-          <a
-            href="https://twitter.com/cryptoeconlab"
-            target="_blank"
-            rel="noopener"
-          >
-            -> Follow @cryptoeconlab on Twitter
-          </a>
+          &nbsp;to get the up-to-date news. Tweet us any comments, we are
+          excited to see some unique usecase.
         </p>
       </div>
       <div>
