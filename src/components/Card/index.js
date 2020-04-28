@@ -1,5 +1,5 @@
-import React from "react";
-import styles from "./styles.module.scss";
+import React from "react"
+import styles from "./styles.module.scss"
 
 function Card(props) {
   return (
@@ -15,7 +15,7 @@ function Card(props) {
       <p className={styles.name}>{props.name}</p>
       <p className={styles.desc}>{props.desc}</p>
     </div>
-  );
+  )
 }
 
-export default Card;
+export default Card

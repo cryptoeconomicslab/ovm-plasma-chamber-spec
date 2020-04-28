@@ -1,5 +1,5 @@
-import React from "react";
-import Thanks from "../../components/Form/Thanks";
+import React from "react"
+import Thanks from "../../components/Form/Thanks"
 
 function SubscribeThanks() {
   return (
@@ -8,7 +8,7 @@ function SubscribeThanks() {
       header="Thank you for subscribing"
       desc="We will let you know if there are any updates."
     />
-  );
+  )
 }
 
-export default SubscribeThanks;
+export default SubscribeThanks

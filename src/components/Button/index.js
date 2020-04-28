@@ -1,10 +1,10 @@
-import React from "react";
-import Link from "@docusaurus/Link";
-import classnames from "classnames";
-import styles from "./styles.module.scss";
+import React from "react"
+import Link from "@docusaurus/Link"
+import classnames from "classnames"
+import styles from "./styles.module.scss"
 
 function Button(props) {
-  const { to, inline, full, className, children, ...restProps } = props;
+  const { to, inline, full, className, children, ...restProps } = props
   return (
     <>
       {!to ? (
@@ -13,7 +13,7 @@ function Button(props) {
           {...restProps}
           className={classnames(className, styles.root, {
             [styles.inline]: inline,
-            [styles.full]: full,
+            [styles.full]: full
           })}
         >
           {children}
@@ -24,14 +24,14 @@ function Button(props) {
           to={to}
           className={classnames(className, styles.root, {
             [styles.inline]: inline,
-            [styles.full]: full,
+            [styles.full]: full
           })}
         >
           {children}
         </Link>
       )}
     </>
-  );
+  )
 }
 
-export default Button;
+export default Button

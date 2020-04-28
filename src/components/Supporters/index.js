@@ -1,20 +1,20 @@
-import React from "react";
-import styles from "./styles.module.scss";
+import React from "react"
+import styles from "./styles.module.scss"
 
 const supporters = [
   {
     img: "/img/supporters/ethereum_foundation.png",
-    title: "Ethereum Foundation",
+    title: "Ethereum Foundation"
   },
   {
     img: "/img/supporters/tezos_foundation.png",
-    title: "Tezos Foundation",
+    title: "Tezos Foundation"
   },
   {
     img: "/img/supporters/web3_foundation.png",
-    title: "Web3 Foundation",
-  },
-];
+    title: "Web3 Foundation"
+  }
+]
 
 function Supporters() {
   return (
@@ -33,7 +33,7 @@ function Supporters() {
         ))}
       </div>
     </div>
-  );
+  )
 }
 
-export default Supporters;
+export default Supporters

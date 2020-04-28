@@ -1,20 +1,20 @@
-import React from "react";
-import Link from "@docusaurus/Link";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import styles from "./styles.module.scss";
-import SubscribeForm from "../../components/Form/SubscribeForm";
+import React from "react"
+import Link from "@docusaurus/Link"
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import styles from "./styles.module.scss"
+import SubscribeForm from "../../components/Form/SubscribeForm"
 
 function Footer() {
-  const context = useDocusaurusContext();
-  const { siteConfig = {} } = context;
-  const { themeConfig = {} } = siteConfig;
-  const { footer } = themeConfig;
+  const context = useDocusaurusContext()
+  const { siteConfig = {} } = context
+  const { themeConfig = {} } = siteConfig
+  const { footer } = themeConfig
 
-  const { copyright, links = [], socials = [] } = footer || {};
+  const { copyright, links = [], socials = [] } = footer || {}
 
   if (!footer) {
-    return null;
+    return null
   }
 
   return (
@@ -68,7 +68,7 @@ function Footer() {
         <small className={styles.copyright}>{copyright}</small>
       </div>
     </footer>
-  );
+  )
 }
 
-export default Footer;
+export default Footer

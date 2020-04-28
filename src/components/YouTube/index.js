@@ -1,5 +1,5 @@
-import React from "react";
-import styles from "./styles.module.scss";
+import React from "react"
+import styles from "./styles.module.scss"
 
 export default ({ youtubeId }) => {
   return (
@@ -10,5 +10,5 @@ export default ({ youtubeId }) => {
         frameBorder="0"
       />
     </div>
-  );
-};
+  )
+}

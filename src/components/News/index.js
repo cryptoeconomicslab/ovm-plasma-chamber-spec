@@ -1,6 +1,6 @@
-import React from "react";
-import SubscribeForm from "../Form/SubscribeForm";
-import YouTube from "../YouTube";
+import React from "react"
+import SubscribeForm from "../Form/SubscribeForm"
+import YouTube from "../YouTube"
 
 function News() {
   return (
@@ -32,7 +32,7 @@ function News() {
             target="_blank"
             rel="noopener"
           >
-            -> Visit Gazelle's YouTube page.
+            -&gt; Visit Gazelle's YouTube page.
           </a>
         </p>
       </div>
@@ -47,7 +47,7 @@ function News() {
             target="_blank"
             rel="noopener"
           >
-            -> Go read blog posts.
+            -&gt; Go read blog posts.
           </a>
         </p>
       </div>
@@ -60,7 +60,7 @@ function News() {
         <SubscribeForm isFooter={false} />
       </div>
     </div>
-  );
+  )
 }
 
-export default News;
+export default News
