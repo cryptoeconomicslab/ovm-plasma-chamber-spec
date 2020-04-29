@@ -1,28 +1,28 @@
-import React from "react";
-import styles from "./styles.module.scss";
-import Button from "../Button";
-import RoundDivider from "../RoundDivider";
+import React from "react"
+import styles from "./styles.module.scss"
+import Button from "../Button"
+import RoundDivider from "../RoundDivider"
 
 const features = [
   {
     title: "Secure",
     desc: `The app is great in design and incredibly simple to use. Well
     categorized navigation and easy to surf content. The user
-    experience of the app is excellent.`,
+    experience of the app is excellent.`
   },
   {
     title: "Fast",
     desc: `Watch thousands of HD Movies and TV shows for free. Regularly
     updates with fresh content. Get movie details like posters,
-    trailer, date of release, and rating.`,
+    trailer, date of release, and rating.`
   },
   {
     title: "Low Cost",
     desc: `Save all your favorite stuff and watch them later. Access this
     section anytime you want, whether you want watch it again or
-    later.`,
-  },
-];
+    later.`
+  }
+]
 
 function Feature({ title, desc }) {
   return (
@@ -30,7 +30,7 @@ function Feature({ title, desc }) {
       <h2 className={styles.feature__title}>{title}</h2>
       <p className={styles.feature__desc}>{desc}</p>
     </div>
-  );
+  )
 }
 
 function Hero() {
@@ -58,7 +58,7 @@ function Hero() {
         <RoundDivider />
       </div>
     </div>
-  );
+  )
 }
 
-export default Hero;
+export default Hero

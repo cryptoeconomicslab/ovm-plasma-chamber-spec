@@ -1,42 +1,42 @@
-import React from "react";
-import styles from "./styles.module.scss";
+import React from "react"
+import styles from "./styles.module.scss"
 
 const roadmaps = [
   {
     title: "Developing Plasma Chamber in TypeScript",
     link: "https://github.com/cryptoeconomicslab/plasma-chamber",
-    linkTxt: "See source code",
+    linkTxt: "See source code"
   },
   {
     title: "EDCON 2019",
     link: "https://www.youtube.com/watch?v=87TJbdKtyis",
-    linkTxt: "Watch our talk",
+    linkTxt: "Watch our talk"
   },
   {
     title: "Scaling Ethereum",
     link: "https://youtu.be/uXVE6lF1eDA?t=4645",
-    linkTxt: "Watch our talk",
+    linkTxt: "Watch our talk"
   },
   {
     title: "Developing OVM-based Plasma Chamber in Rust",
     link: "https://github.com/cryptoeconomicslab/plasma-rust-framework",
-    linkTxt: "See source code",
+    linkTxt: "See source code"
   },
   {
     title: "ETHBoston - Ethereum Blockchain Hackathon",
     link: "/",
-    linkTxt: "",
+    linkTxt: ""
   },
   {
     title: "Devcon5",
     link: "https://www.youtube.com/watch?v=St1-YmucrTM",
-    linkTxt: "Watch our talk",
+    linkTxt: "Watch our talk"
   },
   {
     title: "Developing OVM-based Plasma in Typescript",
     link: "https://github.com/cryptoeconomicslab/wakkanay",
-    linkTxt: "See source code",
-  },
+    linkTxt: "See source code"
+  }
 ]
 
 function RoadmapItem({ title, link, linkTxt }) {
@@ -81,7 +81,7 @@ function Roadmap() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Roadmap;
+export default Roadmap

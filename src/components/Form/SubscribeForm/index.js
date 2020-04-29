@@ -1,10 +1,10 @@
-import React from "react";
-import classnames from "classnames";
-import styles from "./styles.module.scss";
-import Button from "../../Button";
+import React from "react"
+import classnames from "classnames"
+import styles from "./styles.module.scss"
+import Button from "../../Button"
 
 function SubscribeForm(props) {
-  const { isFooter } = props;
+  const { isFooter } = props
   return (
     <form
       className={styles.root}
@@ -18,7 +18,7 @@ function SubscribeForm(props) {
         type="text"
         name="email"
         className={classnames("form-control", styles.input, {
-          [styles.footer]: isFooter,
+          [styles.footer]: isFooter
         })}
         placeholder="cel@example.com"
         required
@@ -27,13 +27,13 @@ function SubscribeForm(props) {
         inline="true"
         type="submit"
         className={classnames(styles.button, {
-          [styles.footer]: isFooter,
+          [styles.footer]: isFooter
         })}
       >
         Subscribe
       </Button>
     </form>
-  );
+  )
 }
 
-export default SubscribeForm;
+export default SubscribeForm

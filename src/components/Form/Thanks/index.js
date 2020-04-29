@@ -1,5 +1,5 @@
-import React from "react";
-import Layout from "@theme/Layout";
+import React from "react"
+import Layout from "@theme/Layout"
 
 function Thanks(props) {
   return (
@@ -13,7 +13,7 @@ function Thanks(props) {
         </div>
       </div>
     </Layout>
-  );
+  )
 }
 
-export default Thanks;
+export default Thanks

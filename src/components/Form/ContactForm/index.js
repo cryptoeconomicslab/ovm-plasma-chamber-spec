@@ -1,7 +1,7 @@
-import React from "react";
-import classnames from "classnames";
-import styles from "./styles.module.scss";
-import Button from "../../Button";
+import React from "react"
+import classnames from "classnames"
+import styles from "./styles.module.scss"
+import Button from "../../Button"
 
 function ContactForm() {
   return (
@@ -37,7 +37,7 @@ function ContactForm() {
         Send
       </Button>
     </form>
-  );
+  )
 }
 
-export default ContactForm;
+export default ContactForm

@@ -1,5 +1,5 @@
-import React from "react";
-import styles from "./styles.module.scss";
+import React from "react"
+import styles from "./styles.module.scss"
 
 const showcases = [
   {
@@ -8,7 +8,7 @@ const showcases = [
     desc: `Plasma Chamber is a DApps development framework that
     guarantees your.`,
     link: "https://wallet.gzle.io/",
-    linkTxt: "Play with Wallet",
+    linkTxt: "Play with Wallet"
   },
   {
     img: "img/showcases/playground.png",
@@ -16,20 +16,20 @@ const showcases = [
     desc: `Plasma Chamber is a DApps development framework that
     guarantees your.`,
     link: "https://playground.gzle.io/",
-    linkTxt: "Start Building",
-  },
-];
+    linkTxt: "Start Building"
+  }
+]
 
-const tools = [
-  {
-    img: "https://picsum.photos/422/290",
-    title: "Your Plasma Wallet",
-    desc: `Plasma Chamber is a DApps development framework that
-  guarantees your.`,
-    link: "/",
-    linkTxt: "Play with Wallet",
-  },
-];
+// const tools = [
+//   {
+//     img: "https://picsum.photos/422/290",
+//     title: "Your Plasma Wallet",
+//     desc: `Plasma Chamber is a DApps development framework that
+//   guarantees your.`,
+//     link: "/",
+//     linkTxt: "Play with Wallet"
+//   }
+// ]
 
 function Showcase({ img, title, desc, link, linkTxt }) {
   return (
@@ -50,7 +50,7 @@ function Showcase({ img, title, desc, link, linkTxt }) {
         </a>
       </div>
     </div>
-  );
+  )
 }
 
 function Showcases() {
@@ -83,7 +83,7 @@ function Showcases() {
         </div>
       </div> */}
     </div>
-  );
+  )
 }
 
-export default Showcases;
+export default Showcases

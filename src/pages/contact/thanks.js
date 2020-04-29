@@ -1,5 +1,5 @@
-import React from "react";
-import Thanks from "../../components/Form/Thanks";
+import React from "react"
+import Thanks from "../../components/Form/Thanks"
 
 function ContactThanks() {
   return (
@@ -8,7 +8,7 @@ function ContactThanks() {
       header="Thank you for contacting us"
       desc="We will reply to you within a few days, so please be patient."
     />
-  );
+  )
 }
 
-export default ContactThanks;
+export default ContactThanks
