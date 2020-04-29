@@ -20,7 +20,7 @@ This allows users to claim how much they have withdrawn and with their transacti
 async function exit(client, amount) {
   console.log("exit:", DEPOSIT_CONTRACT_ADDRESS, amount);
   await client.exit(amount, DEPOSIT_CONTRACT_ADDRESS);
-  await showExitList(client);
+  await getExitList(client);
 }
 ```
 
@@ -178,7 +178,7 @@ async function transfer(client, amount, to) {
 async function exit(client, amount) {
   console.log("exit:", DEPOSIT_CONTRACT_ADDRESS, amount);
   await client.exit(amount, DEPOSIT_CONTRACT_ADDRESS);
-  await showExitList(client);
+  await getExitList(client);
 }
 
 async function getExitList(client) {
