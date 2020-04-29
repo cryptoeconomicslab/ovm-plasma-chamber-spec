@@ -47,6 +47,7 @@ Copy `config.local.json` file to your application repository root.
 
 ```bash
 $ npm i ethers
+$ npm i leveldown
 $ npm i @cryptoeconomicslab/eth-plasma-light-client @cryptoeconomicslab/primitives @cryptoeconomicslab/level-kvs
 ```
 
@@ -56,6 +57,7 @@ You can instantiate light client object using Wallet class of ethers.js.
 
 ```javascript
 const ethers = require("ethers");
+const leveldown = require("leveldown");
 const { Bytes } = require("@cryptoeconomicslab/primitives");
 const { LevelKeyValueStore } = require("@cryptoeconomicslab/level-kvs");
 const initializeLightClient = require("@cryptoeconomicslab/eth-plasma-light-client")
@@ -63,11 +65,15 @@ const initializeLightClient = require("@cryptoeconomicslab/eth-plasma-light-clie
 
 const config = require("./config.local.json");
 
-async function main() {
-  const kvs = new LevelKeyValueStore(Bytes.fromString("plasma_light_client"));
+async function createWalletFromPrivateKey(privateKey) {
   const wallet = new ethers.Wallet(
-    "your private key here",
+    privateKey,
     new ethers.providers.JsonRpcProvider("http://127.0.0.1:8545")
+  );
+  const dbName = wallet.address;
+  const kvs = new LevelKeyValueStore(
+    Bytes.fromString(dbName),
+    leveldown(dbName)
   );
   const lightClient = await initializeLightClient({
     wallet,
@@ -76,6 +82,11 @@ async function main() {
     aggregatorEndpoint: "http://localhost:3000",
   });
   await lightClient.start();
+  return lightClient;
+}
+
+async function main() {
+  const lightClient = await createWalletFromPrivateKey("your private key here");
 }
 
 main();

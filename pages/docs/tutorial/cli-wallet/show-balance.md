@@ -119,10 +119,14 @@ async function getL1Balance(client) {
 }
 
 async function startLightClient() {
-  const kvs = new LevelKeyValueStore(Bytes.fromString("plasma_light_client"));
   const wallet = new ethers.Wallet(
     PRIVATE_KEY,
     new ethers.providers.JsonRpcProvider("http://127.0.0.1:8545")
+  );
+  const dbName = wallet.address;
+  const kvs = new LevelKeyValueStore(
+    Bytes.fromString(dbName),
+    leveldown(dbName)
   );
   const lightClient = await initializeLightClient({
     wallet,

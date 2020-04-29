@@ -19,6 +19,7 @@ You can instantiate light client with
 
 ```javascript
 const ethers = require("ethers");
+const leveldown = require("leveldown");
 const { Bytes } = require("@cryptoeconomicslab/primitives");
 const { LevelKeyValueStore } = require("@cryptoeconomicslab/level-kvs");
 const initializeLightClient = require("@cryptoeconomicslab/eth-plasma-light-client")
@@ -29,10 +30,14 @@ const PRIVATE_KEY = "ENTER YOUR PRIVATE KEY";
 const config = require("./config.local.json");
 
 async function startLightClient() {
-  const kvs = new LevelKeyValueStore(Bytes.fromString("plasma_light_client"));
   const wallet = new ethers.Wallet(
     PRIVATE_KEY,
     new ethers.providers.JsonRpcProvider("http://127.0.0.1:8545")
+  );
+  const dbName = wallet.address;
+  const kvs = new LevelKeyValueStore(
+    Bytes.fromString(dbName),
+    leveldown(dbName)
   );
   const lightClient = await initializeLightClient({
     wallet,
@@ -68,10 +73,14 @@ const rl = readline.createInterface({
 });
 
 async function startLightClient() {
-  const kvs = new LevelKeyValueStore(Bytes.fromString("plasma_light_client"));
   const wallet = new ethers.Wallet(
     PRIVATE_KEY,
     new ethers.providers.JsonRpcProvider("http://127.0.0.1:8545")
+  );
+  const dbName = wallet.address;
+  const kvs = new LevelKeyValueStore(
+    Bytes.fromString(dbName),
+    leveldown(dbName)
   );
   const lightClient = await initializeLightClient({
     wallet,
