@@ -1,5 +1,8 @@
 .root {
-  margin: 4rem 0 0;
+  padding: 7rem 0 0;
+  @media screen and (max-width: 500px) {
+    padding: 4rem 0 0;
+  }
 }
 
 .headline {
