@@ -36,6 +36,7 @@ You can get a list of the exits that the user is currently claiming.
 async function getExitList(client) {
   const exitList = await client.getExitList();
   console.log("exit list:", exitList);
+  return exitList;
 }
 ```
 
@@ -184,6 +185,7 @@ async function exit(client, amount) {
 async function getExitList(client) {
   const exitList = await client.getExitList();
   console.log("exit list:", exitList);
+  return exitList;
 }
 
 async function finalizeExit(client, index) {
