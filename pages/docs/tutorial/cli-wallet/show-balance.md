@@ -17,7 +17,11 @@ Just call the `getBalance` function of the plasma light client to easily check y
 ```javascript
 async function getBalance(client) {
   const balance = await client.getBalance();
-  console.log(`${client.address}:`, balance);
+  console.log(
+    `${client.address}: ${ethers.utils.formatEther(
+      balance[0].amount.toString()
+    )} ETH`
+  );
 }
 ```
 
@@ -27,8 +31,10 @@ In order to make sure that your main chain balance has been properly reduced aft
 
 ```javascript
 async function getL1Balance(client) {
-  const balance = await client.wallet.getL1Balance();
-  console.log(`${client.address}:`, balance.value.raw, balance.symbol);
+  const balance = await wallet.getBalance();
+  console.log(
+    `${client.address}: ${ethers.utils.formatEther(balance.toString())} ETH`
+  );
 }
 ```
 
@@ -97,6 +103,10 @@ const initializeLightClient = require("@cryptoeconomicslab/eth-plasma-light-clie
 const PRIVATE_KEY = "ENTER YOUR PRIVATE KEY";
 const config = require("./config.local.json");
 const DEPOSIT_CONTRACT_ADDRESS = config.payoutContracts.DepositContract;
+const wallet = new ethers.Wallet(
+  PRIVATE_KEY,
+  new ethers.providers.JsonRpcProvider("http://127.0.0.1:8545")
+);
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -110,19 +120,21 @@ async function deposit(client, amount) {
 
 async function getBalance(client) {
   const balance = await client.getBalance();
-  console.log(`${client.address}:`, balance);
+  console.log(
+    `${client.address}: ${ethers.utils.formatEther(
+      balance[0].amount.toString()
+    )} ETH`
+  );
 }
 
 async function getL1Balance(client) {
-  const balance = await client.wallet.getL1Balance();
-  console.log(`${client.address}:`, balance.value.raw, balance.symbol);
+  const balance = await wallet.getBalance();
+  console.log(
+    `${client.address}: ${ethers.utils.formatEther(balance.toString())} ETH`
+  );
 }
 
 async function startLightClient() {
-  const wallet = new ethers.Wallet(
-    PRIVATE_KEY,
-    new ethers.providers.JsonRpcProvider("http://127.0.0.1:8545")
-  );
   const dbName = wallet.address;
   const kvs = new LevelKeyValueStore(
     Bytes.fromString(dbName),
