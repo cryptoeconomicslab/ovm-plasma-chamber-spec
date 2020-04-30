@@ -18,35 +18,35 @@ You can instantiate light client with
 - Aggregator endpoint
 
 ```javascript
-const ethers = require("ethers");
-const leveldown = require("leveldown");
-const { Bytes } = require("@cryptoeconomicslab/primitives");
-const { LevelKeyValueStore } = require("@cryptoeconomicslab/level-kvs");
+const ethers = require("ethers")
+const leveldown = require("leveldown")
+const { Bytes } = require("@cryptoeconomicslab/primitives")
+const { LevelKeyValueStore } = require("@cryptoeconomicslab/level-kvs")
 const initializeLightClient = require("@cryptoeconomicslab/eth-plasma-light-client")
-  .default;
+  .default
 
 // TODO: enter your private key
-const PRIVATE_KEY = "ENTER YOUR PRIVATE KEY";
-const config = require("./config.local.json");
+const PRIVATE_KEY = "ENTER YOUR PRIVATE KEY"
+const config = require("./config.local.json")
 const wallet = new ethers.Wallet(
   PRIVATE_KEY,
   new ethers.providers.JsonRpcProvider("http://127.0.0.1:8545")
-);
+)
 
 async function startLightClient() {
-  const dbName = wallet.address;
+  const dbName = wallet.address
   const kvs = new LevelKeyValueStore(
     Bytes.fromString(dbName),
     leveldown(dbName)
-  );
+  )
   const lightClient = await initializeLightClient({
     wallet,
     kvs,
     config,
-    aggregatorEndpoint: "http://127.0.0.1:3000",
-  });
-  await lightClient.start();
-  return lightClient;
+    aggregatorEndpoint: "http://127.0.0.1:3000"
+  })
+  await lightClient.start()
+  return lightClient
 }
 ```
 
@@ -56,63 +56,64 @@ async function startLightClient() {
 <summary>Click here</summary>
 
 ```javascript
-const readline = require("readline");
-const ethers = require("ethers");
-const { Bytes } = require("@cryptoeconomicslab/primitives");
-const { LevelKeyValueStore } = require("@cryptoeconomicslab/level-kvs");
+const readline = require("readline")
+const ethers = require("ethers")
+const leveldown = require("leveldown")
+const { Bytes } = require("@cryptoeconomicslab/primitives")
+const { LevelKeyValueStore } = require("@cryptoeconomicslab/level-kvs")
 const initializeLightClient = require("@cryptoeconomicslab/eth-plasma-light-client")
-  .default;
+  .default
 
 // TODO: enter your private key
-const PRIVATE_KEY = "ENTER YOUR PRIVATE KEY";
-const config = require("./config.local.json");
+const PRIVATE_KEY = "ENTER YOUR PRIVATE KEY"
+const config = require("./config.local.json")
 const wallet = new ethers.Wallet(
   PRIVATE_KEY,
   new ethers.providers.JsonRpcProvider("http://127.0.0.1:8545")
-);
+)
 
 const rl = readline.createInterface({
   input: process.stdin,
-  output: process.stdout,
-});
+  output: process.stdout
+})
 
 async function startLightClient() {
-  const dbName = wallet.address;
+  const dbName = wallet.address
   const kvs = new LevelKeyValueStore(
     Bytes.fromString(dbName),
     leveldown(dbName)
-  );
+  )
   const lightClient = await initializeLightClient({
     wallet,
     kvs,
     config,
-    aggregatorEndpoint: "http://127.0.0.1:3000",
-  });
-  await lightClient.start();
-  return lightClient;
+    aggregatorEndpoint: "http://127.0.0.1:3000"
+  })
+  await lightClient.start()
+  return lightClient
 }
 
 function cliWalletReadLine() {
-  rl.question(">> ", async (input) => {
-    const args = input.split(/\s+/);
-    const command = args.shift();
+  rl.question(">> ", async input => {
+    const args = input.split(/\s+/)
+    const command = args.shift()
     switch (command) {
       case "quit":
-        console.log("Bye.");
-        rl.close();
-        process.exit();
+        console.log("Bye.")
+        rl.close()
+        process.exit()
       default:
-        console.log(`${command} is not found`);
-        cliWalletReadLine();
+        console.log(`${command} is not found`)
+        cliWalletReadLine()
     }
-  });
+  })
 }
 
 function main() {
-  cliWalletReadLine();
+  cliWalletReadLine()
 }
 
-main();
+main()
 ```
 
 </details>
