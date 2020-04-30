@@ -4,18 +4,18 @@ import styles from "./styles.module.scss"
 const showcases = [
   {
     img: "img/showcases/wallet.png",
-    title: "Your Plasma Wallet",
-    desc: `Plasma Chamber is a DApps development framework that
-    guarantees your.`,
-    link: "https://wallet.gzle.io/",
+    title: "Gazelle Wallet",
+    desc:
+      "Gazelle Wallet is a wallet application that runs on Layer 2 with Gazelle.",
+    link: "https://github.com/cryptoeconomicslab/WakkanayBrowserWallet",
     linkTxt: "Play with Wallet"
   },
   {
     img: "img/showcases/playground.png",
     title: "Playground",
-    desc: `Plasma Chamber is a DApps development framework that
-    guarantees your.`,
-    link: "https://playground.gzle.io/",
+    desc:
+      "You can generate dispute contracts for building apps in Gazelle just by writing DSL.",
+    link: "https://ovm-compiler.netlify.app/",
     linkTxt: "Start Building"
   }
 ]
@@ -58,9 +58,7 @@ function Showcases() {
     <div className={styles.root}>
       <div className={styles.showcaseRoot}>
         <h2 className={styles.headline}>Showcase</h2>
-        <p className={styles.desc}>
-          supports developers to create real cases of blockchain
-        </p>
+        <p className={styles.desc}>See the applications that use Gazelle.</p>
         <div className={styles.showcaseWrapper}>
           <div className={styles.showcases}>
             {showcases.map((showcase, i) => (

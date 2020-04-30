@@ -6,21 +6,18 @@ import RoundDivider from "../RoundDivider"
 const features = [
   {
     title: "Secure",
-    desc: `The app is great in design and incredibly simple to use. Well
-    categorized navigation and easy to surf content. The user
-    experience of the app is excellent.`
+    desc:
+      "Remove the security issues when developing Layer 2 applications. Simply build your application with Gazelle and you'll have an application with the same level of security as Layer 1."
   },
   {
     title: "Fast",
-    desc: `Watch thousands of HD Movies and TV shows for free. Regularly
-    updates with fresh content. Get movie details like posters,
-    trailer, date of release, and rating.`
+    desc:
+      "Gazelle is able to build applications with high throughput and instant finality using Layer 2 technology."
   },
   {
     title: "Low Cost",
-    desc: `Save all your favorite stuff and watch them later. Access this
-    section anytime you want, whether you want watch it again or
-    later.`
+    desc:
+      "Compression of transactions can reduce the end user's gas costs when using public blockchains. It is also possible to reduce operational costs by utilizing public blockchains."
   }
 ]
 
