@@ -16,8 +16,8 @@ You can easily send the tokens on Plasma by simply passing the amount you want t
 
 ```javascript
 async function transfer(client, amount, to) {
-  console.log("transfer:", to, amount);
-  await client.transfer(amount, DEPOSIT_CONTRACT_ADDRESS, to);
+  console.log("transfer:", to, amount)
+  await client.transfer(amount, DEPOSIT_CONTRACT_ADDRESS, to)
 }
 ```
 
@@ -27,19 +27,19 @@ To call the `transfer` function in the CLI Wallet, add some processing to the Re
 
 ```javascript
 function cliWalletReadLine(client) {
-  rl.question(">> ", async (input) => {
-    const args = input.split(/\s+/);
-    const command = args.shift();
+  rl.question(">> ", async input => {
+    const args = input.split(/\s+/)
+    const command = args.shift()
     switch (command) {
       case "transfer":
-        await transfer(client, args[0], args[1]);
-        cliWalletReadLine(client);
-        break;
+        await transfer(client, args[0], args[1])
+        cliWalletReadLine(client)
+        break
       default:
-        console.log(`${command} is not found`);
-        cliWalletReadLine(client);
+        console.log(`${command} is not found`)
+        cliWalletReadLine(client)
     }
-  });
+  })
 }
 ```
 
@@ -71,107 +71,108 @@ $ node app.js
 <summary>Click here</summary>
 
 ```javascript
-const readline = require("readline");
-const ethers = require("ethers");
-const { Bytes } = require("@cryptoeconomicslab/primitives");
-const { LevelKeyValueStore } = require("@cryptoeconomicslab/level-kvs");
+const readline = require("readline")
+const ethers = require("ethers")
+const leveldown = require("leveldown")
+const { Bytes } = require("@cryptoeconomicslab/primitives")
+const { LevelKeyValueStore } = require("@cryptoeconomicslab/level-kvs")
 const initializeLightClient = require("@cryptoeconomicslab/eth-plasma-light-client")
-  .default;
+  .default
 
 // TODO: enter your private key
-const PRIVATE_KEY = "ENTER YOUR PRIVATE KEY";
-const config = require("./config.local.json");
-const DEPOSIT_CONTRACT_ADDRESS = config.payoutContracts.DepositContract;
+const PRIVATE_KEY = "ENTER YOUR PRIVATE KEY"
+const config = require("./config.local.json")
+const DEPOSIT_CONTRACT_ADDRESS = config.payoutContracts.DepositContract
 const wallet = new ethers.Wallet(
   PRIVATE_KEY,
   new ethers.providers.JsonRpcProvider("http://127.0.0.1:8545")
-);
+)
 
 const rl = readline.createInterface({
   input: process.stdin,
-  output: process.stdout,
-});
+  output: process.stdout
+})
 
 async function deposit(client, amount) {
-  console.log("deposit:", amount);
-  await client.deposit(amount, DEPOSIT_CONTRACT_ADDRESS);
+  console.log("deposit:", amount)
+  await client.deposit(amount, DEPOSIT_CONTRACT_ADDRESS)
 }
 
 async function getBalance(client) {
-  const balance = await client.getBalance();
+  const balance = await client.getBalance()
   console.log(
     `${client.address}: ${ethers.utils.formatEther(
       balance[0].amount.toString()
     )} ETH`
-  );
+  )
 }
 
 async function getL1Balance(client) {
-  const balance = await wallet.getBalance();
+  const balance = await wallet.getBalance()
   console.log(
     `${client.address}: ${ethers.utils.formatEther(balance.toString())} ETH`
-  );
+  )
 }
 
 async function transfer(client, amount, to) {
-  console.log("transfer:", to, amount);
-  await client.transfer(amount, DEPOSIT_CONTRACT_ADDRESS, to);
+  console.log("transfer:", to, amount)
+  await client.transfer(amount, DEPOSIT_CONTRACT_ADDRESS, to)
 }
 
 async function startLightClient() {
-  const dbName = wallet.address;
+  const dbName = wallet.address
   const kvs = new LevelKeyValueStore(
     Bytes.fromString(dbName),
     leveldown(dbName)
-  );
+  )
   const lightClient = await initializeLightClient({
     wallet,
     kvs,
     config,
-    aggregatorEndpoint: "http://127.0.0.1:3000",
-  });
-  await lightClient.start();
-  return lightClient;
+    aggregatorEndpoint: "http://127.0.0.1:3000"
+  })
+  await lightClient.start()
+  return lightClient
 }
 
 function cliWalletReadLine(client) {
-  rl.question(">> ", async (input) => {
-    const args = input.split(/\s+/);
-    const command = args.shift();
+  rl.question(">> ", async input => {
+    const args = input.split(/\s+/)
+    const command = args.shift()
     switch (command) {
       case "deposit":
-        await deposit(client, args[0]);
-        cliWalletReadLine(client);
-        break;
+        await deposit(client, args[0])
+        cliWalletReadLine(client)
+        break
       case "getbalance":
-        await getBalance(client);
-        cliWalletReadLine(client);
-        break;
+        await getBalance(client)
+        cliWalletReadLine(client)
+        break
       case "getl1balance":
-        await getL1Balance(client);
-        cliWalletReadLine(client);
-        break;
+        await getL1Balance(client)
+        cliWalletReadLine(client)
+        break
       case "transfer":
-        await transfer(client, args[0], args[1]);
-        cliWalletReadLine(client);
-        break;
+        await transfer(client, args[0], args[1])
+        cliWalletReadLine(client)
+        break
       case "quit":
-        console.log("Bye.");
-        rl.close();
-        process.exit();
+        console.log("Bye.")
+        rl.close()
+        process.exit()
       default:
-        console.log(`${command} is not found`);
-        cliWalletReadLine(client);
+        console.log(`${command} is not found`)
+        cliWalletReadLine(client)
     }
-  });
+  })
 }
 
 async function main() {
-  const client = await startLightClient();
-  cliWalletReadLine(client);
+  const client = await startLightClient()
+  cliWalletReadLine(client)
 }
 
-main();
+main()
 ```
 
 </details>
