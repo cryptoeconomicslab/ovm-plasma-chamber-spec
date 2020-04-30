@@ -28,12 +28,12 @@ const initializeLightClient = require("@cryptoeconomicslab/eth-plasma-light-clie
 // TODO: enter your private key
 const PRIVATE_KEY = "ENTER YOUR PRIVATE KEY";
 const config = require("./config.local.json");
+const wallet = new ethers.Wallet(
+  PRIVATE_KEY,
+  new ethers.providers.JsonRpcProvider("http://127.0.0.1:8545")
+);
 
 async function startLightClient() {
-  const wallet = new ethers.Wallet(
-    PRIVATE_KEY,
-    new ethers.providers.JsonRpcProvider("http://127.0.0.1:8545")
-  );
   const dbName = wallet.address;
   const kvs = new LevelKeyValueStore(
     Bytes.fromString(dbName),
@@ -66,6 +66,10 @@ const initializeLightClient = require("@cryptoeconomicslab/eth-plasma-light-clie
 // TODO: enter your private key
 const PRIVATE_KEY = "ENTER YOUR PRIVATE KEY";
 const config = require("./config.local.json");
+const wallet = new ethers.Wallet(
+  PRIVATE_KEY,
+  new ethers.providers.JsonRpcProvider("http://127.0.0.1:8545")
+);
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -73,10 +77,6 @@ const rl = readline.createInterface({
 });
 
 async function startLightClient() {
-  const wallet = new ethers.Wallet(
-    PRIVATE_KEY,
-    new ethers.providers.JsonRpcProvider("http://127.0.0.1:8545")
-  );
   const dbName = wallet.address;
   const kvs = new LevelKeyValueStore(
     Bytes.fromString(dbName),
