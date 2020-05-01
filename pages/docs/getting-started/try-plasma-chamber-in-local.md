@@ -22,7 +22,6 @@ Get Plasma aggregator from [wakkanay repository](https://github.com/cryptoeconom
 ```bash
 $ git clone https://github.com/cryptoeconomicslab/wakkanay.git
 $ cd wakkanay
-$ cp -p integration-test/aggregator/.sample.env integration-test/aggregator/.env
 $ npm run docker:build
 $ npm run docker:cp
 $ npm run docker:start
