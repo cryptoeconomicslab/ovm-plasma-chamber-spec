@@ -42,11 +42,15 @@ Install the following libraries using npm to enable fund transfers in Plasma.
 - @cryptoeconomicslab/level-kvs
   - A database used by the Client.
 
-Copy `config.local.json` file to your application repository root.
-
 ```bash
 $ npm i ethers
 $ npm i @cryptoeconomicslab/eth-plasma-light-client @cryptoeconomicslab/primitives @cryptoeconomicslab/level-kvs
+```
+
+Copy `config.local.json` file to your application repository root.
+
+```
+$ cp -p <your wakkanay path>/integration-test/aggregator/src/config.local.json ./config.local.json
 ```
 
 ### 2. Instantiate

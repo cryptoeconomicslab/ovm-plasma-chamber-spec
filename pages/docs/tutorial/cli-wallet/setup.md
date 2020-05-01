@@ -40,7 +40,7 @@ $ cd plasma-wallet
 $ npm init
 $ npm i ethers
 $ npm i @cryptoeconomicslab/eth-plasma-light-client @cryptoeconomicslab/primitives @cryptoeconomicslab/level-kvs
-$ cp -p <your wakkanay-plasma-aggregator path>/config.local.json ./config.local.json
+$ cp -p <your wakkanay path>/integration-test/aggregator/src/config.local.json ./config.local.json
 ```
 
 ### Prepare the ReadLine for CLI application
