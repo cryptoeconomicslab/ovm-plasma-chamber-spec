@@ -6,7 +6,7 @@ const showcases = [
     img: "img/showcases/wallet.png",
     title: "Gazelle Wallet",
     desc:
-      "Gazelle Wallet is a wallet application that runs on Layer 2 with Gazelle.",
+      "Gazelle Wallet is is a sample wallet application running on Plasma built with Gazelle.",
     link: "https://github.com/cryptoeconomicslab/WakkanayBrowserWallet",
     linkTxt: "Play with Wallet"
   },
@@ -14,8 +14,8 @@ const showcases = [
     img: "img/showcases/playground.png",
     title: "Playground",
     desc:
-      "You can generate dispute contracts for building apps in Gazelle just by writing DSL.",
-    link: "https://ovm-compiler.netlify.app/",
+      "Playground is online OVM-DSL compiler. It produces Solidity contracts to be used with Gazelle.",
+    link: "https://ovm-compiler.gzle.io",
     linkTxt: "Start Building"
   }
 ]
@@ -57,8 +57,8 @@ function Showcases() {
   return (
     <div className={styles.root}>
       <div className={styles.showcaseRoot}>
-        <h2 className={styles.headline}>Showcase</h2>
-        <p className={styles.desc}>See the applications that use Gazelle.</p>
+        <h2 className={styles.headline}>Example & Tool</h2>
+        <p className={styles.desc}>See Gazelle's example and tool.</p>
         <div className={styles.showcaseWrapper}>
           <div className={styles.showcases}>
             {showcases.map((showcase, i) => (

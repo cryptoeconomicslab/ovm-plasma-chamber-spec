@@ -7,17 +7,17 @@ const features = [
   {
     title: "Secure",
     desc:
-      "Remove the security issues when developing Layer 2 applications. Simply build your application with Gazelle and you'll have an application with the same level of security as Layer 1."
+      "Gazelle makes it easy for you to develop secure applications by Plasma technology."
   },
   {
     title: "Fast",
     desc:
-      "Gazelle is able to build applications with high throughput and instant finality using Layer 2 technology."
+      "By trading off-chain, your application can handle thousands of transactions per second and instant finality."
   },
   {
     title: "Low Cost",
     desc:
-      "Compression of transactions can reduce the end user's gas costs when using public blockchains. It is also possible to reduce operational costs by utilizing public blockchains."
+      "Compression of transactions can reduce the end user's gas costs when using public blockchains."
   }
 ]
 

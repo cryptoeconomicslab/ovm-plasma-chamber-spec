@@ -18,9 +18,9 @@ This allows users to claim how much they have withdrawn and with their transacti
 
 ```javascript
 async function exit(client, amount) {
-  console.log("exit:", DEPOSIT_CONTRACT_ADDRESS, amount);
-  await client.exit(amount, DEPOSIT_CONTRACT_ADDRESS);
-  await showExitList(client);
+  console.log("exit:", DEPOSIT_CONTRACT_ADDRESS, amount)
+  await client.exit(amount, DEPOSIT_CONTRACT_ADDRESS)
+  await showExitList(client)
 }
 ```
 
@@ -34,8 +34,8 @@ You can get a list of the exits that the user is currently claiming.
 
 ```javascript
 async function getExitList(client) {
-  const exitList = await client.getExitList();
-  console.log("exit list:", exitList);
+  const exitList = await client.getExitList()
+  console.log("exit list:", exitList)
 }
 ```
 
@@ -51,9 +51,9 @@ At this time, the exit must have passed the challenge period.
 
 ```javascript
 async function finalizeExit(client, index) {
-  const exitList = await getExitList(client);
+  const exitList = await getExitList(client)
   if (exitList[index]) {
-    await client.finalizeExit(exitList[index]);
+    await client.finalizeExit(exitList[index])
   }
 }
 ```
@@ -64,27 +64,27 @@ To call the `exit`, `getExitList` and `finalizeExit` functions in the CLI Wallet
 
 ```javascript
 function cliWalletReadLine(client) {
-  rl.question(">> ", async (input) => {
-    const args = input.split(/\s+/);
-    const command = args.shift();
+  rl.question(">> ", async input => {
+    const args = input.split(/\s+/)
+    const command = args.shift()
     switch (command) {
       case "getexitlist":
-        await getExitList(client);
-        cliWalletReadLine(client);
-        break;
+        await getExitList(client)
+        cliWalletReadLine(client)
+        break
       case "exit":
-        await exit(client, args[0]);
-        cliWalletReadLine(client);
-        break;
+        await exit(client, args[0])
+        cliWalletReadLine(client)
+        break
       case "finalizeexit":
-        await finalizeExit(client, args[0]);
-        cliWalletReadLine(client);
-        break;
+        await finalizeExit(client, args[0])
+        cliWalletReadLine(client)
+        break
       default:
-        console.log(`${command} is not found`);
-        cliWalletReadLine(client);
+        console.log(`${command} is not found`)
+        cliWalletReadLine(client)
     }
-  });
+  })
 }
 ```
 
@@ -126,9 +126,9 @@ Let's look at the balance using the `getBalance` and `getl1balance` functions we
 If the balance has changed correctly, the exit is complete.
 
 ```bash
-# check l1 balance
+# check L1 balance
 >> getl1balance
-# check l2 balance
+# check L2 balance
 >> getbalance
 ```
 
@@ -138,127 +138,127 @@ If the balance has changed correctly, the exit is complete.
 <summary>Click here</summary>
 
 ```javascript
-const readline = require("readline");
-const ethers = require("ethers");
-const { Bytes } = require("@cryptoeconomicslab/primitives");
-const { LevelKeyValueStore } = require("@cryptoeconomicslab/level-kvs");
+const readline = require("readline")
+const ethers = require("ethers")
+const { Bytes } = require("@cryptoeconomicslab/primitives")
+const { LevelKeyValueStore } = require("@cryptoeconomicslab/level-kvs")
 const initializeLightClient = require("@cryptoeconomicslab/eth-plasma-light-client")
-  .default;
+  .default
 
 // TODO: enter your private key
-const PRIVATE_KEY = "ENTER YOUR PRIVATE KEY";
-const config = require("./config.local.json");
-const DEPOSIT_CONTRACT_ADDRESS = config.payoutContracts.DepositContract;
+const PRIVATE_KEY = "ENTER YOUR PRIVATE KEY"
+const config = require("./config.local.json")
+const DEPOSIT_CONTRACT_ADDRESS = config.payoutContracts.DepositContract
 
 const rl = readline.createInterface({
   input: process.stdin,
-  output: process.stdout,
-});
+  output: process.stdout
+})
 
 async function deposit(client, amount) {
-  console.log("deposit:", amount);
-  await client.deposit(amount, DEPOSIT_CONTRACT_ADDRESS);
+  console.log("deposit:", amount)
+  await client.deposit(amount, DEPOSIT_CONTRACT_ADDRESS)
 }
 
 async function getBalance(client) {
-  const balance = await client.getBalance();
-  console.log(`${client.address}:`, balance);
+  const balance = await client.getBalance()
+  console.log(`${client.address}:`, balance)
 }
 
 async function getL1Balance(client) {
-  const balance = await client.wallet.getL1Balance();
-  console.log(`${client.address}:`, balance.value.raw, balance.symbol);
+  const balance = await client.wallet.getL1Balance()
+  console.log(`${client.address}:`, balance.value.raw, balance.symbol)
 }
 
 async function transfer(client, amount, to) {
-  console.log("transfer:", to, amount);
-  await client.transfer(amount, DEPOSIT_CONTRACT_ADDRESS, to);
+  console.log("transfer:", to, amount)
+  await client.transfer(amount, DEPOSIT_CONTRACT_ADDRESS, to)
 }
 
 async function exit(client, amount) {
-  console.log("exit:", DEPOSIT_CONTRACT_ADDRESS, amount);
-  await client.exit(amount, DEPOSIT_CONTRACT_ADDRESS);
-  await showExitList(client);
+  console.log("exit:", DEPOSIT_CONTRACT_ADDRESS, amount)
+  await client.exit(amount, DEPOSIT_CONTRACT_ADDRESS)
+  await showExitList(client)
 }
 
 async function getExitList(client) {
-  const exitList = await client.getExitList();
-  console.log("exit list:", exitList);
+  const exitList = await client.getExitList()
+  console.log("exit list:", exitList)
 }
 
 async function finalizeExit(client, index) {
-  const exitList = await getExitList(client);
+  const exitList = await getExitList(client)
   if (exitList[index]) {
-    await client.finalizeExit(exitList[index]);
+    await client.finalizeExit(exitList[index])
   }
 }
 
 async function startLightClient() {
-  const kvs = new LevelKeyValueStore(Bytes.fromString("plasma_light_client"));
+  const kvs = new LevelKeyValueStore(Bytes.fromString("plasma_light_client"))
   const wallet = new ethers.Wallet(
     PRIVATE_KEY,
     new ethers.providers.JsonRpcProvider("http://127.0.0.1:8545")
-  );
+  )
   const lightClient = await initializeLightClient({
     wallet,
     kvs,
     config,
-    aggregatorEndpoint: "http://127.0.0.1:3000",
-  });
-  await lightClient.start();
-  return lightClient;
+    aggregatorEndpoint: "http://127.0.0.1:3000"
+  })
+  await lightClient.start()
+  return lightClient
 }
 
 function cliWalletReadLine(client) {
-  rl.question(">> ", async (input) => {
-    const args = input.split(/\s+/);
-    const command = args.shift();
+  rl.question(">> ", async input => {
+    const args = input.split(/\s+/)
+    const command = args.shift()
     switch (command) {
       case "deposit":
-        await deposit(client, args[0]);
-        cliWalletReadLine(client);
-        break;
+        await deposit(client, args[0])
+        cliWalletReadLine(client)
+        break
       case "getbalance":
-        await getBalance(client);
-        cliWalletReadLine(client);
-        break;
+        await getBalance(client)
+        cliWalletReadLine(client)
+        break
       case "getl1balance":
-        await getL1Balance(client);
-        cliWalletReadLine(client);
-        break;
+        await getL1Balance(client)
+        cliWalletReadLine(client)
+        break
       case "transfer":
-        await transfer(client, args[0], args[1]);
-        cliWalletReadLine(client);
-        break;
+        await transfer(client, args[0], args[1])
+        cliWalletReadLine(client)
+        break
       case "getexitlist":
-        await getExitList(client);
-        cliWalletReadLine(client);
-        break;
+        await getExitList(client)
+        cliWalletReadLine(client)
+        break
       case "exit":
-        await exit(client, args[0]);
-        cliWalletReadLine(client);
-        break;
+        await exit(client, args[0])
+        cliWalletReadLine(client)
+        break
       case "finalizeexit":
-        await finalizeExit(client, args[0]);
-        cliWalletReadLine(client);
-        break;
+        await finalizeExit(client, args[0])
+        cliWalletReadLine(client)
+        break
       case "quit":
-        console.log("Bye.");
-        rl.close();
-        process.exit();
+        console.log("Bye.")
+        rl.close()
+        process.exit()
       default:
-        console.log(`${command} is not found`);
-        cliWalletReadLine(client);
+        console.log(`${command} is not found`)
+        cliWalletReadLine(client)
     }
-  });
+  })
 }
 
 async function main() {
-  const client = await startLightClient();
-  cliWalletReadLine(client);
+  const client = await startLightClient()
+  cliWalletReadLine(client)
 }
 
-main();
+main()
 ```
 
 </details>
