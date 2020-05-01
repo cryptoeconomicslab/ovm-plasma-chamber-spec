@@ -12,14 +12,13 @@ In this chapter, we will start the transaction aggregator required to run Plasma
 
 ### Run local aggregator
 
-Get the aggregator from [here](https://github.com/cryptoeconomicslab/wakkanay-plasma-aggregator).
+Get the aggregator from [here](https://github.com/cryptoeconomicslab/wakkanay).
 
 And then, start it with Docker.
 
 ```bash
-$ git clone https://github.com/cryptoeconomicslab/wakkanay-plasma-aggregator.git
-$ cd wakkanay-plasma-aggregator
-$ cp -p .sample.env .env
+$ git clone https://github.com/cryptoeconomicslab/wakkanay.git
+$ cd wakkanay
 $ npm run docker:build
 $ npm run docker:cp
 $ npm run docker:start
@@ -41,7 +40,7 @@ $ cd plasma-wallet
 $ npm init
 $ npm i ethers
 $ npm i @cryptoeconomicslab/eth-plasma-light-client @cryptoeconomicslab/primitives @cryptoeconomicslab/level-kvs
-$ cp -p <your wakkanay-plasma-aggregator path>/config.local.json ./config.local.json
+$ cp -p <your wakkanay path>/integration-test/aggregator/src/config.local.json ./config.local.json
 ```
 
 ### Prepare the ReadLine for CLI application
