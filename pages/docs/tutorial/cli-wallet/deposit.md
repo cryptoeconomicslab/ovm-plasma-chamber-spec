@@ -15,11 +15,11 @@ The users can simply deposit tokens into Plasma just by invoking this function.
 [Plasma Light Client API reference | deposit](/docs/api/Plasma_Light_Client#deposit)
 
 ```javascript
-const DEPOSIT_CONTRACT_ADDRESS = config.payoutContracts.DepositContract;
+const DEPOSIT_CONTRACT_ADDRESS = config.payoutContracts.DepositContract
 
 async function deposit(client, amount) {
-  console.log("deposit:", amount);
-  await client.deposit(amount, DEPOSIT_CONTRACT_ADDRESS);
+  console.log("deposit:", amount)
+  await client.deposit(amount, DEPOSIT_CONTRACT_ADDRESS)
 }
 ```
 
@@ -29,27 +29,27 @@ In order to enable invoking `deposit` function from the CLI Wallet, write a proc
 
 ```javascript
 function cliWalletReadLine(client) {
-  rl.question(">> ", async (input) => {
-    const args = input.split(/\s+/);
-    const command = args.shift();
+  rl.question(">> ", async input => {
+    const args = input.split(/\s+/)
+    const command = args.shift()
     switch (command) {
       case "deposit":
-        await deposit(client, args[0]);
-        cliWalletReadLine(client);
-        break;
+        await deposit(client, args[0])
+        cliWalletReadLine(client)
+        break
       default:
-        console.log(`${command} is not found`);
-        cliWalletReadLine(client);
+        console.log(`${command} is not found`)
+        cliWalletReadLine(client)
     }
-  });
+  })
 }
 
 async function main() {
-  const client = await startLightClient();
-  cliWalletReadLine(client);
+  const client = await startLightClient()
+  cliWalletReadLine(client)
 }
 
-main();
+main()
 ```
 
 ## 3-3. Deposit your ether
@@ -59,7 +59,7 @@ Launch the CLI Wallet and deposit your Ether into Plasma!
 Start the app with the node command and try `deposit <amount>`.
 
 ```
-$ node app.js
+$ node app.js <YOUR PRIVATE KEY>
 >> deposit 100
 ```
 
@@ -71,70 +71,78 @@ $ node app.js
 <summary>Click here</summary>
 
 ```javascript
-const readline = require("readline");
-const ethers = require("ethers");
-const { Bytes } = require("@cryptoeconomicslab/primitives");
-const { LevelKeyValueStore } = require("@cryptoeconomicslab/level-kvs");
+const readline = require("readline")
+const ethers = require("ethers")
+const leveldown = require("leveldown")
+const { Bytes } = require("@cryptoeconomicslab/primitives")
+const { LevelKeyValueStore } = require("@cryptoeconomicslab/level-kvs")
 const initializeLightClient = require("@cryptoeconomicslab/eth-plasma-light-client")
-  .default;
+  .default
 
-// TODO: enter your private key
-const PRIVATE_KEY = "ENTER YOUR PRIVATE KEY";
-const config = require("./config.local.json");
-const DEPOSIT_CONTRACT_ADDRESS = config.payoutContracts.DepositContract;
+// TODO: Please enter your private key when you start the application.
+const PRIVATE_KEY = process.argv[2] || ""
+if (!PRIVATE_KEY) {
+  throw "Please set your private key"
+}
+const config = require("./config.local.json")
+const DEPOSIT_CONTRACT_ADDRESS = config.payoutContracts.DepositContract
+const wallet = new ethers.Wallet(
+  PRIVATE_KEY,
+  new ethers.providers.JsonRpcProvider("http://127.0.0.1:8545")
+)
 
 const rl = readline.createInterface({
   input: process.stdin,
-  output: process.stdout,
-});
+  output: process.stdout
+})
 
 async function deposit(client, amount) {
-  console.log("deposit:", amount);
-  await client.deposit(amount, DEPOSIT_CONTRACT_ADDRESS);
+  console.log("deposit:", amount)
+  await client.deposit(amount, DEPOSIT_CONTRACT_ADDRESS)
 }
 
 async function startLightClient() {
-  const kvs = new LevelKeyValueStore(Bytes.fromString("plasma_light_client"));
-  const wallet = new ethers.Wallet(
-    PRIVATE_KEY,
-    new ethers.providers.JsonRpcProvider("http://127.0.0.1:8545")
-  );
+  const dbName = wallet.address
+  const kvs = new LevelKeyValueStore(
+    Bytes.fromString(dbName),
+    leveldown(dbName)
+  )
   const lightClient = await initializeLightClient({
     wallet,
     kvs,
     config,
-    aggregatorEndpoint: "http://127.0.0.1:3000",
-  });
-  await lightClient.start();
-  return lightClient;
+    aggregatorEndpoint: "http://127.0.0.1:3000"
+  })
+  await lightClient.start()
+  return lightClient
 }
 
 function cliWalletReadLine(client) {
-  rl.question(">> ", async (input) => {
-    const args = input.split(/\s+/);
-    const command = args.shift();
+  rl.question(">> ", async input => {
+    const args = input.split(/\s+/)
+    const command = args.shift()
     switch (command) {
       case "deposit":
-        await deposit(client, args[0]);
-        cliWalletReadLine(client);
-        break;
+        await deposit(client, args[0])
+        cliWalletReadLine(client)
+        break
       case "quit":
-        console.log("Bye.");
-        rl.close();
-        process.exit();
+        console.log("Bye.")
+        rl.close()
+        process.exit()
       default:
-        console.log(`${command} is not found`);
-        cliWalletReadLine(client);
+        console.log(`${command} is not found`)
+        cliWalletReadLine(client)
     }
-  });
+  })
 }
 
 async function main() {
-  const client = await startLightClient();
-  cliWalletReadLine(client);
+  const client = await startLightClient()
+  cliWalletReadLine(client)
 }
 
-main();
+main()
 ```
 
 </details>
