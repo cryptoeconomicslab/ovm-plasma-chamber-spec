@@ -1,4 +1,4 @@
-const fa = require("@fortawesome/free-brands-svg-icons");
+const fa = require("@fortawesome/free-brands-svg-icons")
 
 module.exports = {
   title: "Gazelle",
@@ -11,38 +11,38 @@ module.exports = {
   themeConfig: {
     disableDarkMode: true,
     prism: {
-      theme: require("prism-react-renderer/themes/vsDark"),
+      theme: require("prism-react-renderer/themes/vsDark")
     },
     navbar: {
       title: "Gazelle",
       logo: {
         alt: "Gazelle",
-        src: "img/logo-w.svg",
+        src: "img/logo-w.svg"
       },
       links: [
         {
           to: "docs/Introduction",
           activeBasePath: "docs",
           label: "Docs",
-          position: "right",
+          position: "right"
         },
         {
           to: "communities/Support",
           activeBasePath: "communities",
           label: "Community",
-          position: "right",
+          position: "right"
         },
         {
           href: "https://medium.com/cryptoeconomics-lab",
           label: "Blog",
-          position: "right",
+          position: "right"
         },
         {
           href: "https://github.com/cryptoeconomicslab",
           label: "GitHub",
-          position: "right",
-        },
-      ],
+          position: "right"
+        }
+      ]
     },
     footer: {
       style: "dark",
@@ -52,69 +52,69 @@ module.exports = {
           items: [
             {
               label: "Showcase",
-              to: "/#showcase",
+              to: "/#showcase"
             },
             {
               label: "Roadmap",
-              to: "/#roadmap",
+              to: "/#roadmap"
             },
             {
               label: "Supporters",
-              to: "/#supporters",
-            },
-          ],
+              to: "/#supporters"
+            }
+          ]
         },
         {
           title: "Resources",
           items: [
             {
               label: "Docs",
-              to: "/docs/Introduction",
+              to: "/docs/Introduction"
             },
             {
               label: "Community",
-              to: "/communities/Support",
+              to: "/communities/Support"
             },
             {
               label: "Blog",
-              href: "https://medium.com/cryptoeconomics-lab",
+              href: "https://medium.com/cryptoeconomics-lab"
             },
             {
               label: "Github",
-              href: "https://github.com/cryptoeconomicslab",
-            },
-          ],
-        },
+              href: "https://github.com/cryptoeconomicslab"
+            }
+          ]
+        }
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Cryptoeconomics Lab, Inc.`,
       socials: [
         {
           name: "twitter",
           link: "https://twitter.com/cryptoeconlab",
-          icon: fa.faTwitter,
+          icon: fa.faTwitter
         },
         {
           name: "medium",
           link: "https://medium.com/cryptoeconomics-lab",
-          icon: fa.faMedium,
+          icon: fa.faMedium
         },
         {
           name: "telegram",
           link: "https://t.me/cryptoeocnomicslab",
-          icon: fa.faTelegramPlane,
+          icon: fa.faTelegramPlane
         },
         {
           name: "linkedin",
           link: "https://www.linkedin.com/company/cryptoeconomics-lab/",
-          icon: fa.faLinkedin,
+          icon: fa.faLinkedin
         },
         {
           name: "youtube",
           link: "https://www.youtube.com/channel/UCp1w3jQNBDD2Pz4kool36Pw",
-          icon: fa.faYoutube,
-        },
-      ],
-    },
+          icon: fa.faYoutube
+        }
+      ]
+    }
   },
   presets: [
     [
@@ -123,16 +123,16 @@ module.exports = {
         docs: {
           path: "pages",
           routeBasePath: "",
-          sidebarPath: require.resolve("./sidebars.js"),
+          sidebarPath: require.resolve("./sidebars.js")
         },
         theme: {
-          customCss: require.resolve("./src/css/custom.scss"),
-        },
-      },
-    ],
+          customCss: require.resolve("./src/css/custom.scss")
+        }
+      }
+    ]
   ],
   plugins: ["docusaurus-plugin-sass"],
   stylesheets: [
-    "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap",
-  ],
-};
+    "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap"
+  ]
+}

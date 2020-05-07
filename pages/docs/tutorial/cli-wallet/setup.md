@@ -12,14 +12,13 @@ In this chapter, we will start the transaction aggregator required to run Plasma
 
 ### Run local aggregator
 
-Get the aggregator from [here](https://github.com/cryptoeconomicslab/wakkanay-plasma-aggregator).
+Get the aggregator from [here](https://github.com/cryptoeconomicslab/wakkanay).
 
 And then, start it with Docker.
 
 ```bash
-$ git clone https://github.com/cryptoeconomicslab/wakkanay-plasma-aggregator.git
-$ cd wakkanay-plasma-aggregator
-$ cp -p .sample.env .env
+$ git clone https://github.com/cryptoeconomicslab/wakkanay.git
+$ cd wakkanay
 $ npm run docker:build
 $ npm run docker:cp
 $ npm run docker:start
@@ -40,8 +39,9 @@ $ mkdir plasma-wallet
 $ cd plasma-wallet
 $ npm init
 $ npm i ethers
+$ npm i leveldown
 $ npm i @cryptoeconomicslab/eth-plasma-light-client @cryptoeconomicslab/primitives @cryptoeconomicslab/level-kvs
-$ cp -p <your wakkanay-plasma-aggregator path>/config.local.json ./config.local.json
+$ cp -p <your wakkanay path>/integration-test/aggregator/src/config.local.json ./config.local.json
 ```
 
 ### Prepare the ReadLine for CLI application
@@ -49,34 +49,34 @@ $ cp -p <your wakkanay-plasma-aggregator path>/config.local.json ./config.local.
 This is the initial settings of ReadLine, which is required to implement an interactive CLI Wallet.
 
 ```javascript
-const readline = require("readline");
+const readline = require("readline")
 
 const rl = readline.createInterface({
   input: process.stdin,
-  output: process.stdout,
-});
+  output: process.stdout
+})
 
 function cliWalletReadLine() {
-  rl.question(">> ", (input) => {
-    const args = input.split(/\s+/);
-    const command = args.shift();
+  rl.question(">> ", input => {
+    const args = input.split(/\s+/)
+    const command = args.shift()
     switch (command) {
       case "quit":
-        console.log("Bye.");
-        rl.close();
-        process.exit();
+        console.log("Bye.")
+        rl.close()
+        process.exit()
       default:
-        console.log(`${command} is not found`);
-        cliWalletReadLine();
+        console.log(`${command} is not found`)
+        cliWalletReadLine()
     }
-  });
+  })
 }
 
 function main() {
-  cliWalletReadLine();
+  cliWalletReadLine()
 }
 
-main();
+main()
 ```
 
 ## Go to the next step!

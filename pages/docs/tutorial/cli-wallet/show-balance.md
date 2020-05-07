@@ -8,7 +8,7 @@ In this chapter, we will implement the methods to check the balances in the main
 
 Let's see if you deposited successfully!
 
-## 4-1. Implement to get your l2 balance
+## 4-1. Implement to get your L2 balance
 
 Just call the `getBalance` function of the plasma light client to easily check your balance.
 
@@ -17,7 +17,11 @@ Just call the `getBalance` function of the plasma light client to easily check y
 ```javascript
 async function getBalance(client) {
   const balance = await client.getBalance()
-  console.log(`${client.address}:`, balance)
+  console.log(
+    `${client.address}: ${ethers.utils.formatEther(
+      balance[0].amount.toString()
+    )} ETH`
+  )
 }
 ```
 
@@ -27,8 +31,10 @@ In order to make sure that your main chain balance has been properly reduced aft
 
 ```javascript
 async function getL1Balance(client) {
-  const balance = await client.wallet.getL1Balance()
-  console.log(`${client.address}:`, balance.value.raw, balance.symbol)
+  const balance = await wallet.getBalance()
+  console.log(
+    `${client.address}: ${ethers.utils.formatEther(balance.toString())} ETH`
+  )
 }
 ```
 
@@ -65,7 +71,7 @@ Launch the CLI Wallet and check your balance of Layer2!
 Start the app with the node command and try `getbalance`.
 
 ```
-$ node app.js
+$ node app.js <YOUR PRIVATE KEY>
 >> getbalance
 ```
 
@@ -76,7 +82,7 @@ Also, check your balance in the main chain was reduced.
 Try `getl1balance`.
 
 ```
-$ node app.js
+$ node app.js <YOUR PRIVATE KEY>
 >> getl1balance
 ```
 
@@ -88,15 +94,23 @@ $ node app.js
 ```javascript
 const readline = require("readline")
 const ethers = require("ethers")
+const leveldown = require("leveldown")
 const { Bytes } = require("@cryptoeconomicslab/primitives")
 const { LevelKeyValueStore } = require("@cryptoeconomicslab/level-kvs")
 const initializeLightClient = require("@cryptoeconomicslab/eth-plasma-light-client")
   .default
 
-// TODO: enter your private key
-const PRIVATE_KEY = "ENTER YOUR PRIVATE KEY"
+// TODO: Please enter your private key when you start the application.
+const PRIVATE_KEY = process.argv[2] || ""
+if (!PRIVATE_KEY) {
+  throw "Please set your private key"
+}
 const config = require("./config.local.json")
 const DEPOSIT_CONTRACT_ADDRESS = config.payoutContracts.DepositContract
+const wallet = new ethers.Wallet(
+  PRIVATE_KEY,
+  new ethers.providers.JsonRpcProvider("http://127.0.0.1:8545")
+)
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -110,19 +124,25 @@ async function deposit(client, amount) {
 
 async function getBalance(client) {
   const balance = await client.getBalance()
-  console.log(`${client.address}:`, balance)
+  console.log(
+    `${client.address}: ${ethers.utils.formatEther(
+      balance[0].amount.toString()
+    )} ETH`
+  )
 }
 
 async function getL1Balance(client) {
-  const balance = await client.wallet.getL1Balance()
-  console.log(`${client.address}:`, balance.value.raw, balance.symbol)
+  const balance = await wallet.getBalance()
+  console.log(
+    `${client.address}: ${ethers.utils.formatEther(balance.toString())} ETH`
+  )
 }
 
 async function startLightClient() {
-  const kvs = new LevelKeyValueStore(Bytes.fromString("plasma_light_client"))
-  const wallet = new ethers.Wallet(
-    PRIVATE_KEY,
-    new ethers.providers.JsonRpcProvider("http://127.0.0.1:8545")
+  const dbName = wallet.address
+  const kvs = new LevelKeyValueStore(
+    Bytes.fromString(dbName),
+    leveldown(dbName)
   )
   const lightClient = await initializeLightClient({
     wallet,

@@ -95,7 +95,7 @@ Launch the CLI Wallet and start the exit process!
 Start the app with node command and try `exit <amount>`.
 
 ```
-$ node app.js
+$ node app.js <YOUR PRIVATE KEY>
 >> exit 10
 ```
 
@@ -140,15 +140,23 @@ If the balance has changed correctly, the exit is complete.
 ```javascript
 const readline = require("readline")
 const ethers = require("ethers")
+const leveldown = require("leveldown")
 const { Bytes } = require("@cryptoeconomicslab/primitives")
 const { LevelKeyValueStore } = require("@cryptoeconomicslab/level-kvs")
 const initializeLightClient = require("@cryptoeconomicslab/eth-plasma-light-client")
   .default
 
-// TODO: enter your private key
-const PRIVATE_KEY = "ENTER YOUR PRIVATE KEY"
+// TODO: Please enter your private key when you start the application.
+const PRIVATE_KEY = process.argv[2] || ""
+if (!PRIVATE_KEY) {
+  throw "Please set your private key"
+}
 const config = require("./config.local.json")
 const DEPOSIT_CONTRACT_ADDRESS = config.payoutContracts.DepositContract
+const wallet = new ethers.Wallet(
+  PRIVATE_KEY,
+  new ethers.providers.JsonRpcProvider("http://127.0.0.1:8545")
+)
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -162,12 +170,18 @@ async function deposit(client, amount) {
 
 async function getBalance(client) {
   const balance = await client.getBalance()
-  console.log(`${client.address}:`, balance)
+  console.log(
+    `${client.address}: ${ethers.utils.formatEther(
+      balance[0].amount.toString()
+    )} ETH`
+  )
 }
 
 async function getL1Balance(client) {
-  const balance = await client.wallet.getL1Balance()
-  console.log(`${client.address}:`, balance.value.raw, balance.symbol)
+  const balance = await wallet.getBalance()
+  console.log(
+    `${client.address}: ${ethers.utils.formatEther(balance.toString())} ETH`
+  )
 }
 
 async function transfer(client, amount, to) {
@@ -194,10 +208,10 @@ async function finalizeExit(client, index) {
 }
 
 async function startLightClient() {
-  const kvs = new LevelKeyValueStore(Bytes.fromString("plasma_light_client"))
-  const wallet = new ethers.Wallet(
-    PRIVATE_KEY,
-    new ethers.providers.JsonRpcProvider("http://127.0.0.1:8545")
+  const dbName = wallet.address
+  const kvs = new LevelKeyValueStore(
+    Bytes.fromString(dbName),
+    leveldown(dbName)
   )
   const lightClient = await initializeLightClient({
     wallet,
