@@ -6,21 +6,18 @@ import RoundDivider from "../RoundDivider"
 const features = [
   {
     title: "Secure",
-    desc: `The app is great in design and incredibly simple to use. Well
-    categorized navigation and easy to surf content. The user
-    experience of the app is excellent.`
+    desc:
+      "You can build scalable applications without compromising security of blockchain."
   },
   {
     title: "Fast",
-    desc: `Watch thousands of HD Movies and TV shows for free. Regularly
-    updates with fresh content. Get movie details like posters,
-    trailer, date of release, and rating.`
+    desc:
+      "Gazelle improves throughput to thousands of transactions per second and supports opt-in instant finality."
   },
   {
     title: "Low Cost",
-    desc: `Save all your favorite stuff and watch them later. Access this
-    section anytime you want, whether you want watch it again or
-    later.`
+    desc:
+      "Gazelle greatly reduces transaction gas cost by compressing transactions."
   }
 ]
 
