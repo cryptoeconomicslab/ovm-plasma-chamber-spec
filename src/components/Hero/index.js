@@ -7,17 +7,17 @@ const features = [
   {
     title: "Secure",
     desc:
-      "Gazelle makes it easy for you to develop secure applications by Plasma technology."
+      "You can build scalable applications without compromising security of blockchain."
   },
   {
     title: "Fast",
     desc:
-      "By trading off-chain, your application can handle thousands of transactions per second and instant finality."
+      "Gazelle improves throughput to thousands of transactions per second and supports opt-in instant finality."
   },
   {
     title: "Low Cost",
     desc:
-      "Compression of transactions can reduce the end user's gas costs when using public blockchains."
+      "Gazelle greatly reduces transaction gas cost by compressing transactions."
   }
 ]
 
