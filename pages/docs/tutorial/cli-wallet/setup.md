@@ -12,13 +12,13 @@ In this chapter, we will start the transaction aggregator required to run Plasma
 
 ### Run local aggregator
 
-Get the aggregator from [here](https://github.com/cryptoeconomicslab/wakkanay).
+Get the aggregator from [here](https://github.com/cryptoeconomicslab/gazelle/releases/tag/v0.4.0).
 
 And then, start it with Docker.
 
 ```bash
-$ git clone https://github.com/cryptoeconomicslab/wakkanay.git
-$ cd wakkanay
+$ git clone -b v0.4.0 https://github.com/cryptoeconomicslab/gazelle.git
+$ cd gazelle
 $ npm run docker:build
 $ npm run docker:cp
 $ npm run docker:start
@@ -41,7 +41,7 @@ $ npm init
 $ npm i ethers
 $ npm i leveldown
 $ npm i @cryptoeconomicslab/eth-plasma-light-client @cryptoeconomicslab/primitives @cryptoeconomicslab/level-kvs
-$ cp -p <your wakkanay path>/integration-test/aggregator/src/config.local.json ./config.local.json
+$ cp -p <your gazelle path>/integration-test/aggregator/src/config.local.json ./config.local.json
 ```
 
 ### Prepare the ReadLine for CLI application
