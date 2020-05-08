@@ -10,6 +10,9 @@ module.exports = {
   projectName: "Gazelle",
   themeConfig: {
     disableDarkMode: true,
+    googleAnalytics: {
+      trackingID: "UA-165940442-1"
+    },
     prism: {
       theme: require("prism-react-renderer/themes/vsDark")
     },
