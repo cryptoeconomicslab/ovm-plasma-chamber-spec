@@ -24,7 +24,7 @@ const roadmaps = [
   },
   {
     title: "ETHBoston - Ethereum Blockchain Hackathon",
-    link: "/",
+    link: "",
     linkTxt: ""
   },
   {
@@ -34,7 +34,7 @@ const roadmaps = [
   },
   {
     title: "Developing OVM-based Plasma in Typescript",
-    link: "https://github.com/cryptoeconomicslab/wakkanay",
+    link: "https://github.com/cryptoeconomicslab/gazelle",
     linkTxt: "See source code"
   }
 ]

@@ -7,7 +7,7 @@ const showcases = [
     title: "Gazelle Wallet",
     desc:
       "Gazelle Wallet is is a sample wallet application running on Plasma built with Gazelle.",
-    link: "https://github.com/cryptoeconomicslab/WakkanayBrowserWallet",
+    link: "https://github.com/cryptoeconomicslab/gazelle-wallet",
     linkTxt: "Play with Wallet"
   },
   {
@@ -64,6 +64,9 @@ function Showcases() {
             {showcases.map((showcase, i) => (
               <Showcase {...showcase} key={i} />
             ))}
+          </div>
+          <div className={styles.collabLinkWrapper}>
+            <a href="/communities/Collaboration">Collaborate with us!</a>
           </div>
         </div>
       </div>

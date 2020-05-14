@@ -4,12 +4,14 @@ module.exports = {
       "communities/Support",
       "communities/News",
       "communities/Team",
-      "communities/Collaboration",
-    ],
+      "communities/Collaboration"
+    ]
   },
   docs: {
-    Introduction: ["docs/Introduction"],
-    "Getting Started": ["docs/getting-started/Try_Gazelle_In_Local"],
+    Introduction: [
+      "docs/Introduction",
+      "docs/getting-started/Try_Gazelle_In_Local"
+    ],
     Tutorial: [
       "docs/tutorial/cli-wallet/README",
       "docs/tutorial/cli-wallet/Setup",
@@ -17,15 +19,15 @@ module.exports = {
       "docs/tutorial/cli-wallet/Deposit",
       "docs/tutorial/cli-wallet/Show_Balance",
       "docs/tutorial/cli-wallet/Transfer",
-      "docs/tutorial/cli-wallet/Exit",
+      "docs/tutorial/cli-wallet/Exit"
     ],
     "API Reference": [
       "docs/api/Plasma_Aggregator",
-      "docs/api/Plasma_Light_Client",
+      "docs/api/Plasma_Light_Client"
     ],
     "For Contributors": [
       "docs/contributors/Related_Repositories",
-      "docs/contributors/Code_Of_Conduct",
-    ],
-  },
-};
+      "docs/contributors/Code_Of_Conduct"
+    ]
+  }
+}
