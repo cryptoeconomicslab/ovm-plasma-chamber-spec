@@ -1,13 +1,13 @@
 const fa = require("@fortawesome/free-brands-svg-icons")
 
 module.exports = {
-  title: "Gazelle",
+  title: "gazelle",
   tagline: "The tagline of my site",
   url: "https://gzle.io",
   baseUrl: "/",
   favicon: "",
   organizationName: "Cryptoeconomics Lab",
-  projectName: "Gazelle",
+  projectName: "gazelle",
   themeConfig: {
     disableDarkMode: true,
     googleAnalytics: {
@@ -17,9 +17,9 @@ module.exports = {
       theme: require("prism-react-renderer/themes/vsDark")
     },
     navbar: {
-      title: "Gazelle",
+      title: "gazelle",
       logo: {
-        alt: "Gazelle",
+        alt: "gazelle",
         src: "img/logo-w.svg"
       },
       links: [
@@ -41,7 +41,7 @@ module.exports = {
           position: "right"
         },
         {
-          href: "https://github.com/cryptoeconomicslab",
+          href: "https://github.com/cryptoeconomicslab/gazelle",
           label: "GitHub",
           position: "right"
         }
