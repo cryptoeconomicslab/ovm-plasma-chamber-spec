@@ -14,13 +14,13 @@ We introduce gazelle alpha release.
 
 **The ultimate goal of gazelle** is to provide a way to build highly scalable and usable blockchain applications by utilizing off-chain technology.
 
-For scalability, we use off-chain technology such as Plasma just because it's fast and secure. For usability, we provide a way to combine multiple off-chain technology constructions to make use of strengths of different off-chain technologies. For instance, if you combine Plasma and channel, you can achieve instant finality capability with arbitrary participants. This wouldn't have been possible by using only Plasma or channel. Combination of different constructions is possible thanks to OGS as a fraud-proof verification base. You can find detailed discussion about OGS in Optimism blog(link).
+For scalability, we use off-chain technology such as Plasma just because it's fast and secure. For usability, we provide a way to combine multiple off-chain technology constructions to make use of strengths of different off-chain technologies. For instance, if you combine Plasma and channel, you can achieve instant finality capability with arbitrary participants. This wouldn't have been possible by using only Plasma or channel. Combination of different constructions is possible thanks to OGS as a fraud-proof verification base. You can find detailed discussion about OGS [here](https://plasma.group/optimistic-game-semantics.pdf).
 
 ## EF Grant program
 
 We greatly appreciate that our project is supported by the Ecosystem Support Program of Ethereum Foundation from Jan 2020.
 
-check [https://blog.ethereum.org/2020/04/01/ecosystem-support-program-allocation-update/](https://blog.ethereum.org/2020/04/01/ecosystem-support-program-allocation-update/)
+If you are intereseted in this program, check out [Ethereum Foundation's ecosystem support program](https://blog.ethereum.org/2020/04/01/ecosystem-support-program-allocation-update/).
 
 ## Next Step
 
