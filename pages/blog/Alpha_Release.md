@@ -28,7 +28,7 @@ We are planning to release following milestones next quarter in 2020.
 
 ## Collaboration
 
-We are looking for a collaboration to build impressive plasma applications. [Feel free to contact us](mailto:info@gzle.com)!
+We are looking for a collaboration to build impressive plasma applications. [Feel free to contact us](mailto:info@gzle.io)!
 
 ---
 
