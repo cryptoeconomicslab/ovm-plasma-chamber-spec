@@ -21,7 +21,7 @@
     Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
   --ifm-line-height-base: 1.7;
   --ifm-font-base-color: #25212d;
-  --ifm-link-color: #2baef8;
+  --ifm-link-color: #00e6cc;
   --ifm-contents-border-color: rgba(0, 0, 0, 0.06);
 
   --ifm-leading-desktop: 1.75;
@@ -44,13 +44,18 @@
   --ifm-blockquote-padding-vertical: 1.5rem;
   --ifm-blockquote-padding-horizontal: 1.5rem;
 
+  --ifm-hr-border-color: #efefef;
+  --ifm-hr-border-width: 1px;
+
   // CEL original
   --sub-text-white: rgba(255, 255, 255, 0.6);
   --sub-text-black: rgba(0, 0, 0, 0.6);
+  --gazelle: #00e6cc;
   --red: #eb3959;
   --blue: #2baef8;
   --yellow: #eff313;
   --purple: #6356f5;
+  --black: #141315;
   --border: rgba(0, 0, 0, 0.1);
   --placeholder: rgba(0, 0, 0, 0.1);
   --placeholder-white: rgba(255, 255, 255, 0.1);
@@ -70,6 +75,9 @@
   --ifm-heading-vertical-rhythm-top: 1.5;
   --ifm-h1-vertical-rhythm-bottom: 1;
   --ifm-heading-vertical-rhythm-bottom: 0.85;
+  hr {
+    border-bottom: none;
+  }
 }
 
 blockquote {
@@ -77,7 +85,7 @@ blockquote {
 }
 
 .navbar {
-  background: var(--gradient);
+  background: var(--black);
   &__toggle {
     color: var(--ifm-navbar-link-color);
   }
@@ -85,7 +93,7 @@ blockquote {
     visibility: hidden;
   }
   &__brand {
-    padding: 0.375rem;
+    padding: 0rem;
   }
   .navbar__link {
     font-weight: 700;
@@ -94,7 +102,7 @@ blockquote {
       &:after {
         position: absolute;
         content: "";
-        background: var(--red);
+        background: var(--gazelle);
         width: calc(100% - 2rem);
         height: 3px;
         bottom: 1px;
@@ -113,7 +121,7 @@ blockquote {
   border: 1px solid transparent;
   &:focus {
     outline: none;
-    border-color: var(--purple);
+    border-color: var(--gazelle);
   }
   &::placeholder {
     color: var(--placeholder);
@@ -164,7 +172,7 @@ blockquote {
     font-weight: 900;
     &.contents__link--active,
     &:hover {
-      color: var(--red);
+      color: var(--gazelle);
     }
   }
   &.contents__left-border {

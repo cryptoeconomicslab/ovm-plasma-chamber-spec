@@ -1,4 +1,5 @@
 import React from "react"
+import Link from "@docusaurus/Link"
 import styles from "./styles.module.scss"
 
 const showcases = [
@@ -65,8 +66,18 @@ function Showcases() {
               <Showcase {...showcase} key={i} />
             ))}
           </div>
-          <div className={styles.collabLinkWrapper}>
-            <a href="/communities/Collaboration">Collaborate with us!</a>
+          <div className={styles.collab}>
+            <h3 className={styles.collab__title}>Collaboration</h3>
+            <p className={styles.collab__desc}>
+              Gazelle core dev team is looking forward to receiving collab
+              offers from DApps developers. Let's create cool usecase together.
+            </p>
+            <Link
+              className={styles.collab__link}
+              to="/communities/Collaboration"
+            >
+              Collaborate with us!
+            </Link>
           </div>
         </div>
       </div>

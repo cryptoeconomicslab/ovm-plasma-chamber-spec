@@ -1,5 +1,5 @@
 .root {
-  background: var(--gradient);
+  background: var(--black);
   padding: 6rem 2rem;
   @media screen and (max-width: 768px) {
     padding: 3rem 2rem;
@@ -89,9 +89,10 @@
 
 .logo {
   flex-basis: 8rem;
+  max-width: 8rem;
   opacity: 0.1;
   @media screen and (max-width: 500px) {
-    margin-bottom: 2rem;
+    margin: 0 auto 2rem;
   }
 }
 

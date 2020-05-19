@@ -20,7 +20,7 @@ module.exports = {
       title: "gazelle",
       logo: {
         alt: "gazelle",
-        src: "img/logo-w.svg"
+        src: "img/gazelle-logo.svg"
       },
       links: [
         {
@@ -54,8 +54,8 @@ module.exports = {
           title: "Home",
           items: [
             {
-              label: "Showcase",
-              to: "/#showcase"
+              label: "Example & Tool",
+              to: "/#example-and-tool"
             },
             {
               label: "Roadmap",
@@ -136,6 +136,6 @@ module.exports = {
   ],
   plugins: ["docusaurus-plugin-sass"],
   stylesheets: [
-    "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap"
+    "https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;0,900;1,900&display=swap"
   ]
 }
