@@ -59,25 +59,15 @@ function Showcases() {
     <div className={styles.root}>
       <div className={styles.showcaseRoot}>
         <h2 className={styles.headline}>Example & Tool</h2>
-        <p className={styles.desc}>See Gazelle's example and tool.</p>
+        <p className={styles.desc}>
+          See Gazelle's example and tool and{" "}
+          <Link to="/communities/Collaboration">collaborate with us!</Link>
+        </p>
         <div className={styles.showcaseWrapper}>
           <div className={styles.showcases}>
             {showcases.map((showcase, i) => (
               <Showcase {...showcase} key={i} />
             ))}
-          </div>
-          <div className={styles.collab}>
-            <h3 className={styles.collab__title}>Collaboration</h3>
-            <p className={styles.collab__desc}>
-              Gazelle core dev team is looking forward to receiving collab
-              offers from DApps developers. Let's create cool usecase together.
-            </p>
-            <Link
-              className={styles.collab__link}
-              to="/communities/Collaboration"
-            >
-              Collaborate with us!
-            </Link>
           </div>
         </div>
       </div>
