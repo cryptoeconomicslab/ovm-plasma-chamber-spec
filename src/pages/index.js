@@ -15,7 +15,7 @@ function Home() {
       description="Gazelle is a scaling technology for blockchain based on Plasma and OVM. Current scope of it's functionality includes transfer of WrappedETH and ERC20 tokens."
     >
       <Hero />
-      <section id="showcase">
+      <section id="example-and-tool">
         <Showcase />
       </section>
       <section id="roadmap">
@@ -26,7 +26,7 @@ function Home() {
       </section>
       <div className={styles.cta}>
         <RoundDivider top />
-        <Button to="docs/getting-started/Try_Gazelle_In_Local">
+        <Button withLogo to="docs/getting-started/Try_Gazelle_In_Local">
           Get Started
         </Button>
       </div>

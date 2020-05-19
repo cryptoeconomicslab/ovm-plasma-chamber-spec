@@ -4,7 +4,15 @@ import classnames from "classnames"
 import styles from "./styles.module.scss"
 
 function Button(props) {
-  const { to, inline, full, className, children, ...restProps } = props
+  const {
+    withLogo,
+    to,
+    inline,
+    full,
+    className,
+    children,
+    ...restProps
+  } = props
   return (
     <>
       {!to ? (
@@ -13,10 +21,17 @@ function Button(props) {
           {...restProps}
           className={classnames(className, styles.root, {
             [styles.inline]: inline,
-            [styles.full]: full
+            [styles.full]: full,
+            [styles.withLogo]: withLogo
           })}
         >
-          {children}
+          <span
+            className={classnames(styles.txt, {
+              [styles.withLogo]: withLogo
+            })}
+          >
+            {children}
+          </span>
         </button>
       ) : (
         <Link
@@ -24,10 +39,17 @@ function Button(props) {
           to={to}
           className={classnames(className, styles.root, {
             [styles.inline]: inline,
-            [styles.full]: full
+            [styles.full]: full,
+            [styles.withLogo]: withLogo
           })}
         >
-          {children}
+          <span
+            className={classnames(styles.txt, {
+              [styles.withLogo]: withLogo
+            })}
+          >
+            {children}
+          </span>
         </Link>
       )}
     </>

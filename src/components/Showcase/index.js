@@ -1,4 +1,5 @@
 import React from "react"
+import Link from "@docusaurus/Link"
 import styles from "./styles.module.scss"
 
 const showcases = [
@@ -58,15 +59,15 @@ function Showcases() {
     <div className={styles.root}>
       <div className={styles.showcaseRoot}>
         <h2 className={styles.headline}>Example & Tool</h2>
-        <p className={styles.desc}>See Gazelle's example and tool.</p>
+        <p className={styles.desc}>
+          See Gazelle's example and tool and{" "}
+          <Link to="/communities/Collaboration">collaborate with us!</Link>
+        </p>
         <div className={styles.showcaseWrapper}>
           <div className={styles.showcases}>
             {showcases.map((showcase, i) => (
               <Showcase {...showcase} key={i} />
             ))}
-          </div>
-          <div className={styles.collabLinkWrapper}>
-            <a href="/communities/Collaboration">Collaborate with us!</a>
           </div>
         </div>
       </div>

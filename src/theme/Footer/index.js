@@ -62,7 +62,7 @@ function Footer() {
       <div className={styles.bottom}>
         <div className={styles.logo}>
           <Link to="/">
-            <img src="/img/logo-w.svg" className={styles.logo__img} />
+            <img src="/img/gazelle-logo-w.svg" className={styles.logo__img} />
           </Link>
         </div>
         <small className={styles.copyright}>{copyright}</small>

@@ -1,6 +1,6 @@
 import React from "react"
+import Link from "@docusaurus/Link"
 import styles from "./styles.module.scss"
-import Button from "../Button"
 import RoundDivider from "../RoundDivider"
 
 const features = [
@@ -35,15 +35,18 @@ function Hero() {
     <div className={styles.root}>
       <div className={styles.inner}>
         <div className={styles.copy}>
-          <h1 className={styles.headline}>Secure Dapps without any hassle</h1>
+          <h1 className={styles.headline}>Secure DApps without any hassle</h1>
           <p className={styles.desc}>
             Gazelle is a DApps development framework that guarantees to make the
             app secure, scalable, and usable with the Layer 2 technology.
           </p>
           <div className={styles.btnWrap}>
-            <Button to="docs/getting-started/Try_Gazelle_In_Local">
-              Get Started
-            </Button>
+            <Link
+              to="docs/getting-started/Try_Gazelle_In_Local"
+              className={styles.btn}
+            >
+              <span className={styles.btnTxt}>Get Started</span>
+            </Link>
           </div>
         </div>
         <hr className={styles.hr} />
