@@ -87,13 +87,16 @@ blockquote {
 .navbar {
   background: var(--black);
   &__toggle {
-    color: var(--ifm-navbar-link-color);
+    color: rgba(255, 255, 255, 0.25);
   }
   &__title {
     visibility: hidden;
   }
   &__brand {
     padding: 0rem;
+  }
+  .navbar__toggle {
+    margin-right: 0.75rem;
   }
   .navbar__link {
     font-weight: 700;
