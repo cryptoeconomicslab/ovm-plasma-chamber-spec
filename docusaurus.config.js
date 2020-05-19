@@ -5,10 +5,11 @@ module.exports = {
   tagline: "The tagline of my site",
   url: "https://gzle.io",
   baseUrl: "/",
-  favicon: "",
+  favicon: "/img/favicon.ico",
   organizationName: "Cryptoeconomics Lab",
   projectName: "gazelle",
   themeConfig: {
+    image: "/img/ogp.jpg",
     disableDarkMode: true,
     googleAnalytics: {
       trackingID: "UA-165940442-1"
