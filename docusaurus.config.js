@@ -36,7 +36,7 @@ module.exports = {
           position: "right"
         },
         {
-          href: "https://medium.com/cryptoeconomics-lab",
+          to: "blog",
           label: "Blog",
           position: "right"
         },
