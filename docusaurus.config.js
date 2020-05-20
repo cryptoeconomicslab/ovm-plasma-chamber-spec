@@ -81,7 +81,7 @@ module.exports = {
             },
             {
               label: "Blog",
-              href: "https://medium.com/cryptoeconomics-lab"
+              to: "/blog"
             },
             {
               label: "Github",
