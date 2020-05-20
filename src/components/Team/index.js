@@ -7,7 +7,7 @@ const cards = [
     name: "Syuhei Hiya",
     img: "/img/team/syuhei.png",
     desc:
-      "Father of 2 lovely boys. Specializes in Programming Language Design. Experienced startup CEO twice and he says CEL is the best team ever."
+      "Father of 2 lovely boys. He founded the company building Backend as a Service for IoT in 2012. He transfered the ownership of the service to othe IoT company. After working at some IoT startups, he joined Cryptoeconomcis Lab in 2018."
   },
   {
     name: "Takamichi Tsutsumi",
