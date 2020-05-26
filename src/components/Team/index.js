@@ -7,7 +7,7 @@ const cards = [
     name: "Syuhei Hiya",
     img: "/img/team/syuhei.png",
     desc:
-      "Father of 2 lovely boys. He founded the company building Backend as a Service for IoT in 2012. He transfered the ownership of the service to othe IoT company. After working at some IoT startups, he joined Cryptoeconomcis Lab in 2018."
+      "Father of 2 lovely boys. He founded the company building Backend as a Service for IoT in 2012. He transferred the ownership of the service to other IoT company. After working at some IoT startups, he joined Cryptoeconomcis Lab in 2018."
   },
   {
     name: "Takamichi Tsutsumi",
