@@ -44,7 +44,7 @@ Install the following libraries using npm to enable fund transfers in Plasma.
 
 ```bash
 $ npm i ethers
-$ npm i @cryptoeconomicslab/eth-plasma-light-client @cryptoeconomicslab/primitives @cryptoeconomicslab/level-kvs
+$ npm i @cryptoeconomicslab/eth-plasma-light-client@0.4.0 @cryptoeconomicslab/primitives @cryptoeconomicslab/level-kvs
 ```
 
 Copy `config.local.json` file to your application repository root.
