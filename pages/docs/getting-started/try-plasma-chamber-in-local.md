@@ -9,7 +9,7 @@ For this quick start document using Typescript SDK, you need Node.js with the ve
 
 ## Prerequisites
 
-- Python2.7
+- Python (for `node-gyp`)
 - Node v10.x
 - Docker
 

@@ -1,7 +1,7 @@
 const fa = require("@fortawesome/free-brands-svg-icons")
 
 module.exports = {
-  title: "gazelle",
+  title: "Gazelle",
   tagline: "The tagline of my site",
   url: "https://gzle.io",
   baseUrl: "/",
@@ -18,9 +18,9 @@ module.exports = {
       theme: require("prism-react-renderer/themes/vsDark")
     },
     navbar: {
-      title: "gazelle",
+      title: "Gazelle",
       logo: {
-        alt: "gazelle",
+        alt: "Gazelle",
         src: "img/gazelle-logo.svg"
       },
       links: [
