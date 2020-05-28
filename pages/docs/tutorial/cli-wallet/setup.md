@@ -40,7 +40,7 @@ $ cd plasma-wallet
 $ npm init
 $ npm i ethers
 $ npm i leveldown
-$ npm i @cryptoeconomicslab/eth-plasma-light-client @cryptoeconomicslab/primitives @cryptoeconomicslab/level-kvs
+$ npm i @cryptoeconomicslab/eth-plasma-light-client@0.4.0 @cryptoeconomicslab/primitives @cryptoeconomicslab/level-kvs
 $ cp -p <your gazelle path>/integration-test/aggregator/src/config.local.json ./config.local.json
 ```
 
