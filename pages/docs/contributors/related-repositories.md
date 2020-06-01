@@ -3,29 +3,20 @@ id: Related_Repositories
 title: Category of OVM related repositories
 sidebar_label: Related Repositories
 ---
-
-- wakkanay
+## Core
+- [gazelle](https://github.com/cryptoeconomicslab/gazelle)
   - monorepo for OVM based Plasma implementation
-
-## For Etherum
-
-- wakkanay-ethereum
-  - Ethereum version OVM Plasma implementation following wakkanay's interfaces
-- wakkanay-plasma-aggregator
-  - Plasma aggregator implementation using wakkanay
-- wakkanay-plasma-light-client
-  - Plasma light client implementation using wakkanay
-- ovm-compiler
-  - wakkanay uses this ovm compiler to convert OVM's DSL to Solidity contracts deployed on Layer1 and create JSON for L2 clients
-- ovm-contracts
+- [ovm-contracts](https://github.com/cryptoeconomicslab/ovm-contracts)
   - Solidity OVM contract. Aggregator and light client connects to these contracts
 
 ## For Tezos
-
-- wakkanay-tezos
+- [wakkanay-tezos](https://github.com/cryptoeconomicslab/wakkanay-tezos)
   - Tezos version OVM Plasma implementation following wakkanay's interfaces
 
 ## For Substrate
-
-- wakkanay-substrate
+- [gazelle-substrate](https://github.com/cryptoeconomicslab/gazelle-substrate)
   - Substrate version OVM Plasma implementation following wakkanay's interfaces
+
+## Gazelle wallet
+- [gazelle-wallet](https://github.com/cryptoeconomicslab/gazelle-wallet)
+  - Browser wallet implementation
