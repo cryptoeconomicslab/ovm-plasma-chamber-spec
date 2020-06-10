@@ -7,7 +7,7 @@ const showcases = [
     img: "img/showcases/wallet.png",
     title: "Gazelle Wallet",
     desc:
-      "Gazelle Wallet is is a sample wallet application running on Plasma built with Gazelle.",
+      "Gazelle Wallet is a sample wallet application running on Plasma built with Gazelle.",
     link: "https://github.com/cryptoeconomicslab/gazelle-wallet",
     linkTxt: "Play with Wallet"
   },
