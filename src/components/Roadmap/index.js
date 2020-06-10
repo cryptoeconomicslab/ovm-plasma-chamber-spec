@@ -66,7 +66,7 @@ function Roadmap() {
           <div
             className={`${styles.roadmap__year} ${styles.roadmap__yearFirst}`}
           >
-            <span className={styles.roadmap__yearTxt}>2020</span>
+            <span className={styles.roadmap__yearTxt}>2019</span>
           </div>
           <ul className={styles.roadmap__list}>
             {roadmaps.map((roadmap, i) => (
