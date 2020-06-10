@@ -18,7 +18,7 @@ const roadmaps = [
     linkTxt: "Watch our talk"
   },
   {
-    title: "Developing OGS-based Plasma Chamber in Rust",
+    title: "Developing OVM-based Plasma Chamber in Rust",
     link: "https://github.com/cryptoeconomicslab/plasma-rust-framework",
     linkTxt: "See source code"
   },
@@ -33,7 +33,7 @@ const roadmaps = [
     linkTxt: "Watch our talk"
   },
   {
-    title: "Developing OGS-based Plasma in Typescript",
+    title: "Developing OVM-based Plasma in Typescript",
     link: "https://github.com/cryptoeconomicslab/gazelle",
     linkTxt: "See source code"
   }
