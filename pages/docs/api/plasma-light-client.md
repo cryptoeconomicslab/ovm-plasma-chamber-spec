@@ -6,7 +6,7 @@ sidebar_label: Plasma Light Client
 
 ## deposit
 
-▸ **deposit**(`amount`: number, `depositContractAddress`: string): _Promise‹void›_
+▸ **deposit**(`amount`: number, `tokenContractAddress`: string): _Promise‹void›_
 
 Deposit given amount of token to corresponding deposit contract.
 this method calls `approve` method of ERC20 contract and `deposit` method
@@ -14,10 +14,10 @@ of Deposit contract.
 
 **Parameters:**
 
-| Name                     | Type   | Description                              |
-| ------------------------ | ------ | ---------------------------------------- |
-| `amount`                 | number | amount to deposit                        |
-| `depositContractAddress` | string | deposit contract address to deposit into |
+| Name                   | Type   | Description                            |
+| ---------------------- | ------ | -------------------------------------- |
+| `amount`               | number | amount to deposit                      |
+| `tokenContractAddress` | string | token contract address to deposit into |
 
 **Returns:** _Promise‹void›_
 
@@ -25,46 +25,46 @@ of Deposit contract.
 
 ## transfer
 
-▸ **transfer**(`amount`: number, `depositContractAddressString`: string, `toAddress`: string): _Promise‹void›_
+▸ **transfer**(`amount`: number, `tokenContractAddressString`: string, `toAddress`: string): _Promise‹void›_
 
 transfer token to new owner. throw if given invalid inputs.
 
 **Parameters:**
 
-| Name                           | Type   | Description        |
-| ------------------------------ | ------ | ------------------ |
-| `amount`                       | number | amount to transfer |
-| `depositContractAddressString` | string | -                  |
-| `toAddress`                    | string | -                  |
+| Name                         | Type   | Description        |
+| ---------------------------- | ------ | ------------------ |
+| `amount`                     | number | amount to transfer |
+| `tokenContractAddressString` | string | -                  |
+| `toAddress`                  | string | -                  |
 
 **Returns:** _Promise‹void›_
 
 ---
 
-## exit
+## startWithdrawal
 
-▸ **exit**(`amount`: number, `depositContractAddress`: string): _Promise‹void›_
+▸ **startWithdrawal**(`amount`: number, `tokenContractAddress`: string): _Promise‹void›_
 
 Withdrawal process starts from calling this method.
-Given amount and depositContractAddress, checks if client has sufficient token amount.
+Given amount and tokenContractAddress, checks if client has sufficient token amount.
 If client has sufficient amount, create exitProperty from stateUpdates this client owns,
 calls `claimProperty` method on UniversalAdjudicationContract. Store the property in exitList.
-User can call `finalizeExit` to withdraw actual token after the exitProperty is decided to true on-chain.
+User can call `completeWithdrawal` to withdraw actual token after the exitProperty is decided to true on-chain.
 
 **Parameters:**
 
-| Name                     | Type   | Description                      |
-| ------------------------ | ------ | -------------------------------- |
-| `amount`                 | number | amount to exit                   |
-| `depositContractAddress` | string | deposit contract address to exit |
+| Name                   | Type   | Description                    |
+| ---------------------- | ------ | ------------------------------ |
+| `amount`               | number | amount to exit                 |
+| `tokenContractAddress` | string | token contract address to exit |
 
 **Returns:** _Promise‹void›_
 
 ---
 
-## finalizeExit
+## completeWithdrawal
 
-▸ **finalizeExit**(`exit`: Exit): _Promise‹void›_
+▸ **completeWithdrawal**(`exit`: Exit): _Promise‹void›_
 
 Given exit instance, finalize exit to withdraw token from deposit contract.
 Client checks if the exitProperty of the exit instance is decided by calling `isDecided` method
@@ -92,9 +92,9 @@ All ERC20 tokens including Peth registered by `registerCustomToken` method or `r
 
 ---
 
-## getExitlist
+## getPendingWithdrawals
 
-▸ **getExitlist**(): _Promise‹Exit[]›_
+▸ **getPendingWithdrawals**(): _Promise‹Exit[]›_
 
 Get pending exit list
 
@@ -123,15 +123,15 @@ when you want to use custom IERC20 contract. PETH contract use this method.
 
 ## registerToken
 
-▸ **registerToken**(`erc20ContractAddress`: string, `depositContractAddress`: string): _void_
+▸ **registerToken**(`erc20ContractAddress`: string, `tokenContractAddress`: string): _void_
 
 register ERC20 token. use default ERC20 contract wrapper
 
 **Parameters:**
 
-| Name                     | Type   | Description                                               |
-| ------------------------ | ------ | --------------------------------------------------------- |
-| `erc20ContractAddress`   | string | ERC20 token address to register                           |
-| `depositContractAddress` | string | deposit contract address connecting to tokenAddress above |
+| Name                   | Type   | Description                                             |
+| ---------------------- | ------ | ------------------------------------------------------- |
+| `erc20ContractAddress` | string | ERC20 token address to register                         |
+| `tokenContractAddress` | string | token contract address connecting to tokenAddress above |
 
 **Returns:** _void_

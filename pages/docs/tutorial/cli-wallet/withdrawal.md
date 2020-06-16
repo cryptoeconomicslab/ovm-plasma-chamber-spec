@@ -1,66 +1,66 @@
 ---
-id: Exit
-title: 6. Exit
-sidebar_label: Exit
+id: Withdrawal
+title: 6. Withdrawal
+sidebar_label: Withdrawal
 ---
 
-In this chapter, we will implement exit functionality to withdraw your tokens from Plasma.
+In this chapter, we will implement withdrawal functionality to withdraw your tokens from Plasma.
 
 By submitting your correct transaction history, you can withdraw your tokens that are locked in DepositContract on the main chain.
 
-## 6-1. Implement exit
+## 6-1. Implement startWithdrawal
 
-You can call the `exit` function from the plasma light client.
+You can call the `startWithdrawal` function from the plasma light client.
 
 This allows users to claim how much they have withdrawn and with their transaction history.
 
-[Plasma Light Client API reference | exit](/docs/api/Plasma_Light_Client#exit)
+[Plasma Light Client API reference | startWithdrawal](/docs/api/Plasma_Light_Client#startwithdrawal)
 
 ```javascript
-async function exit(client, amount) {
-  console.log("exit:", DEPOSIT_CONTRACT_ADDRESS, amount)
-  await client.exit(amount, DEPOSIT_CONTRACT_ADDRESS)
+async function startWithdrawal(client, amount) {
+  console.log("startWithdrawal:", TOKEN_CONTRACT_ADDRESS, amount)
+  await client.startWithdrawal(amount, TOKEN_CONTRACT_ADDRESS)
   await showExitList(client)
 }
 ```
 
-## 6-2. Implement getExitList
+## 6-2. Implement getPendingWithdrawals
 
-You can call the `getExitList` function from the plasma light client.
+You can call the `getPendingWithdrawals` function from the plasma light client.
 
 You can get a list of the exits that the user is currently claiming.
 
-[Plasma Light Client API reference | getExitlist](/docs/api/Plasma_Light_Client#getexitlist)
+[Plasma Light Client API reference | getPendingWithdrawals](/docs/api/Plasma_Light_Client#getpendingwithdrawals)
 
 ```javascript
-async function getExitList(client) {
-  const exitList = await client.getExitList()
+async function getPendingWithdrawals(client) {
+  const exitList = await client.getPendingWithdrawals()
   console.log("exit list:", exitList)
 }
 ```
 
-## 6-3. Implement finalizeExit
+## 6-3. Implement completeWithdrawal
 
-You can call the `finalizeExit` function from the plasma light client.
+You can call the `completeWithdrawal` function from the plasma light client.
 
 By specifying the index of exit object from the exitList, you can withdraw the excitable tokens to the main chain.
 
 At this time, the exit must have passed the challenge period.
 
-[Plasma Light Client API reference | finalizeExit](/docs/api/Plasma_Light_Client#finalizeexit)
+[Plasma Light Client API reference | completeWithdrawal](/docs/api/Plasma_Light_Client#completewithdrawal)
 
 ```javascript
-async function finalizeExit(client, index) {
-  const exitList = await getExitList(client)
+async function completeWithdrawal(client, index) {
+  const exitList = await getPendingWithdrawals(client)
   if (exitList[index]) {
-    await client.finalizeExit(exitList[index])
+    await client.completeWithdrawal(exitList[index])
   }
 }
 ```
 
-## 6-4. Add exit functions to the CLI
+## 6-4. Add withdrawal functions to the CLI
 
-To call the `exit`, `getExitList` and `finalizeExit` functions in the CLI Wallet, add some processing to the ReadLine.
+To call the `startWithdrawal`, `getPendingWithdrawals` and `completeWithdrawal` functions in the CLI Wallet, add some processing to the ReadLine.
 
 ```javascript
 function cliWalletReadLine(client) {
@@ -68,16 +68,16 @@ function cliWalletReadLine(client) {
     const args = input.split(/\s+/)
     const command = args.shift()
     switch (command) {
-      case "getexitlist":
-        await getExitList(client)
+      case "getpendingwithdrawals":
+        await getPendingWithdrawals(client)
         cliWalletReadLine(client)
         break
-      case "exit":
-        await exit(client, args[0])
+      case "startwithdrawal":
+        await startWithdrawal(client, args[0])
         cliWalletReadLine(client)
         break
-      case "finalizeexit":
-        await finalizeExit(client, args[0])
+      case "completewithdrawal":
+        await completeWithdrawal(client, args[0])
         cliWalletReadLine(client)
         break
       default:
@@ -88,42 +88,42 @@ function cliWalletReadLine(client) {
 }
 ```
 
-## 6-5. Exit ether
+## 6-5. Withdrawal Ether
 
-Launch the CLI Wallet and start the exit process!
+Launch the CLI Wallet and start the withdrawal process!
 
-Start the app with node command and try `exit <amount>`.
+Start the app with node command and try `startwithdrawal <amount>`.
 
 ```
 $ node app.js <YOUR PRIVATE KEY>
->> exit 10
+>> startwithdrawal 10
 ```
 
 ## 6-6. Check your exit list
 
 Let's take a look at exitList to see if the exit has been claimed correctly.
 
-Try `getexitlist`.
+Try `getpendingwithdrawals`.
 
 ```
->> getexitlist
+>> getpendingwithdrawals
 ```
 
 ## 6-7. Withdraw your Ether from Plasma
 
-Specify the index number of the Exit you want to finalize and pull the token from Plasma!
+Specify the index number of the exit you want to finalize and pull the token from Plasma!
 
-Try `finalizeexit <index>`.
+Try `completewithdrawal <index>`.
 
 ```
->> finalizeexit 0
+>> completewithdrawal 0
 ```
 
 ## 6-8. Check your balance
 
 Let's look at the balance using the `getBalance` and `getl1balance` functions we just created to see if we've successfully withdrawn the token!
 
-If the balance has changed correctly, the exit is complete.
+If the balance has changed correctly, the withdrawal is complete.
 
 ```bash
 # check L1 balance
@@ -152,7 +152,7 @@ if (!PRIVATE_KEY) {
   throw "Please set your private key"
 }
 const config = require("./config.local.json")
-const DEPOSIT_CONTRACT_ADDRESS = config.payoutContracts.DepositContract
+const TOKEN_CONTRACT_ADDRESS = config.PlasmaETH
 const wallet = new ethers.Wallet(
   PRIVATE_KEY,
   new ethers.providers.JsonRpcProvider("http://127.0.0.1:8545")
@@ -165,7 +165,7 @@ const rl = readline.createInterface({
 
 async function deposit(client, amount) {
   console.log("deposit:", amount)
-  await client.deposit(amount, DEPOSIT_CONTRACT_ADDRESS)
+  await client.deposit(amount, TOKEN_CONTRACT_ADDRESS)
 }
 
 async function getBalance(client) {
@@ -186,24 +186,24 @@ async function getL1Balance(client) {
 
 async function transfer(client, amount, to) {
   console.log("transfer:", to, amount)
-  await client.transfer(amount, DEPOSIT_CONTRACT_ADDRESS, to)
+  await client.transfer(amount, TOKEN_CONTRACT_ADDRESS, to)
 }
 
-async function exit(client, amount) {
-  console.log("exit:", DEPOSIT_CONTRACT_ADDRESS, amount)
-  await client.exit(amount, DEPOSIT_CONTRACT_ADDRESS)
+async function startWithdrawal(client, amount) {
+  console.log("startWithdrawal:", TOKEN_CONTRACT_ADDRESS, amount)
+  await client.startWithdrawal(amount, TOKEN_CONTRACT_ADDRESS)
   await showExitList(client)
 }
 
-async function getExitList(client) {
-  const exitList = await client.getExitList()
+async function getPendingWithdrawals(client) {
+  const exitList = await client.getPendingWithdrawals()
   console.log("exit list:", exitList)
 }
 
-async function finalizeExit(client, index) {
-  const exitList = await getExitList(client)
+async function completeWithdrawal(client, index) {
+  const exitList = await getPendingWithdrawals(client)
   if (exitList[index]) {
-    await client.finalizeExit(exitList[index])
+    await client.completeWithdrawal(exitList[index])
   }
 }
 
@@ -244,22 +244,22 @@ function cliWalletReadLine(client) {
         await transfer(client, args[0], args[1])
         cliWalletReadLine(client)
         break
-      case "getexitlist":
-        await getExitList(client)
+      case "getpendingwithdrawals":
+        await getPendingWithdrawals(client)
         cliWalletReadLine(client)
         break
-      case "exit":
-        await exit(client, args[0])
+      case "startwithdrawal":
+        await startWithdrawal(client, args[0])
         cliWalletReadLine(client)
         break
-      case "finalizeexit":
-        await finalizeExit(client, args[0])
+      case "completewithdrawal":
+        await completeWithdrawal(client, args[0])
         cliWalletReadLine(client)
         break
       case "quit":
         console.log("Bye.")
         rl.close()
-        process.exit()
+        process.startWithdrawal()
       default:
         console.log(`${command} is not found`)
         cliWalletReadLine(client)
@@ -280,7 +280,7 @@ main()
 ## Tutorial Gazelle CLI Wallet - The End
 
 Congratulations!
-Now we've developed a CLI Plasma Wallet with basic functions from deposit to exit!
+Now we've developed a CLI Plasma Wallet with basic functions from deposit to withdrawal!
 
 Once again, this tutorial and the framework is not production-ready yet. Please refrain from using it on the main net until we announce the alpha version and it is ready for production use.
 
