@@ -33,7 +33,7 @@ Welcome to the documentation for Gazelle, an open-source Dapps development frame
 Plasma is a blockchain scaling design which significantly reduces the gas cost per transaction.
 Using Plasma, transactions are not directly submitted to the mainchain, but to a **transaction aggregator**, also known as an **operator**, who later submits them hashed into 32 bytes data. Aggregator computes the root hash of a Merkle tree in which every leaf node is labeled with a hash of state from off-loaded transactions and commits the root hash to the mainchain.
 
-![plasma-image](/img/docs/plasma.png")
+![plasma-image](/img/docs/plasma.png)
 Transaction aggregator recieves all the off-chain transactions off-loaded from the mainchain and generates a Merkle tree, putting all the transactions' hash in the Merkle tree leaves.
 
 With transaction aggregator submitting a Merkle root to the mainchain at a regular time interval, **users can protect their assets using their local information** such as signed transactions and Merkle inclusion proofs.
