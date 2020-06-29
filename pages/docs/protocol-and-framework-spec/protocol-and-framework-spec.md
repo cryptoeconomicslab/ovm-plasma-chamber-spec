@@ -1,5 +1,5 @@
 ---
-id: protocol-and-framework-spec
+id: Protocol_And_Framework_Spec
 title: Protocol and Framework Spec
 sidebar_label: Protocol and Framework Spec
 ---
@@ -8,8 +8,8 @@ sidebar_label: Protocol and Framework Spec
 
 Welcome to the documentation for Gazelle, an open-source Dapps development framework. This documentation consists of two parts.
 
-1. **Blockchain with fraud-proof scaling solutions in big picture**: documentation[link of the page] that describes how public blockchains securely scale with fraud-proof technology in general. This page is for those that want to start with gaining a big picture of Gazelle's underlying scaling technology.
-2. **Gazelle documentation**: documentation[link of the page] that describes how Gazelle works and specifications for its main components. This is mainly for the developers who are contributing to Gazelle's open-source development.
+1. **High-level overview of the fraud-proof scaling solutions**: describes how public blockchains securely scale with fraud-proof technology in general. This page is for those that want to start with gaining a big picture of Gazelle's underlying scaling technology.
+2. **Gazelle documentation**: describes how Gazelle works and specifications for its main components. This is mainly for the developers who are contributing to Gazelle's open-source development.
 
    Specific motivation is to provide inforamtion with
 
@@ -17,12 +17,12 @@ Welcome to the documentation for Gazelle, an open-source Dapps development frame
    - Developers who can contribute to Gazelle's client development and new platform suppot such as Android and iOS.
    - Developers who can contribute to development of predicate DSL and Gazelle smart contracts.
 
-## Blockchain with fraud-proof scaling solutions in big picture
+## High-level overview of the fraud-proof scaling solutions
 
 ### Basic Terminologies
 
 - **Merkle tree**: a data structure that allows efficient and secure verification of large data, only requiring $log(n)$ of computation where n is the number of leaf nodes in the tree. It is important to highlight that in Plasma, Merkle tree's every leaf node is labled with **a hash of off-chain transactions** offloaded from the mainchain.
-- **Merkle inclusion proof**: **a list of hash**, which proves that a particular off-chain transaction was actually included in a Merkle tree. Aggregator gives a Merkle inclusion proof to L2 clients. L2 clients use **Merkle inclusion proof and corresponding Merkle root** to check whether a transaction has actually been included or not. Data size of Merkle inclusion proof and the computation to check the inclusion are both $log(n)$ where n is the number of leaf nodes in the tree.
+- **Merkle inclusion proof**: **a list of hash**, which proves that a particular off-chain transaction was actually included in a Merkle tree. Aggregator gives a Merkle inclusion proof to L2 clients. L2 clients use **Merkle inclusion proof and corresponding Merkle root** to check whether a transaction has actually been included or not. Data size of Merkle inclusion proof and the computation to check the inclusion are both log(n) where n is the number of leaf nodes in the tree.
 - **Interactive dispute game**: a game played between a claim prover and its opponent. The game is judged by a smart conract using the on-chain data and proofs submitted by Plasma clients.
 - **Dispute period**: period that the dispute game is played. Users have to wait this period to withdraw their assets.
 
@@ -33,7 +33,7 @@ Welcome to the documentation for Gazelle, an open-source Dapps development frame
 Plasma is a blockchain scaling design which significantly reduces the gas cost per transaction.
 Using Plasma, transactions are not directly submitted to the mainchain, but to a **transaction aggregator**, also known as an **operator**, who later submits them hashed into 32 bytes data. Aggregator computes the root hash of a Merkle tree in which every leaf node is labeled with a hash of state from off-loaded transactions and commits the root hash to the mainchain.
 
-![](https://i.imgur.com/bAqdgPc.png)
+![plasma-image](/img/docs/plasma.png")
 Transaction aggregator recieves all the off-chain transactions off-loaded from the mainchain and generates a Merkle tree, putting all the transactions' hash in the Merkle tree leaves.
 
 With transaction aggregator submitting a Merkle root to the mainchain at a regular time interval, **users can protect their assets using their local information** such as signed transactions and Merkle inclusion proofs.
@@ -62,7 +62,7 @@ For the transaction aggregation, Gazelle utilizes **Merkle Interval Tree**, a bi
 
 1. Merkle Interval Tree's leaf nodes are labeled with **a state made by an off-chain transaction and the range that is transacted**. The range is specified by `start` and `end`value.
 2. Merkle Interval Tree does not include any two different transactions which refrence an **overlapped range**.
-   By defining unique ranges that is used in the off-chain transactions, Plasma Clients only have to track the transactions that are related to themselves. This is the advent of Layer2 **LightClient**, which carries some of the transaction they would need in comparison to full nodes carrying all the transaction history.
+   By defining unique ranges that is used in the off-chain transactions, Plasma clients only have to track the transactions that are related to themselves. This is the advent of Layer2 **Light clients**, which carry some of the transactions they would need, in comparison to full nodes carrying all the transaction history.
 
 ### OGS
 
@@ -78,7 +78,7 @@ For example, let's say a proposition claims that you have an asset X in Plasma. 
 
 ### Gazelle in a nutshell
 
-![](https://i.imgur.com/dl7Irwd.png)
+![gazelle-image](/img/docs/gazelle.png)
 
 ### Features of Gazelle
 
