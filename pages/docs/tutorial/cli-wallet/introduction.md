@@ -1,5 +1,5 @@
 ---
-id: README
+id: Introduction
 title: Introduction to CLI wallet Tutorial
 sidebar_label: Introduction
 ---
