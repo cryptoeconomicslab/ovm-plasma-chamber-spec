@@ -1,5 +1,5 @@
 ---
-id: Protocol-Spec
+id: Protocol_Spec
 title: Protocol Spec
 sidebar_label: Protocol Spec
 ---
