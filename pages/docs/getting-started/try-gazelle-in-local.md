@@ -1,7 +1,7 @@
 ---
 id: Try_Gazelle_In_Local
-title: Try Gazelle in local
-sidebar_label: Try Gazelle in local
+title: Try Gazelle in Local
+sidebar_label: Try Gazelle in Local
 ---
 
 Following this document, you will be able to build secure and scalable Dapps using Plasma.
