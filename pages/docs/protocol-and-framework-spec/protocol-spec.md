@@ -1,7 +1,7 @@
 ---
-id: Protocol_And_Framework_Spec
-title: Protocol and Framework Spec
-sidebar_label: Protocol and Framework Spec
+id: Protocol_Spec
+title: Protocl Spec
+sidebar_label: Protocol Spec
 ---
 
 ## Introduction
@@ -73,33 +73,3 @@ Optimistic Game Semantics is an abstraction scheme for fraud-proof scaling solut
 #### Plasma in OGS
 
 For example, let's say a proposition claims that you have an asset X in Plasma. Then, Predicate Evaluation Contract will check whether or not you actually have the asset X based on the submitted evidence such as signature, transactions, or Merkle inclusion proof. **The greatness of OGS is that it enables both smart contracts and client devicese to evaluate a claim following the same rule.** As the name says, OGS is **a new shared language that defines the sematics of the dispute games for fraud-proof**. Therefore, now it is possible to express many parts of the Plasma system, such as check points, exits, ownership states, and atomic swaps, using OGS propositions. That makes the development a lot simpler and brings a composability to Gazelle applications.
-
-## Gazelle Documentation
-
-### Gazelle in a nutshell
-
-![gazelle-image](/img/docs/gazelle.png)
-
-### Features of Gazelle
-
-#### L1 agnostic design
-
-Using Gazelle, you can build application on top of a variety of blockchain. Gazelle currently supports Ethereum and Tezos.
-
-#### Composability of multiple off-chain solutions
-
-If you are an application developer, you probably understand that the composability of applications plays a huge role in the development. As above section about OGS explained, Gazelle made it possible to build scalable blockchain applications using multiple off-chain scaling solutions, such as Plasma, State channels, and Optimistic Rollup, employing OGS. This feature makes your blockchain application more general and flexibility.
-
-### Main Components of Gazelle
-
-#### On-chain and off-chain predicates
-
-##### Predicate Compiler
-
-To avoid claiming a big-sized property to Predicate Evaluation Contract, which would require more gas cost, developers would want smaller-sized predicates that can compose a complex property. However, manually writing specific, small predicates in Solidity would be time-consuming and might cause trivial bugs. Predicate Compiler[link], hence, is there to compile complex, big property to piecies of simpler predicates.
-Also, you can utilize Predicate Compiler to build a library for complex properties such as a property for atomic swap.
-
-##### On-chain predicate evaluation
-
-**Predicate Evaluation Contract** evaluates each building-block predicate that composes a claimed property when a property is claimed to on-chain contracts. For example in Plasma, property is calimed to PEC when a user tries to withdraw their off-chain assets to the mainchain or a user tries to challenge fraudulent exits. The evaluation is completed after a week of dispute period.
-By evaluating each predicate for challenged property, PEC proves the invalidity of the state in the property as a whole. Then, users will be able to withdraw their deposited funds to the mainchain after a week.
