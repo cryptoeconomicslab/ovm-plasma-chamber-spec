@@ -1,20 +1,20 @@
 ---
-id: Protocol_Spec
+id: Protocol-Spec
 title: Protocl Spec
 sidebar_label: Protocol Spec
 ---
 
 ## Introduction
 
-Welcome to the documentation for Gazelle, an open-source Dapps development framework. This documentation consists of two parts.
+Welcome to the documentation for Gazelle, an open-source dapps development framework. This documentation consists of two pages.
 
-1. **High-level overview of the fraud-proof scaling solutions**: describes how public blockchains securely scale with fraud-proof technology in general. This page is for those that want to start with gaining a big picture of Gazelle's underlying scaling technology.
-2. **Gazelle documentation**: describes how Gazelle works and specifications for its main components. This is mainly for the developers who are contributing to Gazelle's open-source development.
+1. **High-level overview of the fraud-proof scaling solutions**: describes how public blockchains securely scale with fraud-proof technology in general. This page is for those that want to start with looking at a bigger picture of Gazelle's underlying scaling technology.
+2. **Gazelle documentation**: describes how Gazelle works and its specifications for the main components. This is mainly for the developers who are contributing to Gazelle's open-source development.
 
    Specific motivation is to provide inforamtion with
 
-   - Developers who can contribute to integration of Gazelle into new blockchains.
-   - Developers who can contribute to Gazelle's client development and new platform suppot such as Android and iOS.
+   - Developers who can contribute to integration of new blockchains as a main chain.
+   - Developers who can contribute to Gazelle's client development and new platform support such as Android and iOS.
    - Developers who can contribute to development of predicate DSL and Gazelle smart contracts.
 
 ## High-level overview of the fraud-proof scaling solutions
@@ -57,7 +57,6 @@ This system significantly reduces the amount of data each Plasma client must sto
 
 ##### Light Clients powered by Merkle Interval Tree
 
-[Chart to describe Merkle Interval Tree]
 For the transaction aggregation, Gazelle utilizes **Merkle Interval Tree**, a binary tree that has special leaf node labelling to reduce clients' verification costs. Here are Merkle Interval Tree's special rules for labelling its leaf nodes.
 
 1. Merkle Interval Tree's leaf nodes are labeled with **a state made by an off-chain transaction and the range that is transacted**. The range is specified by `start` and `end`value.
