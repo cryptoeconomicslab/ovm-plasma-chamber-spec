@@ -1,5 +1,5 @@
 ---
-id: Gazelle-Documentation
+id: Gazelle_Documentation
 title: Gazelle Dcumentation
 sidebar_label: Gazelle Documentation
 ---
