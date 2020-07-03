@@ -17,7 +17,7 @@ Gazelle is a blockchain application framework, which integrated Layer2 scaling s
 
 ##### Try Gazelle in local
 
-[Try Gazelle in local](getting-started/Try_Gazelle_In_Local)
+[Try Gazelle in local](get-started/Try_Gazelle_In_Local)
 
 #### Learn Gazelle
 
