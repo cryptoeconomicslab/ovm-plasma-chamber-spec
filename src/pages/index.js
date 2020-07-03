@@ -26,7 +26,7 @@ function Home() {
       </section>
       <div className={styles.cta}>
         <RoundDivider top />
-        <Button withLogo to="docs/getting-started/Try_Gazelle_In_Local">
+        <Button withLogo to="docs/get-started/Try_Gazelle_In_Local">
           Get Started
         </Button>
       </div>
