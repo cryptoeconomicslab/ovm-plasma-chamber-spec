@@ -2,6 +2,7 @@
 id: Related_Repositories
 title: Related Repositories
 sidebar_label: Related Repositories
+description: Check out our repo to delve into the OVM-based architecture of Gazelle and Plasma implementations with Tezos and Substrate.
 ---
 
 ## Core

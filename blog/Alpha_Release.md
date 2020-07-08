@@ -7,7 +7,7 @@ We introduce Gazelle alpha release🦌
 
 ## What is Gazelle?
 
-**Gazelle** is a blockchain application framework for real-world use cases. It provides scalability and usability by utilizing off-chain scaling technology. As our first step, this alpha release includes Plasma SDK that provides simple APIs for Plasma applications. APIs include `deposit`, `transfer` and `exit`. You can start from trying out the [tutorial](https://gzle.io/docs/tutorial/cli-wallet/README).
+**Gazelle** is a blockchain application framework for real-world use cases. It provides scalability and usability by utilizing off-chain scaling technology. As our first step, this alpha release includes Plasma SDK that provides simple APIs for Plasma applications. APIs include `deposit`, `transfer` and `exit`. You can start from trying out the [tutorial](https://gzle.io/docs/tutorial/cli-wallet/Introduction).
 
 ## The goal of Gazelle
 
