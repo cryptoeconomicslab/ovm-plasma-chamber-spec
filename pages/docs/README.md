@@ -2,6 +2,7 @@
 id: README
 title: Gazelle Specifications
 sidebar_label: Introduction
+description: Gazelle is a blockhcain application development framework, powered by Plasma, a layer-2 scaling solution. With Gazelle, you can build a secure, scalable blockchain application without hassles.
 ---
 
 Gazelle is a dapps development framework which grantees security, scalabilty, and userbility, based on the OVM.

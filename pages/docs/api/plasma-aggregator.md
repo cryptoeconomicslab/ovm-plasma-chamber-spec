@@ -2,6 +2,7 @@
 id: Plasma_Aggregator
 title: Plasma Aggregator API
 sidebar_label: Plasma Aggregator
+description: Check out Gazelle's API reference to set up a Plasma Aggregator without hassles.
 ---
 
 Plasma Aggregator is an actor to collect Layer2 transactions and calculate merkle root, submit it to CommitmentContract. Aggregator has several HTTP API endpoints.
