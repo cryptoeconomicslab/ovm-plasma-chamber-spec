@@ -103,36 +103,17 @@ Get pending exit list
 
 ---
 
-## registerCustomToken
-
-_Defined in [LightClient.ts:421](https://github.com/cryptoeconomicslab/wakkanay/blob/a43f185/packages/plasma-light-client/src/LightClient.ts#L421)_
-
-register ERC20 custom token.
-ERC20 contract wrapper is passed directly. This method should be used
-when you want to use custom IERC20 contract. PETH contract use this method.
-
-**Parameters:**
-
-| Name              | Type             | Description               |
-| ----------------- | ---------------- | ------------------------- |
-| `erc20Contract`   | IERC20Contract   | IERC20Contract instance   |
-| `depositContract` | IDepositContract | IDepositContract instance |
-
-**Returns:** _void_
-
----
-
 ## registerToken
 
-▸ **registerToken**(`erc20ContractAddress`: string, `tokenContractAddress`: string): _void_
+▸ **registerToken**(`erc20ContractAddress`: string, `depositContractAddress`: string): _void_
 
-register ERC20 token. use default ERC20 contract wrapper
+register ERC20 token. use default ERC20 contract wrapper.
 
 **Parameters:**
 
-| Name                   | Type   | Description                                             |
-| ---------------------- | ------ | ------------------------------------------------------- |
-| `erc20ContractAddress` | string | ERC20 token address to register                         |
-| `tokenContractAddress` | string | token contract address connecting to tokenAddress above |
+| Name                     | Type   | Description                                               |
+| ------------------------ | ------ | --------------------------------------------------------- |
+| `erc20ContractAddress`   | string | ERC20 token address to register                           |
+| `depositContractAddress` | string | deposit contract address connecting to tokenAddress above |
 
 **Returns:** _void_
