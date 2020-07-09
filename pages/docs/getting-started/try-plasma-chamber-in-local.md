@@ -17,10 +17,10 @@ For this quick start document using Typescript SDK, you need Node.js with the ve
 
 ### 1. Run test aggregator
 
-Get Plasma aggregator from [gazelle repository](https://github.com/cryptoeconomicslab/gazelle/releases/tag/v0.4.0).
+Get Plasma aggregator from [gazelle repository](https://github.com/cryptoeconomicslab/gazelle/releases/tag/v0.4.1).
 
 ```bash
-$ git clone -b v0.4.0 https://github.com/cryptoeconomicslab/gazelle.git
+$ git clone -b v0.4.1 https://github.com/cryptoeconomicslab/gazelle.git
 $ cd gazelle
 $ npm run docker:build
 $ npm run docker:cp
@@ -44,7 +44,7 @@ Install the following libraries using npm to enable fund transfers in Plasma.
 
 ```bash
 $ npm i ethers
-$ npm i @cryptoeconomicslab/eth-plasma-light-client@0.4.0 @cryptoeconomicslab/primitives @cryptoeconomicslab/level-kvs
+$ npm i @cryptoeconomicslab/eth-plasma-light-client@0.4.1 @cryptoeconomicslab/primitives @cryptoeconomicslab/level-kvs
 ```
 
 Copy `config.local.json` file to your application repository root.
