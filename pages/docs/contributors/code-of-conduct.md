@@ -2,6 +2,7 @@
 id: Code_Of_Conduct
 title: Code of Conduct
 sidebar_label: Code of Conduct
+description: Be part of Gazelle's open-source community! We welcome you to read our Code of Conduct for healthy community engagements.
 ---
 
 ## Our Pledge

@@ -8,22 +8,31 @@ module.exports = {
     ]
   },
   docs: {
-    Introduction: [
+    "Get Started": [
       "docs/Introduction",
-      "docs/getting-started/Try_Gazelle_In_Local"
+      "docs/get-started/Try_Gazelle_In_Local"
+    ],
+    "Protocol Spec": [
+      "docs/protocol-spec/Overview",
+      "docs/protocol-spec/Fraud_Proof",
+      "docs/protocol-spec/OGS"
+    ],
+    "Framework Spec": [
+      "docs/framework-spec/Introduction",
+      "docs/framework-spec/Main_Components"
+    ],
+    "API Reference": [
+      "docs/api/Plasma_Aggregator",
+      "docs/api/Plasma_Light_Client"
     ],
     Tutorial: [
-      "docs/tutorial/cli-wallet/README",
+      "docs/tutorial/cli-wallet/Introduction",
       "docs/tutorial/cli-wallet/Setup",
       "docs/tutorial/cli-wallet/Start_Client",
       "docs/tutorial/cli-wallet/Deposit",
       "docs/tutorial/cli-wallet/Show_Balance",
       "docs/tutorial/cli-wallet/Transfer",
       "docs/tutorial/cli-wallet/Withdrawal"
-    ],
-    "API Reference": [
-      "docs/api/Plasma_Aggregator",
-      "docs/api/Plasma_Light_Client"
     ],
     "For Contributors": [
       "docs/contributors/Related_Repositories",

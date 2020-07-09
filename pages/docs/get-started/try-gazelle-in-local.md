@@ -1,11 +1,12 @@
 ---
 id: Try_Gazelle_In_Local
-title: Try Gazelle in local
-sidebar_label: Try Gazelle in local
+title: Try Gazelle in Local
+sidebar_label: Try Gazelle in Local
+description: Try Gazelle in your local environment. You can start building a scalable blockchain application with our TypeScript SDK.
 ---
 
 Following this document, you will be able to build secure and scalable Dapps using Plasma.
-For this quick start document using Typescript SDK, you need Node.js with the version later than v.10.x.
+For this quick start document using Typescript SDK, you need Node.js with the version higher than v.10.x.
 
 ## Prerequisites
 
@@ -27,7 +28,7 @@ $ npm run docker:cp
 $ npm run docker:start
 ```
 
-Contracts config file `config.local.json` is generated at the root directory after `npm run docker:build` f you have not installed them yet.
+Contracts config file `config.local.json` is generated at the root directory after `npm run docker:build` if you have not installed them yet.
 
 ## Create your application
 
@@ -101,7 +102,7 @@ console.log("balance", balance)
 
 ### 4. Deposit to Plasma
 
-Let's deposit L1 token to Plasma.
+Let's say you want to deposit L1 token to Plasma.
 Plasma requires a contract to deposit L1 tokens to Plasma.
 You can get default Deposit Contract for ETH.
 

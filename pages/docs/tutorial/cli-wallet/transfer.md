@@ -2,6 +2,7 @@
 id: Transfer
 title: 5. Transfer
 sidebar_label: Transfer
+description: Gazelle's step-by-step guide for you to build a client wallet to make deposits, transfers, and withdrawals of Ether and ERC20 tokens to/from Plasma chains.
 ---
 
 In this chapter, we'll be implementing remittances on Plasma.

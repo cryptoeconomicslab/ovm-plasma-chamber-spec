@@ -2,6 +2,7 @@
 id: Show_Balance
 title: 4. Show balance
 sidebar_label: Show balance
+description: Gazelle's step-by-step guide for you to build a client wallet to make deposits, transfers, and withdrawals of Ether and ERC20 tokens to/from Plasma chains.
 ---
 
 In this chapter, we will implement the methods to check the balances in the main chain and Plasma chain.

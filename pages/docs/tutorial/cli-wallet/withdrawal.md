@@ -2,6 +2,7 @@
 id: Withdrawal
 title: 6. Withdrawal
 sidebar_label: Withdrawal
+description: Gazelle's step-by-step guide for you to build a client wallet to make deposits, transfers, and withdrawals of Ether and ERC20 tokens to/from Plasma chains.
 ---
 
 In this chapter, we will implement withdrawal functionality to withdraw your tokens from Plasma.

@@ -2,6 +2,7 @@
 id: Setup
 title: 1. Setup
 sidebar_label: Setup
+description: Gazelle's step-by-step guide for you to build a client wallet to make deposits, transfers, and withdrawals of Ether and ERC20 tokens to/from Plasma chains.
 ---
 
 Now, let's develop the Plasma Wallet!

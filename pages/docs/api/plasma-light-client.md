@@ -2,6 +2,7 @@
 id: Plasma_Light_Client
 title: Plasma Light Client API
 sidebar_label: Plasma Light Client
+description: Check out Gazelle's API reference to set up a Plasma Light Client without hassles.
 ---
 
 ## deposit

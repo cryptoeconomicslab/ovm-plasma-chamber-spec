@@ -42,7 +42,7 @@ function Hero() {
           </p>
           <div className={styles.btnWrap}>
             <Link
-              to="docs/getting-started/Try_Gazelle_In_Local"
+              to="docs/get-started/Try_Gazelle_In_Local"
               className={styles.btn}
             >
               <span className={styles.btnTxt}>Get Started</span>
