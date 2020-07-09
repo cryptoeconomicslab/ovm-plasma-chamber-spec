@@ -194,4 +194,4 @@ Now you can transfer funds in Plasma chain!
 
 In the last chapter, we'll be working on withdrawing some tokens back to the main chain.
 
-Move on to the [6. Exit](Exit) step.
+Move on to the [6. Withdrawal](Withdrawal) step.
