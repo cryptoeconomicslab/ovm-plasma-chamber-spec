@@ -18,10 +18,10 @@ For this quick start document using Typescript SDK, you need Node.js with the ve
 
 ### 1. Run test aggregator
 
-Get Plasma aggregator from [gazelle repository](https://github.com/cryptoeconomicslab/gazelle/releases/tag/v0.4.0).
+Get Plasma aggregator from [gazelle repository](https://github.com/cryptoeconomicslab/gazelle/releases/tag/v0.4.1).
 
 ```bash
-$ git clone -b v0.4.0 https://github.com/cryptoeconomicslab/gazelle.git
+$ git clone -b v0.4.1 https://github.com/cryptoeconomicslab/gazelle.git
 $ cd gazelle
 $ npm run docker:build
 $ npm run docker:cp
@@ -45,7 +45,7 @@ Install the following libraries using npm to enable fund transfers in Plasma.
 
 ```bash
 $ npm i ethers
-$ npm i @cryptoeconomicslab/eth-plasma-light-client@0.4.0 @cryptoeconomicslab/primitives @cryptoeconomicslab/level-kvs
+$ npm i @cryptoeconomicslab/eth-plasma-light-client@0.4.1 @cryptoeconomicslab/primitives @cryptoeconomicslab/level-kvs
 ```
 
 Copy `config.local.json` file to your application repository root.
@@ -109,13 +109,13 @@ You can get default Deposit Contract for ETH.
 ```javascript
 const config = require("./config.local.json")
 // Get default Deposit Contract address
-const DEPOSIT_CONTRACT_ADDRESS = config.payoutContracts.DepositContract
+const TOKEN_CONTRACT_ADDRESS = config.PlasmaETH
 ```
 
 Deposit 10 wei to Plasma.
 
 ```javascript
-await lightClient.deposit(10, DEPOSIT_CONTRACT_ADDRESS)
+await lightClient.deposit(10, TOKEN_CONTRACT_ADDRESS)
 ```
 
 ### 5. Transfer
@@ -123,24 +123,24 @@ await lightClient.deposit(10, DEPOSIT_CONTRACT_ADDRESS)
 You can make your first Plasma transaction!
 
 ```javascript
-await lightClient.transfer(10, DEPOSIT_CONTRACT_ADDRESS, to)
+await lightClient.transfer(10, TOKEN_CONTRACT_ADDRESS, to)
 ```
 
-### 6. Exit and withdraw assets from Plasma
+### 6. Withdraw assets from Plasma
 
-Start exit your asset from Plasma.
+Start withdraw your asset from Plasma.
 
 ```javascript
-await lightClient.exit(10, DEPOSIT_CONTRACT_ADDRESS)
-const exitList = await lightClient.getExitList()
+await lightClient.startWithdrawal(10, TOKEN_CONTRACT_ADDRESS)
+const exitList = await lightClient.getPendingWithdrawals()
 console.log("new exits", exitList)
 ```
 
 After dispute period, you can withdraw your asset to Ethereum.
 
 ```javascript
-const exitList = await lightClient.getExitList()
+const exitList = await lightClient.getPendingWithdrawals()
 if (exitList[0]) {
-  await lightClient.finalizeExit(exitList[0])
+  await lightClient.completeWithdrawal(exitList[0])
 }
 ```

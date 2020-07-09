@@ -18,7 +18,7 @@ You can easily send the tokens on Plasma by simply passing the amount you want t
 ```javascript
 async function transfer(client, amount, to) {
   console.log("transfer:", amount, to)
-  await client.transfer(amount, DEPOSIT_CONTRACT_ADDRESS, to)
+  await client.transfer(amount, TOKEN_CONTRACT_ADDRESS, to)
 }
 ```
 
@@ -93,7 +93,7 @@ if (!PRIVATE_KEY) {
   throw "Please set your private key"
 }
 const config = require("./config.local.json")
-const DEPOSIT_CONTRACT_ADDRESS = config.payoutContracts.DepositContract
+const TOKEN_CONTRACT_ADDRESS = config.PlasmaETH
 const wallet = new ethers.Wallet(
   PRIVATE_KEY,
   new ethers.providers.JsonRpcProvider("http://127.0.0.1:8545")
@@ -106,7 +106,7 @@ const rl = readline.createInterface({
 
 async function deposit(client, amount) {
   console.log("deposit:", amount)
-  await client.deposit(amount, DEPOSIT_CONTRACT_ADDRESS)
+  await client.deposit(amount, TOKEN_CONTRACT_ADDRESS)
 }
 
 async function getBalance(client) {
@@ -127,7 +127,7 @@ async function getL1Balance(client) {
 
 async function transfer(client, amount, to) {
   console.log("transfer:", amount, to)
-  await client.transfer(amount, DEPOSIT_CONTRACT_ADDRESS, to)
+  await client.transfer(amount, TOKEN_CONTRACT_ADDRESS, to)
 }
 
 async function startLightClient() {
@@ -194,4 +194,4 @@ Now you can transfer funds in Plasma chain!
 
 In the last chapter, we'll be working on withdrawing some tokens back to the main chain.
 
-Move on to the [6. Exit](Exit) step.
+Move on to the [6. Withdrawal](Withdrawal) step.

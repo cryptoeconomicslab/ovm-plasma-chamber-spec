@@ -32,7 +32,7 @@ module.exports = {
       "docs/tutorial/cli-wallet/Deposit",
       "docs/tutorial/cli-wallet/Show_Balance",
       "docs/tutorial/cli-wallet/Transfer",
-      "docs/tutorial/cli-wallet/Exit"
+      "docs/tutorial/cli-wallet/Withdrawal"
     ],
     "For Contributors": [
       "docs/contributors/Related_Repositories",

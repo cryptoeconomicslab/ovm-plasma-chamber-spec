@@ -30,7 +30,7 @@ Once you complete this tutorial, you will be able to create a wallet that enable
 3. [Deposit](Deposit)
 4. [Show balance](Show_Balance)
 5. [Transfer](Transfer)
-6. [Exit](Exit)
+6. [Withdrawal](Withdrawal)
 
 ## Go to the next step!
 

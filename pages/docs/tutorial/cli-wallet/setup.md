@@ -13,12 +13,12 @@ In this chapter, we will start the transaction aggregator required to run Plasma
 
 ### Run local aggregator
 
-Get the aggregator from [here](https://github.com/cryptoeconomicslab/gazelle/releases/tag/v0.4.0).
+Get the aggregator from [here](https://github.com/cryptoeconomicslab/gazelle/releases/tag/v0.4.1).
 
 And then, start it with Docker.
 
 ```bash
-$ git clone -b v0.4.0 https://github.com/cryptoeconomicslab/gazelle.git
+$ git clone -b v0.4.1 https://github.com/cryptoeconomicslab/gazelle.git
 $ cd gazelle
 $ npm run docker:build
 $ npm run docker:cp
@@ -41,7 +41,7 @@ $ cd plasma-wallet
 $ npm init
 $ npm i ethers
 $ npm i leveldown
-$ npm i @cryptoeconomicslab/eth-plasma-light-client@0.4.0 @cryptoeconomicslab/primitives @cryptoeconomicslab/level-kvs
+$ npm i @cryptoeconomicslab/eth-plasma-light-client@0.4.1 @cryptoeconomicslab/primitives @cryptoeconomicslab/level-kvs
 $ cp -p <your gazelle path>/integration-test/aggregator/src/config.local.json ./config.local.json
 ```
 
