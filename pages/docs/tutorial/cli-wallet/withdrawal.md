@@ -260,7 +260,7 @@ function cliWalletReadLine(client) {
       case "quit":
         console.log("Bye.")
         rl.close()
-        process.startWithdrawal()
+        process.exit()
       default:
         console.log(`${command} is not found`)
         cliWalletReadLine(client)
